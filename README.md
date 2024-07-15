@@ -18,8 +18,8 @@ Welcome to **Isometric RPG**, a 2D isometric action RPG developed for [Name of t
 
 | Technology           | Description                                          |
 |----------------------|------------------------------------------------------|
-| **Game Engine**      | Godot                                                |
-| **Programming Language** | GDscript                                       |
+| **Game Engine**      | Godot 4.2.2                                          |
+| **Programming Language** | GDscript                                         |
 | **Graphics**         | Aseprite for pixel art                               |
 | **Sound**            | Audacity, Reaper                                     |
 | **Version Control**  | Git and GitHub for collaboration and code management |
