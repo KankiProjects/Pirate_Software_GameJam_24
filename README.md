@@ -1,5 +1,9 @@
 # Isometric RPG Game
 
+## Early Considerations
+
+We want to focus on Game Feel, creating an engaging environment that rewards player curiosity and a satisfying solid polished game loop. User experience and playability are our main goals.
+
 ## Introduction
 
 Welcome to **Isometric RPG**, a 2D isometric action RPG developed for [Name of the Game Jam] in [Month, Year]. This project focuses on exploring, fighting enemies, and collecting treasures in a beautifully designed isometric world.
