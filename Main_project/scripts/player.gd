@@ -7,13 +7,32 @@ const RUN_SPEED_MULTIPLIER = 1.5
 const CROUCH_SPEED_MULTIPLIER = 0.5
 const JUMP_VELOCITY = -300.0
 
-# Imports
+# Class instance has these
 @onready var sprite = $Sprite2D
 @onready var cshape = $CollisionShape2D
+@onready var invUI = $InventoryUI
+
+# Can't remember what this was so don't touch it
+#@export var inventory: Inventory
 
 # Global variables
+
+# Player physics
 var is_crouching = false
 var current_speed
+
+# Collectable ingredients
+var ingredients = {
+	"nut" : false,
+ 	"scissors" : false,
+ 	"leaf" : false,
+	"mushroom" : false,
+	"flower" : false,
+ 	"ginseng_root" : false,
+ 	"mandrake_root" : false,
+ 	"rose_water" : false
+}
+
 
 # Upload resources
 var standing_cshape = preload("res://resources/standing.tres")
@@ -44,7 +63,7 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * current_speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, current_speed * delta * 3.5)
+		velocity.x = move_toward(velocity.x, 0, current_speed * delta * 4)
 	
 	move_and_slide()
 
@@ -60,3 +79,12 @@ func stand():
 		return
 	is_crouching = false
 	cshape.shape = standing_cshape
+
+# Handle item interaction and collection
+func collect_item(item):
+	if !ingredients[item.name]:
+		ingredients[item.name] = true
+		var collected_item: InventoryItem = InventoryItem.new()
+		collected_item.name = item.name
+		collected_item.texture = load("res://resources/assets/textures/" + item.name + ".png") as Texture2D
+		invUI.inv.items.append(collected_item)

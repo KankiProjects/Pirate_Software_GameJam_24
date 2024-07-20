@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://c74eqr8jvxk2w"]
+[gd_scene load_steps=14 format=3 uid="uid://c74eqr8jvxk2w"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_xkon4"]
-[ext_resource type="Shape2D" uid="uid://bwpjgpsmfwnjd" path="res://resources/standing.tres" id="2_qvro6"]
+[ext_resource type="PackedScene" uid="uid://c426bgaslwpjs" path="res://scenes/character.tscn" id="1_2h8w3"]
+[ext_resource type="PackedScene" uid="uid://ka5hpxuspxea" path="res://scenes/inventory_ui.tscn" id="2_hqkwm"]
+[ext_resource type="Script" path="res://scripts/item_2DArea.gd" id="2_qolbp"]
+[ext_resource type="Texture2D" uid="uid://bfu5wib6ewbh1" path="res://resources/assets/textures/icon.png" id="3_e5v8d"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_lnxlg"]
 a = Vector2(-535, -1)
@@ -28,6 +30,8 @@ size = Vector2(523.5, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bebco"]
 size = Vector2(42, 6)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_00gow"]
+
 [node name="scene" type="Node2D"]
 
 [node name="limits" type="StaticBody2D" parent="."]
@@ -43,16 +47,8 @@ shape = SubResource("SegmentShape2D_8l1b6")
 scale = Vector2(5.58936, 3.30103)
 shape = SubResource("SegmentShape2D_wkqul")
 
-[node name="character" type="CharacterBody2D" parent="."]
-position = Vector2(90, 508)
-script = ExtResource("1_xkon4")
-
-[node name="Sprite2D" type="Sprite2D" parent="character"]
-scale = Vector2(0.022, 0.022)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="character"]
-position = Vector2(-54, 106)
-shape = ExtResource("2_qvro6")
+[node name="character" parent="." instance=ExtResource("1_2h8w3")]
+position = Vector2(27, 595)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="character"]
 remote_path = NodePath("../../Camera2D")
@@ -89,10 +85,44 @@ position = Vector2(97, 593)
 shape = SubResource("RectangleShape2D_bebco")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(-16, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
 position = Vector2(162, 573)
 shape = SubResource("RectangleShape2D_bebco")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(90, 508)
+position = Vector2(27, 595)
+offset = Vector2(0, -22)
+zoom = Vector2(2.25, 2)
+position_smoothing_enabled = true
+editor_draw_drag_margin = true
+
+[node name="InventoryUI" parent="Camera2D" instance=ExtResource("2_hqkwm")]
+offset_left = 117.0
+offset_top = -167.0
+offset_right = 117.0
+offset_bottom = -167.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.556863)
+metadata/_edit_use_anchors_ = true
+
+[node name="mandrake_root" type="Area2D" parent="."]
+visibility_layer = 4
+script = ExtResource("2_qolbp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mandrake_root"]
+visible = false
+position = Vector2(233, 535)
+shape = SubResource("CircleShape2D_00gow")
+
+[node name="Sprite2D" type="Sprite2D" parent="mandrake_root"]
+position = Vector2(233, 534)
+scale = Vector2(0.022, 0.022)
+texture = ExtResource("3_e5v8d")
+
+[connection signal="body_entered" from="mandrake_root" to="mandrake_root" method="_on_pickable_body_entered"]
+[connection signal="body_exited" from="mandrake_root" to="mandrake_root" method="_on_pickable_body_exited"]

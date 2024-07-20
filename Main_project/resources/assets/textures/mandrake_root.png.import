@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfu5wib6ewbh1"
-path="res://.godot/imported/icon.png-f931f6b997c470ed41f337ac62349254.ctex"
+uid="uid://dlqdlopt0kvdx"
+path="res://.godot/imported/mandrake_root.png-cfe4d11396aa5214fd46eecd855be808.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/icon.png"
-dest_files=["res://.godot/imported/icon.png-f931f6b997c470ed41f337ac62349254.ctex"]
+source_file="res://resources/assets/textures/mandrake_root.png"
+dest_files=["res://.godot/imported/mandrake_root.png-cfe4d11396aa5214fd46eecd855be808.ctex"]
 
 [params]
 
