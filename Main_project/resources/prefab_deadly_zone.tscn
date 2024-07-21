@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://hifwmp353sk3"]
+
+[ext_resource type="Script" path="res://scripts/Deadly Zone.gd" id="1_sf6gl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8a2f1"]
+size = Vector2(410.256, 64.6343)
+
+[node name="prefab_Deadly Zone" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_sf6gl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.104342)
+scale = Vector2(0.936, 0.986957)
+shape = SubResource("RectangleShape2D_8a2f1")
+debug_color = Color(0.983662, 0, 0.350934, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_deadly_zone_body_entered"]

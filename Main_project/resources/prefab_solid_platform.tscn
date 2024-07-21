@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfkuqut0db8jg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iax5r"]
+size = Vector2(128, 128)
+
+[node name="prefab_Solid_Platform" type="StaticBody2D"]
+
+[node name="PlatformShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_iax5r")
