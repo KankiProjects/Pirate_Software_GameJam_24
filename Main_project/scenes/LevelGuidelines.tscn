@@ -9,10 +9,6 @@
 [node name="LevelGuidelines" type="Node2D"]
 
 [node name="Ch_Lur" parent="." instance=ExtResource("1_i3ysg")]
-SPEED = 400.0
-CROUCH_SPEED_MULTIPLIER = 0.7
-JUMP_VELOCITY = -1500.0
-ACCELERATION = 2000.0
 
 [node name="Camera2D" parent="." instance=ExtResource("2_i6jbe")]
 
@@ -54,7 +50,7 @@ position = Vector2(2720, -416)
 scale = Vector2(0.5, 5)
 
 [node name="prefab_OneWay_Platform" parent="." instance=ExtResource("5_qp6if")]
-position = Vector2(1664, -496)
+position = Vector2(1664, -528)
 
 [node name="prefab_OneWay_Platform2" parent="." instance=ExtResource("5_qp6if")]
 position = Vector2(2816, -720)

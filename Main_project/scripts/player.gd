@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 # Constants
-@export var SPEED = 700.0
+@export var SPEED = 400.0
 @export var RUN_SPEED_MULTIPLIER = 2.1
-@export var CROUCH_SPEED_MULTIPLIER = 0.5
-@export var JUMP_VELOCITY = -1800.0
+@export var CROUCH_SPEED_MULTIPLIER = 0.7
+@export var JUMP_VELOCITY = -1500.0
 @export var WEIGHT = 5.0
 @export var AIR_CONTROL_MULTIPLIER = 0.5  # Influence multiplier for air control
-@export var ACCELERATION = 5000.0  # Acceleration when running
+@export var ACCELERATION = 2000.0  # Acceleration when running
 @export var DECELERATION_BASE = 2000.0  # Base deceleration when stopping
 @export var DECELERATION_MULTIPLIER = 1.5  # Multiplier for deceleration based on speed
 @export var LANDING_DECELERATION_MULTIPLIER = 3.0  # Extra deceleration when landing
