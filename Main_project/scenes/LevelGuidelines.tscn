@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://7hbokmybeqhv"]
+
+[ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_i3ysg"]
+[ext_resource type="PackedScene" uid="uid://beeu2iu24g3mh" path="res://prefabs/camera_2d.tscn" id="2_i6jbe"]
+[ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="3_caaww"]
+[ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="4_tlevd"]
+[ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="5_qp6if"]
+
+[node name="LevelGuidelines" type="Node2D"]
+
+[node name="Ch_Lur" parent="." instance=ExtResource("1_i3ysg")]
+SPEED = 400.0
+CROUCH_SPEED_MULTIPLIER = 0.7
+JUMP_VELOCITY = -1500.0
+ACCELERATION = 2000.0
+
+[node name="Camera2D" parent="." instance=ExtResource("2_i6jbe")]
+
+[node name="Limits" type="Node2D" parent="."]
+
+[node name="MapLimit" parent="Limits" instance=ExtResource("3_caaww")]
+position = Vector2(0, 384)
+
+[node name="MapLimit2" parent="Limits" instance=ExtResource("3_caaww")]
+position = Vector2(-576, 0)
+rotation = 1.5708
+
+[node name="prefab_Solid_Platform" parent="." instance=ExtResource("4_tlevd")]
+position = Vector2(768, 384)
+scale = Vector2(8, 1)
+
+[node name="prefab_Solid_Platform2" parent="." instance=ExtResource("4_tlevd")]
+position = Vector2(1024, 160)
+scale = Vector2(2, 0.5)
+
+[node name="prefab_Solid_Platform3" parent="." instance=ExtResource("4_tlevd")]
+position = Vector2(1344, -32)
+scale = Vector2(2, 0.5)
+
+[node name="prefab_Solid_Platform4" parent="." instance=ExtResource("4_tlevd")]
+position = Vector2(1664, -224)
+scale = Vector2(2, 0.5)
+
+[node name="prefab_Solid_Platform5" parent="." instance=ExtResource("4_tlevd")]
+position = Vector2(2048, -704)
+scale = Vector2(2, 0.5)
+
+[node name="prefab_Solid_Platform6" parent="." instance=ExtResource("4_tlevd")]
+position = Vector2(2816, -96)
+scale = Vector2(2, 0.5)
+
+[node name="prefab_Solid_Platform7" parent="." instance=ExtResource("4_tlevd")]
+position = Vector2(2720, -416)
+scale = Vector2(0.5, 5)
+
+[node name="prefab_OneWay_Platform" parent="." instance=ExtResource("5_qp6if")]
+position = Vector2(1664, -496)
+
+[node name="prefab_OneWay_Platform2" parent="." instance=ExtResource("5_qp6if")]
+position = Vector2(2816, -720)

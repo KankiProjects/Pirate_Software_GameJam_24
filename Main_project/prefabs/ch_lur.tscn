@@ -8,12 +8,12 @@
 script = ExtResource("1_n13u7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3.99998, 12)
+position = Vector2(3.99998, -114)
 scale = Vector2(0.22963, 0.22963)
 texture = ExtResource("2_o3j22")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
+position = Vector2(0, -112)
 shape = ExtResource("3_anwle")
 debug_color = Color(0.0561924, 0.649996, 3.85046e-07, 0.42)
 

@@ -97,7 +97,6 @@ script = ExtResource("5_gvh5c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deadly Zone platforms"]
 position = Vector2(677.528, 616.035)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ixcbv")
 debug_color = Color(0.983662, 0, 0.350934, 0.42)
 
