@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddstmqfgc5ipx"]
+[gd_scene load_steps=13 format=3 uid="uid://ddstmqfgc5ipx"]
 
 [ext_resource type="Texture2D" uid="uid://b6hs6xvqvaeqo" path="res://Sprites/Sp_LurResourcesNoline.png" id="1_wu5c7"]
 
@@ -20,7 +20,7 @@ joint_data/1/bone2d_node = NodePath("Hip/LegR/ForelegR")
 joint_data/1/rotate_from_joint = false
 joint_data/1/enable_constraint = true
 joint_data/1/constraint_angle_min = 0.0
-joint_data/1/constraint_angle_max = 163.291
+joint_data/1/constraint_angle_max = 188.823
 joint_data/1/constraint_angle_invert = false
 joint_data/1/constraint_in_localspace = true
 joint_data/1/editor_draw_gizmo = true
@@ -93,6 +93,105 @@ modifications/0 = SubResource("SkeletonModification2DCCDIK_dogsb")
 modifications/1 = SubResource("SkeletonModification2DCCDIK_yppoi")
 modifications/2 = SubResource("SkeletonModification2DCCDIK_sejf5")
 modifications/3 = SubResource("SkeletonModification2DCCDIK_g61ob")
+
+[sub_resource type="Animation" id="Animation_tja2i"]
+resource_name = "Idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IK Targets/ArmR:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-69, -121), Vector2(-71, -122), Vector2(-69, -121)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IK Targets/ArmL:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(50, -136), Vector2(50, -144), Vector2(50, -136)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/Hip/torso:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.6, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0872665, 0.0188372, 0.0872665]
+}
+
+[sub_resource type="Animation" id="Animation_iggwa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/Hip/torso:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IK Targets/ArmR:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-72, -126)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("IK Targets/ArmL:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(47, -139)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ra8p4"]
+_data = {
+"Idle": SubResource("Animation_tja2i"),
+"RESET": SubResource("Animation_iggwa")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c84s8"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q25f3"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_baa8b"]
+states/Idle/node = SubResource("AnimationNodeAnimation_c84s8")
+states/Idle/position = Vector2(273, 100)
+states/Start/position = Vector2(159, 100)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_q25f3")]
+graph_offset = Vector2(-56, -21)
 
 [node name="Lur" type="Node2D"]
 
@@ -176,16 +275,17 @@ rest = Transform2D(0.0326346, -0.999467, 0.999467, 0.0326346, -6, -141)
 
 [node name="torso" type="Bone2D" parent="Skeleton2D/Hip"]
 position = Vector2(34.0471, 0.889358)
+scale = Vector2(0.999836, 0.999836)
 rest = Transform2D(1, 0, 0, 1, 34.0471, 0.889358)
 
 [node name="Neck" type="Bone2D" parent="Skeleton2D/Hip/torso"]
 position = Vector2(90.7883, -7.96708)
+rotation = -0.0248612
 rest = Transform2D(1, 0, 0, 1, 90.7883, -7.96708)
 
 [node name="Head" type="Bone2D" parent="Skeleton2D/Hip/torso/Neck"]
 position = Vector2(27.1488, 4.1162)
 rotation = 1.45202
-scale = Vector2(1, 1)
 rest = Transform2D(0.118501, 0.992954, -0.992954, 0.118501, 27.1488, 4.1162)
 
 [node name="ArmR" type="Bone2D" parent="Skeleton2D/Hip/torso"]
@@ -216,7 +316,6 @@ metadata/_local_pose_override_enabled_ = true
 [node name="HandL" type="Bone2D" parent="Skeleton2D/Hip/torso/ArmL/ForearmL"]
 position = Vector2(-49.8102, 6.62907)
 rotation = 2.95018
-scale = Vector2(1, 1)
 rest = Transform2D(-0.981737, 0.190244, -0.190244, -0.981737, -49.8102, 6.62907)
 
 [node name="LegR" type="Bone2D" parent="Skeleton2D/Hip"]
@@ -235,12 +334,10 @@ metadata/_local_pose_override_enabled_ = true
 [node name="FootR" type="Bone2D" parent="Skeleton2D/Hip/LegR/ForelegR"]
 position = Vector2(-69.2014, -3.36626)
 rotation = 1.47028
-scale = Vector2(1, 1)
 rest = Transform2D(0.100349, 0.994952, -0.994952, 0.100349, -69.2014, -3.36626)
 
 [node name="LegL" type="Bone2D" parent="Skeleton2D/Hip"]
 position = Vector2(-0.0530766, 29.0172)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -0.0530766, 29.0172)
 metadata/_local_pose_override_enabled_ = true
 
@@ -252,20 +349,29 @@ metadata/_local_pose_override_enabled_ = true
 [node name="FootL" type="Bone2D" parent="Skeleton2D/Hip/LegL/ForelegL"]
 position = Vector2(-67.0296, 0.187585)
 rotation = -0.0669128
-scale = Vector2(1, 1)
 rest = Transform2D(0.997762, -0.0668629, 0.0668629, 0.997762, -67.0296, 0.187585)
 
 [node name="IK Targets" type="Node2D" parent="."]
 
 [node name="FootR" type="Node2D" parent="IK Targets"]
-position = Vector2(-40, 15)
+position = Vector2(-39, -2)
 
 [node name="FootL" type="Node2D" parent="IK Targets"]
-position = Vector2(18, 10)
+position = Vector2(24, -1)
 scale = Vector2(0.946307, -0.527237)
 
 [node name="ArmR" type="Node2D" parent="IK Targets"]
-position = Vector2(-70, -90)
+position = Vector2(-72, -126)
 
 [node name="ArmL" type="Node2D" parent="IK Targets"]
-position = Vector2(48, -124)
+position = Vector2(47, -139)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ra8p4")
+}
+autoplay = "Idle"
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_baa8b")
+anim_player = NodePath("../AnimationPlayer")
