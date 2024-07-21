@@ -11,6 +11,7 @@ extends CharacterBody2D
 @export var DECELERATION_BASE = 2000.0  # Base deceleration when stopping
 @export var DECELERATION_MULTIPLIER = 1.5  # Multiplier for deceleration based on speed
 @export var LANDING_DECELERATION_MULTIPLIER = 3.0  # Extra deceleration when landing
+@export var CROUCH_DECELERATION = 20000.0  # Deceleration when crouched
 
 # Imports
 @onready var sprite = $Sprite2D
@@ -42,13 +43,16 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("left", "right")
 	current_speed = SPEED
-	
-	if Input.is_action_pressed("run"):
-		current_speed *= RUN_SPEED_MULTIPLIER
-	elif Input.is_action_pressed("crouch"):
+
+	if Input.is_action_pressed("crouch"):
 		crouch()
 	else:
 		stand()
+	
+	if is_crouching:
+		current_speed *= CROUCH_SPEED_MULTIPLIER
+	elif Input.is_action_pressed("run"):
+		current_speed *= RUN_SPEED_MULTIPLIER
 
 	# Apply horizontal movement with reduced influence if the character is in the air
 	if on_floor:
@@ -59,6 +63,9 @@ func _physics_process(delta):
 			var effective_deceleration = DECELERATION_BASE + DECELERATION_MULTIPLIER * abs(velocity.x)
 			if was_in_air:
 				effective_deceleration *= LANDING_DECELERATION_MULTIPLIER
+			# Apply crouch deceleration if crouching
+			if is_crouching:
+				effective_deceleration = CROUCH_DECELERATION
 			velocity.x = move_toward(velocity.x, 0, effective_deceleration * delta)
 	else:
 		if direction:
@@ -71,13 +78,12 @@ func _physics_process(delta):
 
 func crouch():
 	if is_crouching:
-		current_speed *= CROUCH_SPEED_MULTIPLIER
 		return
 	is_crouching = true
 	cshape.shape = crouching_cshape
 
 func stand():
-	if is_crouching == false:
+	if not is_crouching:
 		return
 	is_crouching = false
 	cshape.shape = standing_cshape
