@@ -20,7 +20,7 @@ b = Vector2(5000, 0)
 size = Vector2(128, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixcbv"]
-size = Vector2(1802.71, 41.0022)
+size = Vector2(1986.83, 41.0022)
 
 [node name="scene" type="Node2D"]
 
@@ -37,7 +37,7 @@ position = Vector2(-960, 648)
 shape = SubResource("SegmentShape2D_lnxlg")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="limits"]
-position = Vector2(1200, 776)
+position = Vector2(1064, 776)
 shape = SubResource("SegmentShape2D_lnxlg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="limits"]
@@ -49,7 +49,7 @@ position = Vector2(4144, -432)
 shape = SubResource("SegmentShape2D_8l1b6")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="limits"]
-position = Vector2(3232, 648)
+position = Vector2(3072, 648)
 shape = SubResource("SegmentShape2D_lnxlg")
 
 [node name="limits2" type="StaticBody2D" parent="."]
@@ -96,7 +96,8 @@ collision_layer = 0
 script = ExtResource("5_gvh5c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deadly Zone platforms"]
-position = Vector2(952.992, 883.524)
+position = Vector2(677.528, 616.035)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ixcbv")
 debug_color = Color(0.983662, 0, 0.350934, 0.42)
 
