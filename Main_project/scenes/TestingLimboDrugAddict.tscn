@@ -37,7 +37,7 @@ position = Vector2(-960, 648)
 shape = SubResource("SegmentShape2D_lnxlg")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="limits"]
-position = Vector2(1088, 776)
+position = Vector2(1200, 776)
 shape = SubResource("SegmentShape2D_lnxlg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="limits"]
@@ -88,7 +88,7 @@ shape = SubResource("RectangleShape2D_g3fbu")
 position = Vector2(232, 384)
 
 [node name="prefab_OneWay_Platform" parent="." instance=ExtResource("6_4bmo3")]
-position = Vector2(-264, 272)
+position = Vector2(-256, 336)
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
 
@@ -101,7 +101,7 @@ position = Vector2(1984, 704)
 shape = SubResource("RectangleShape2D_g3fbu")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D5"]
-position = Vector2(3200, 704)
+position = Vector2(2944, 704)
 shape = SubResource("RectangleShape2D_g3fbu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -113,7 +113,7 @@ collision_layer = 0
 script = ExtResource("5_gvh5c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deadly Zone platforms"]
-position = Vector2(808.398, 600.297)
+position = Vector2(952.992, 883.524)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ixcbv")
 debug_color = Color(0.983662, 0, 0.350934, 0.42)
@@ -122,7 +122,7 @@ debug_color = Color(0.983662, 0, 0.350934, 0.42)
 position = Vector2(2240, -160)
 
 [node name="prefab_OneWay_Platform2" parent="." instance=ExtResource("6_4bmo3")]
-position = Vector2(608, 232)
+position = Vector2(640, 240)
 
 [node name="prefab_Solid_Platform2" parent="." instance=ExtResource("5_lgol5")]
 position = Vector2(-704, 448)
