@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddstmqfgc5ipx"]
+[gd_scene load_steps=16 format=3 uid="uid://ddstmqfgc5ipx"]
 
 [ext_resource type="Texture2D" uid="uid://b6hs6xvqvaeqo" path="res://Sprites/Sp_LurResourcesNoline.png" id="1_wu5c7"]
 
@@ -102,7 +102,7 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("IK Targets/ArmR:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.4, 3),
@@ -114,7 +114,7 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("IK Targets/ArmL:position")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.4, 3),
@@ -173,12 +173,92 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(47, -139)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("IK Targets/FootR:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-34, 2)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("IK Targets/FootL:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24, -1)]
+}
+
+[sub_resource type="Animation" id="Animation_41650"]
+resource_name = "Walk"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IK Targets/FootR:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-34, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IK Targets/FootL:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("IK Targets/ArmR:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-69.0223, -121.011)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("IK Targets/ArmL:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(50, -137.034)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ra8p4"]
 _data = {
 "Idle": SubResource("Animation_tja2i"),
-"RESET": SubResource("Animation_iggwa")
+"RESET": SubResource("Animation_iggwa"),
+"Walk": SubResource("Animation_41650")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n45pr"]
+animation = &"Idle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c84s8"]
 animation = &"Idle"
@@ -186,11 +266,16 @@ animation = &"Idle"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q25f3"]
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g85vk"]
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_baa8b"]
 states/Idle/node = SubResource("AnimationNodeAnimation_c84s8")
-states/Idle/position = Vector2(273, 100)
+states/Idle/position = Vector2(296, 100)
+"states/Idle 2/node" = SubResource("AnimationNodeAnimation_n45pr")
+"states/Idle 2/position" = Vector2(445, 100)
 states/Start/position = Vector2(159, 100)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_q25f3")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_q25f3"), "Idle", "Idle 2", SubResource("AnimationNodeStateMachineTransition_g85vk")]
 graph_offset = Vector2(-56, -21)
 
 [node name="Lur" type="Node2D"]
@@ -266,6 +351,7 @@ uv = PackedVector2Array(167.164, 248.507, 438.06, 179.851, 454.478, 458.209, 178
 bones = ["Hip", PackedFloat32Array(0, 0, 0, 0), "Hip/torso", PackedFloat32Array(0, 0, 0, 0), "Hip/torso/Neck", PackedFloat32Array(0, 0, 0, 0), "Hip/torso/Neck/Head", PackedFloat32Array(1, 1, 1, 1), "Hip/torso/ArmL", PackedFloat32Array(0, 0, 0, 0), "Hip/torso/ArmL/ForearmL", PackedFloat32Array(0, 0, 0, 0), "Hip/torso/ArmL/ForearmL/HandL", PackedFloat32Array(0, 0, 0, 0), "Hip/torso/ArmR", PackedFloat32Array(0, 0, 0, 0), "Hip/torso/ArmR/ForearmR", PackedFloat32Array(0, 0, 0, 0), "Hip/torso/ArmR/ForearmR/HandR", PackedFloat32Array(0, 0, 0, 0), "Hip/LegR", PackedFloat32Array(0, 0, 0, 0), "Hip/LegR/ForelegR", PackedFloat32Array(0, 0, 0, 0), "Hip/LegR/ForelegR/FootR", PackedFloat32Array(0, 0, 0, 0), "Hip/LegL", PackedFloat32Array(0, 0, 0, 0), "Hip/LegL/ForelegL", PackedFloat32Array(0, 0, 0, 0), "Hip/LegL/ForelegL/FootL", PackedFloat32Array(0, 0, 0, 0)]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
+visible = false
 modification_stack = SubResource("SkeletonModificationStack2D_ll7qp")
 
 [node name="Hip" type="Bone2D" parent="Skeleton2D"]
@@ -354,7 +440,7 @@ rest = Transform2D(0.997762, -0.0668629, 0.0668629, 0.997762, -67.0296, 0.187585
 [node name="IK Targets" type="Node2D" parent="."]
 
 [node name="FootR" type="Node2D" parent="IK Targets"]
-position = Vector2(-39, -2)
+position = Vector2(-34, 2)
 
 [node name="FootL" type="Node2D" parent="IK Targets"]
 position = Vector2(24, -1)
@@ -370,7 +456,6 @@ position = Vector2(47, -139)
 libraries = {
 "": SubResource("AnimationLibrary_ra8p4")
 }
-autoplay = "Idle"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_baa8b")
