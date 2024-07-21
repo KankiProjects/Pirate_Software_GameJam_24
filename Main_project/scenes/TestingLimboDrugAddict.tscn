@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://c74eqr8jvxk2w"]
 
 [ext_resource type="Texture2D" uid="uid://c0jit5rdycts8" path="res://textures/TestScenario.png" id="1_mmfrh"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="2_bfk0n"]
-[ext_resource type="Texture2D" uid="uid://8t3p6nmqv88d" path="res://textures/alquimista 2.png" id="3_r05sh"]
-[ext_resource type="Shape2D" uid="uid://bwpjgpsmfwnjd" path="res://resources/standing.tres" id="4_1p4xa"]
+[ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="2_yyvqa"]
 [ext_resource type="Script" path="res://scripts/Deadly Zone.gd" id="5_gvh5c"]
-[ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://resources/prefab_solid_platform.tscn" id="5_lgol5"]
-[ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://resources/prefab_one_way_platform.tscn" id="6_4bmo3"]
-[ext_resource type="PackedScene" uid="uid://hifwmp353sk3" path="res://resources/prefab_deadly_zone.tscn" id="6_tfxlj"]
+[ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="5_lgol5"]
+[ext_resource type="PackedScene" uid="uid://beeu2iu24g3mh" path="res://prefabs/camera_2d.tscn" id="5_q4rfr"]
+[ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="6_4bmo3"]
+[ext_resource type="PackedScene" uid="uid://hifwmp353sk3" path="res://prefabs/prefab_deadly_zone.tscn" id="6_tfxlj"]
+[ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="8_w28ny"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_lnxlg"]
 a = Vector2(1920, -8)
@@ -59,24 +59,7 @@ position = Vector2(-960, -440)
 shape = SubResource("SegmentShape2D_8l1b6")
 debug_color = Color(0.964706, 0, 0.494118, 0.776471)
 
-[node name="character" type="CharacterBody2D" parent="."]
-script = ExtResource("2_bfk0n")
-
-[node name="Sprite2D" type="Sprite2D" parent="character"]
-position = Vector2(3.99998, 12)
-scale = Vector2(0.22963, 0.22963)
-texture = ExtResource("3_r05sh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="character"]
-position = Vector2(0, 16)
-shape = ExtResource("4_1p4xa")
-debug_color = Color(0.0561924, 0.649996, 3.85046e-07, 0.42)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="character"]
-remote_path = NodePath("../../Camera2D")
-
-[node name="PlatformRayCast" type="RayCast2D" parent="character"]
-target_position = Vector2(0, 64)
+[node name="Ch_Lur" parent="." instance=ExtResource("2_yyvqa")]
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 
@@ -104,7 +87,7 @@ shape = SubResource("RectangleShape2D_g3fbu")
 position = Vector2(2944, 704)
 shape = SubResource("RectangleShape2D_g3fbu")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" parent="." instance=ExtResource("5_q4rfr")]
 
 [node name="Deadly Zone platforms" type="Area2D" parent="."]
 position = Vector2(1324, 144)
@@ -114,7 +97,6 @@ script = ExtResource("5_gvh5c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deadly Zone platforms"]
 position = Vector2(952.992, 883.524)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ixcbv")
 debug_color = Color(0.983662, 0, 0.350934, 0.42)
 
@@ -126,5 +108,12 @@ position = Vector2(640, 240)
 
 [node name="prefab_Solid_Platform2" parent="." instance=ExtResource("5_lgol5")]
 position = Vector2(-704, 448)
+
+[node name="MapLimit" parent="." instance=ExtResource("8_w28ny")]
+position = Vector2(-1624, 0)
+rotation = 1.57079
+
+[node name="MapLimit2" parent="." instance=ExtResource("8_w28ny")]
+position = Vector2(0, 880)
 
 [connection signal="body_entered" from="Deadly Zone platforms" to="Deadly Zone platforms" method="_on_deadly_zone_body_entered"]

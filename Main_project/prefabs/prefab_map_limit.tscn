@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://blvb6lomyadwd"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wursh"]
+distance = 832.0
+
+[node name="MapLimit" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 832)
+shape = SubResource("WorldBoundaryShape2D_wursh")
+one_way_collision_margin = 128.0
+debug_color = Color(0.768627, 0, 0.133333, 1)
