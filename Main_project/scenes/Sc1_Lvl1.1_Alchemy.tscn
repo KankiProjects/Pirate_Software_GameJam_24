@@ -1,33 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://bskej62pttvsm"]
+[gd_scene load_steps=13 format=3 uid="uid://bskej62pttvsm"]
 
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_k60fx"]
 [ext_resource type="PackedScene" uid="uid://beeu2iu24g3mh" path="res://prefabs/camera_2d.tscn" id="2_7fk3y"]
 [ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="3_acsw4"]
 [ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="3_oy31s"]
-[ext_resource type="PackedScene" uid="uid://hifwmp353sk3" path="res://prefabs/prefab_deadly_zone.tscn" id="5_o6l5c"]
+[ext_resource type="Texture2D" uid="uid://mufcr4awut21" path="res://textures/imgbin_areca-palm-areca-nut-arecaceae-drawing-png.png" id="4_wcy1s"]
 [ext_resource type="Texture2D" uid="uid://cb2u6x4p3tnf3" path="res://textures/—Pngtree—log cabin clip art_6025396.png" id="6_t2muy"]
 [ext_resource type="Texture2D" uid="uid://s4w7x85c0mfp" path="res://textures/—Pngtree—sharp rock clip art_5830708.png" id="7_invw2"]
+[ext_resource type="Texture2D" uid="uid://8s7sn4u5pu75" path="res://textures/clipart1961948.png" id="7_vck4t"]
+[ext_resource type="Texture2D" uid="uid://2c8nkkl4mk5k" path="res://textures/blank.png" id="8_26f16"]
 [ext_resource type="PackedScene" uid="uid://ddd0b666rc56" path="res://prefabs/prefab_solid_ramp.tscn" id="8_nppxw"]
+[ext_resource type="Texture2D" uid="uid://b3o2vfyf8ufpx" path="res://textures/pngtree-stone-portal-photo-png-image_14369772.png" id="11_xgcsp"]
+[ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="12_41vwv"]
 
 [node name="Sc1Lvl1_1Alchemy" type="Node2D"]
 
 [node name="Ch_Lur" parent="." instance=ExtResource("1_k60fx")]
-position = Vector2(0, 480)
+position = Vector2(-448, 480)
 
 [node name="Camera2D" parent="." instance=ExtResource("2_7fk3y")]
-position = Vector2(0, 480)
-
-[node name="prefab_Solid_Platform" parent="." instance=ExtResource("3_oy31s")]
-position = Vector2(-896, 576)
-scale = Vector2(14, 1)
-
-[node name="Area2D" type="Area2D" parent="prefab_Solid_Platform"]
-
-[node name="prefab_Solid_Platform2" parent="." instance=ExtResource("3_oy31s")]
-position = Vector2(1408, 704)
-scale = Vector2(14, 1)
-
-[node name="Area2D" type="Area2D" parent="prefab_Solid_Platform2"]
+position = Vector2(-448, 480)
 
 [node name="Limits" type="Node2D" parent="."]
 position = Vector2(-320, 0)
@@ -39,10 +31,16 @@ position = Vector2(0, 1024)
 position = Vector2(-1472, 0)
 rotation = 1.57079
 
-[node name="prefab_Deadly Zone" parent="." instance=ExtResource("5_o6l5c")]
-position = Vector2(832, 888)
+[node name="MapLimit3" parent="Limits" instance=ExtResource("3_acsw4")]
+position = Vector2(6912, 0)
+rotation = -1.57079
 
 [node name="ArtAssets" type="Node2D" parent="."]
+
+[node name="ImgbinAreca-palm-areca-nut-arecaceae-drawing-png" type="Sprite2D" parent="ArtAssets"]
+position = Vector2(1024, 424)
+scale = Vector2(0.385305, 0.385305)
+texture = ExtResource("4_wcy1s")
 
 [node name="—pngtree—logCabinClipArt6025396" type="Sprite2D" parent="ArtAssets"]
 position = Vector2(-1320, 200)
@@ -55,8 +53,121 @@ rotation = 0.677904
 scale = Vector2(0.513333, 0.513333)
 texture = ExtResource("7_invw2")
 
-[node name="Solid_Ramp" parent="." instance=ExtResource("8_nppxw")]
+[node name="Clipart1961948" type="Sprite2D" parent="ArtAssets"]
+position = Vector2(2528, 432)
+scale = Vector2(0.222721, 0.222721)
+texture = ExtResource("7_vck4t")
+
+[node name="Blank" type="Sprite2D" parent="ArtAssets"]
+self_modulate = Color(0.545098, 0.545098, 0.545098, 0.345098)
+position = Vector2(4803.87, -612)
+scale = Vector2(5.12077, 5.12077)
+texture = ExtResource("8_26f16")
+
+[node name="Pngtree-stone-portal-photo-png-image14369772" type="Sprite2D" parent="ArtAssets"]
+position = Vector2(6416, 312)
+scale = Vector2(0.0968, 0.0968)
+texture = ExtResource("11_xgcsp")
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="prefab_Solid_Platform" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(-896, 576)
+scale = Vector2(14, 1)
+
+[node name="Area2D" type="Area2D" parent="Platforms/prefab_Solid_Platform"]
+
+[node name="prefab_Solid_Platform2" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(1024, 640)
+scale = Vector2(12, 1)
+
+[node name="Area2D" type="Area2D" parent="Platforms/prefab_Solid_Platform2"]
+
+[node name="prefab_Solid_Platform4" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4800, 512)
+scale = Vector2(24, 1)
+
+[node name="Area2D" type="Area2D" parent="Platforms/prefab_Solid_Platform4"]
+
+[node name="prefab_Solid_Platform3" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(2624, 576)
+scale = Vector2(9, 1)
+
+[node name="Area2D" type="Area2D" parent="Platforms/prefab_Solid_Platform3"]
+
+[node name="Solid_Ramp" parent="Platforms" instance=ExtResource("8_nppxw")]
 position = Vector2(0, 576)
 
-[node name="Solid_Ramp2" parent="." instance=ExtResource("8_nppxw")]
-position = Vector2(256, 640)
+[node name="Solid_Ramp2" parent="Platforms" instance=ExtResource("8_nppxw")]
+position = Vector2(2048, 576)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Solid_Ramp3" parent="Platforms" instance=ExtResource("8_nppxw")]
+position = Vector2(3264, 512)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="prefab_Solid_Platform5" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(3744, -768)
+scale = Vector2(0.5, 14)
+
+[node name="prefab_Solid_Platform6" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(5856, -768)
+scale = Vector2(0.5, 14)
+
+[node name="prefab_Solid_Platform7" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4800, -1632)
+scale = Vector2(16, 0.5)
+
+[node name="prefab_OneWay_Platform" parent="Platforms" instance=ExtResource("12_41vwv")]
+position = Vector2(5056, 176)
+scale = Vector2(4, 1)
+
+[node name="prefab_OneWay_Platform2" parent="Platforms" instance=ExtResource("12_41vwv")]
+position = Vector2(5056, -112)
+scale = Vector2(4, 1)
+
+[node name="prefab_OneWay_Platform3" parent="Platforms" instance=ExtResource("12_41vwv")]
+position = Vector2(4032, -368)
+scale = Vector2(4, 1)
+
+[node name="prefab_Solid_Platform8" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4288, -96)
+scale = Vector2(8, 0.5)
+
+[node name="prefab_Solid_Platform9" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(5568, -96)
+scale = Vector2(4, 0.5)
+
+[node name="prefab_Solid_Platform10" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4576, -480)
+scale = Vector2(2.5, 0.5)
+
+[node name="prefab_Solid_Platform11" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4992, -736)
+scale = Vector2(4, 0.5)
+
+[node name="prefab_Solid_Platform12" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4288, -1184)
+scale = Vector2(8, 0.5)
+
+[node name="prefab_Solid_Platform13" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(5568, -992)
+scale = Vector2(4, 0.5)
+
+[node name="prefab_Solid_Platform14" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4352, -384)
+scale = Vector2(1, 2)
+
+[node name="prefab_Solid_Platform15" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4672, -640)
+scale = Vector2(1, 2)
+
+[node name="prefab_Solid_Platform16" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4672, -1024)
+scale = Vector2(1, 2)
+
+[node name="prefab_Solid_Platform17" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(6656, 512)
+scale = Vector2(5, 1)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d0ujyyldukj60"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ok5bs"]
-size = Vector2(256, 32)
+size = Vector2(128, 32)
 
 [node name="prefab_OneWay_Platform" type="StaticBody2D"]
 
