@@ -2,7 +2,7 @@ extends Sprite2D
 
 # Variables to control the speed of scaling down, the initial size, and the minimum size
 @export var shrink_speed = 0.0
-@export var initial_scale = Vector2(7, 7)  # Initial scale values for x and y
+@export var initial_scale = Vector2(11, 11)  # Initial scale values for x and y
 @export var min_scale = Vector2(1, 1)  # Minimum scale values for x and y
 
 func _ready():

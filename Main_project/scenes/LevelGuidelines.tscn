@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://7hbokmybeqhv"]
+[gd_scene load_steps=9 format=3 uid="uid://7hbokmybeqhv"]
 
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_i3ysg"]
 [ext_resource type="PackedScene" uid="uid://beeu2iu24g3mh" path="res://prefabs/camera_2d.tscn" id="2_i6jbe"]
 [ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="3_caaww"]
 [ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="4_tlevd"]
 [ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="5_qp6if"]
+[ext_resource type="PackedScene" uid="uid://hifwmp353sk3" path="res://prefabs/prefab_deadly_zone.tscn" id="6_riaim"]
+[ext_resource type="Script" path="res://scripts/Deadly Zone.gd" id="7_62dv3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fba7u"]
+size = Vector2(1984.87, 66.9906)
 
 [node name="LevelGuidelines" type="Node2D"]
 
@@ -26,12 +31,17 @@ position = Vector2(768, 384)
 scale = Vector2(8, 1)
 
 [node name="prefab_Solid_Platform2" parent="." instance=ExtResource("4_tlevd")]
-position = Vector2(1024, 160)
-scale = Vector2(2, 0.5)
+position = Vector2(2368, 384)
+scale = Vector2(8, 1)
 
-[node name="prefab_Solid_Platform3" parent="." instance=ExtResource("4_tlevd")]
-position = Vector2(1344, -32)
-scale = Vector2(2, 0.5)
+[node name="prefab_Solid_Platform8" parent="." instance=ExtResource("4_tlevd")]
+position = Vector2(3584, 384)
+
+[node name="prefab_Solid_Platform9" parent="." instance=ExtResource("4_tlevd")]
+position = Vector2(4288, 384)
+
+[node name="prefab_Solid_Platform10" parent="." instance=ExtResource("4_tlevd")]
+position = Vector2(4992, 384)
 
 [node name="prefab_Solid_Platform4" parent="." instance=ExtResource("4_tlevd")]
 position = Vector2(1664, -224)
@@ -42,15 +52,42 @@ position = Vector2(2048, -704)
 scale = Vector2(2, 0.5)
 
 [node name="prefab_Solid_Platform6" parent="." instance=ExtResource("4_tlevd")]
-position = Vector2(2816, -96)
+position = Vector2(2816, -328)
 scale = Vector2(2, 0.5)
 
 [node name="prefab_Solid_Platform7" parent="." instance=ExtResource("4_tlevd")]
-position = Vector2(2720, -416)
-scale = Vector2(0.5, 5)
+position = Vector2(2720, -520)
+scale = Vector2(0.5, 3)
 
 [node name="prefab_OneWay_Platform" parent="." instance=ExtResource("5_qp6if")]
 position = Vector2(1664, -528)
 
+[node name="prefab_OneWay_Platform3" parent="." instance=ExtResource("5_qp6if")]
+position = Vector2(768, 48)
+
+[node name="prefab_OneWay_Platform4" parent="." instance=ExtResource("5_qp6if")]
+position = Vector2(1344, 48)
+
 [node name="prefab_OneWay_Platform2" parent="." instance=ExtResource("5_qp6if")]
 position = Vector2(2816, -720)
+
+[node name="prefab_Deadly Zone" parent="." instance=ExtResource("6_riaim")]
+position = Vector2(1568, 416)
+scale = Vector2(2, 1)
+collision_layer = 1
+
+[node name="Deadly Zone platforms" type="Area2D" parent="."]
+position = Vector2(1324, 144)
+scale = Vector2(0.936, 0.986957)
+collision_layer = 0
+script = ExtResource("7_62dv3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deadly Zone platforms"]
+position = Vector2(2654.83, 274.522)
+shape = SubResource("RectangleShape2D_fba7u")
+debug_color = Color(0.983662, 0, 0.350934, 0.42)
+
+[node name="prefab_Solid_Platform3" parent="." instance=ExtResource("4_tlevd")]
+position = Vector2(320, 128)
+
+[connection signal="body_entered" from="Deadly Zone platforms" to="Deadly Zone platforms" method="_on_deadly_zone_body_entered"]
