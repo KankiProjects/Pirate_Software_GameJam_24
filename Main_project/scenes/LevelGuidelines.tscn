@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://7hbokmybeqhv"]
+[gd_scene load_steps=10 format=3 uid="uid://7hbokmybeqhv"]
 
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_i3ysg"]
 [ext_resource type="PackedScene" uid="uid://beeu2iu24g3mh" path="res://prefabs/camera_2d.tscn" id="2_i6jbe"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="5_qp6if"]
 [ext_resource type="PackedScene" uid="uid://hifwmp353sk3" path="res://prefabs/prefab_deadly_zone.tscn" id="6_riaim"]
 [ext_resource type="Script" path="res://scripts/Deadly Zone.gd" id="7_62dv3"]
+[ext_resource type="PackedScene" uid="uid://ddd0b666rc56" path="res://prefabs/prefab_solid_ramp.tscn" id="8_g6kca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fba7u"]
 size = Vector2(1984.87, 66.9906)
@@ -23,7 +24,7 @@ size = Vector2(1984.87, 66.9906)
 position = Vector2(0, 384)
 
 [node name="MapLimit2" parent="Limits" instance=ExtResource("3_caaww")]
-position = Vector2(-576, 0)
+position = Vector2(-1280, 0)
 rotation = 1.5708
 
 [node name="prefab_Solid_Platform" parent="." instance=ExtResource("4_tlevd")]
@@ -89,5 +90,11 @@ debug_color = Color(0.983662, 0, 0.350934, 0.42)
 
 [node name="prefab_Solid_Platform3" parent="." instance=ExtResource("4_tlevd")]
 position = Vector2(320, 128)
+
+[node name="Solid_Ramp" parent="." instance=ExtResource("8_g6kca")]
+position = Vector2(-384, 384)
+
+[node name="Solid_Ramp2" parent="." instance=ExtResource("8_g6kca")]
+position = Vector2(-640, 320)
 
 [connection signal="body_entered" from="Deadly Zone platforms" to="Deadly Zone platforms" method="_on_deadly_zone_body_entered"]

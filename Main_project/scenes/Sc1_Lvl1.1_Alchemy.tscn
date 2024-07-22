@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bskej62pttvsm"]
+[gd_scene load_steps=9 format=3 uid="uid://bskej62pttvsm"]
 
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_k60fx"]
 [ext_resource type="PackedScene" uid="uid://beeu2iu24g3mh" path="res://prefabs/camera_2d.tscn" id="2_7fk3y"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://hifwmp353sk3" path="res://prefabs/prefab_deadly_zone.tscn" id="5_o6l5c"]
 [ext_resource type="Texture2D" uid="uid://cb2u6x4p3tnf3" path="res://textures/—Pngtree—log cabin clip art_6025396.png" id="6_t2muy"]
 [ext_resource type="Texture2D" uid="uid://s4w7x85c0mfp" path="res://textures/—Pngtree—sharp rock clip art_5830708.png" id="7_invw2"]
+[ext_resource type="PackedScene" uid="uid://ddd0b666rc56" path="res://prefabs/prefab_solid_ramp.tscn" id="8_nppxw"]
 
 [node name="Sc1Lvl1_1Alchemy" type="Node2D"]
 
@@ -21,6 +22,12 @@ position = Vector2(-896, 576)
 scale = Vector2(14, 1)
 
 [node name="Area2D" type="Area2D" parent="prefab_Solid_Platform"]
+
+[node name="prefab_Solid_Platform2" parent="." instance=ExtResource("3_oy31s")]
+position = Vector2(1408, 704)
+scale = Vector2(14, 1)
+
+[node name="Area2D" type="Area2D" parent="prefab_Solid_Platform2"]
 
 [node name="Limits" type="Node2D" parent="."]
 position = Vector2(-320, 0)
@@ -47,3 +54,9 @@ position = Vector2(-1968, 360)
 rotation = 0.677904
 scale = Vector2(0.513333, 0.513333)
 texture = ExtResource("7_invw2")
+
+[node name="Solid_Ramp" parent="." instance=ExtResource("8_nppxw")]
+position = Vector2(0, 576)
+
+[node name="Solid_Ramp2" parent="." instance=ExtResource("8_nppxw")]
+position = Vector2(256, 640)
