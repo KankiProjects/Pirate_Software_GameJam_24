@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ca7ufur3w6ilj"]
+[gd_scene load_steps=8 format=3 uid="uid://ca7ufur3w6ilj"]
 
 [ext_resource type="Script" path="res://scenes/moving_platform.gd" id="1_kun1s"]
+[ext_resource type="Texture2D" uid="uid://2c8nkkl4mk5k" path="res://textures/blank.png" id="2_bej0a"]
 
 [sub_resource type="Curve2D" id="Curve2D_0t7o1"]
 _data = {
@@ -69,6 +70,11 @@ one_shot = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 shape = SubResource("RectangleShape2D_valej")
 debug_color = Color(0.802372, 0.292959, 0.753722, 0.42)
+
+[node name="Blank" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(-4.17233e-06, -9.53674e-07)
+scale = Vector2(0.599532, 0.154589)
+texture = ExtResource("2_bej0a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 callback_mode_process = 0

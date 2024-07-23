@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://t0chioc3bph4"]
+
+[ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="1_mxwf7"]
+[ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="2_tcc7d"]
+[ext_resource type="PackedScene" uid="uid://beeu2iu24g3mh" path="res://prefabs/camera_2d.tscn" id="3_fnrnw"]
+[ext_resource type="Texture2D" uid="uid://b3o2vfyf8ufpx" path="res://textures/pngtree-stone-portal-photo-png-image_14369772.png" id="4_mnbsr"]
+[ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="5_mvnph"]
+[ext_resource type="Texture2D" uid="uid://8t3p6nmqv88d" path="res://textures/alquimista 2.png" id="6_ua04m"]
+
+[node name="Sc2Lvl2_2_1Platform" type="Node2D"]
+
+[node name="Limits" type="Node2D" parent="."]
+
+[node name="MapLimit" parent="Limits" instance=ExtResource("1_mxwf7")]
+position = Vector2(0, 640)
+
+[node name="MapLimit2" parent="Limits" instance=ExtResource("1_mxwf7")]
+position = Vector2(-1024, 0)
+rotation = 1.57079
+
+[node name="MapLimit3" parent="Limits" instance=ExtResource("1_mxwf7")]
+position = Vector2(4544, 0)
+rotation = -1.5708
+
+[node name="Ch_Lur" parent="." instance=ExtResource("2_tcc7d")]
+position = Vector2(-544, 352)
+
+[node name="Camera2D" parent="." instance=ExtResource("3_fnrnw")]
+position = Vector2(-544, 352)
+
+[node name="ArtAssets" type="Node2D" parent="."]
+show_behind_parent = true
+
+[node name="Front" type="Node2D" parent="ArtAssets"]
+top_level = true
+
+[node name="Back" type="Node2D" parent="ArtAssets"]
+show_behind_parent = true
+
+[node name="Pngtree-stone-portal-photo-png-image14369772" type="Sprite2D" parent="ArtAssets/Back"]
+position = Vector2(-1032, 520)
+scale = Vector2(0.084, 0.084)
+texture = ExtResource("4_mnbsr")
+
+[node name="Pngtree-stone-portal-photo-png-image14369773" type="Sprite2D" parent="ArtAssets/Back"]
+position = Vector2(4504, 520)
+scale = Vector2(0.084, 0.084)
+texture = ExtResource("4_mnbsr")
+
+[node name="Platforms" type="Node2D" parent="."]
+position = Vector2(-128, 704)
+
+[node name="prefab_Solid_Platform" parent="Platforms" instance=ExtResource("5_mvnph")]
+position = Vector2(896, -128)
+
+[node name="Alquimista2" type="Sprite2D" parent="."]
+position = Vector2(1816, 528)
+scale = Vector2(0.218519, 0.218519)
+texture = ExtResource("6_ua04m")
+
+[node name="Alquimista3" type="Sprite2D" parent="."]
+position = Vector2(2400, 528)
+scale = Vector2(0.218519, 0.218519)
+texture = ExtResource("6_ua04m")

@@ -16,8 +16,8 @@ extends CharacterBody2D
 @export var PLATFORM_HEIGHT_THRESHOLD = 64.0  # Maximum height of platforms to drop through
 
 # Pushing block constants
-@export var PUSH_FORCE = 160
-@export var BLOCK_MAX_VELOCITY = 120
+@export var PUSH_FORCE = 380
+@export var BLOCK_MAX_VELOCITY = 370
 
 # Imports
 @onready var sprite = $Sprite2D

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0ujyyldukj60"]
+[gd_scene load_steps=3 format=3 uid="uid://d0ujyyldukj60"]
+
+[ext_resource type="Texture2D" uid="uid://2c8nkkl4mk5k" path="res://textures/blank.png" id="1_yqvgd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ok5bs"]
 size = Vector2(128, 32)
@@ -8,3 +10,8 @@ size = Vector2(128, 32)
 [node name="PlatformShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ok5bs")
 one_way_collision = true
+
+[node name="Blank" type="Sprite2D" parent="."]
+position = Vector2(-8.34465e-07, 0.5)
+scale = Vector2(0.299766, 0.0748792)
+texture = ExtResource("1_yqvgd")

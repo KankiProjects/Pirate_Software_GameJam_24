@@ -66,6 +66,7 @@ shape = SubResource("SegmentShape2D_8l1b6")
 debug_color = Color(0.964706, 0, 0.494118, 0.776471)
 
 [node name="Ch_Lur" parent="." instance=ExtResource("2_yyvqa")]
+position = Vector2(-512, 24)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 
@@ -74,12 +75,11 @@ position = Vector2(1024, 704)
 shape = SubResource("RectangleShape2D_g3fbu")
 
 [node name="prefab_Solid_Platform" parent="." instance=ExtResource("5_lgol5")]
-visible = false
-position = Vector2(0, 256)
+position = Vector2(-320, 256)
 scale = Vector2(4, 1)
 
 [node name="prefab_OneWay_Platform" parent="." instance=ExtResource("6_4bmo3")]
-position = Vector2(-384, 368)
+position = Vector2(-1088, 400)
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
 
@@ -96,6 +96,7 @@ position = Vector2(2944, 704)
 shape = SubResource("RectangleShape2D_g3fbu")
 
 [node name="Camera2D" parent="." instance=ExtResource("5_q4rfr")]
+position = Vector2(-512, 24)
 
 [node name="Deadly Zone platforms" type="Area2D" parent="."]
 position = Vector2(1324, 144)
@@ -122,6 +123,12 @@ rotation = 1.57079
 position = Vector2(0, 880)
 
 [node name="Crate" parent="." instance=ExtResource("9_538kf")]
-visible = false
+position = Vector2(-320, 64)
+mass = 3.0
+
+[node name="moving_platform2" parent="." instance=ExtResource("1_iyt70")]
+position = Vector2(1472, 288)
+rotation = 3.14159
+invert = true
 
 [connection signal="body_entered" from="Deadly Zone platforms" to="Deadly Zone platforms" method="_on_deadly_zone_body_entered"]

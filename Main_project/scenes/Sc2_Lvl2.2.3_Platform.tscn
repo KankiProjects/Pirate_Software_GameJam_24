@@ -21,7 +21,7 @@ position = Vector2(-1024, 0)
 rotation = 1.57079
 
 [node name="MapLimit3" parent="Limits" instance=ExtResource("1_s1vag")]
-position = Vector2(9496, 0)
+position = Vector2(16640, 0)
 rotation = -1.5708
 
 [node name="Ch_Lur" parent="." instance=ExtResource("2_2rc0f")]
@@ -39,12 +39,18 @@ top_level = true
 [node name="Back" type="Node2D" parent="ArtAssets"]
 show_behind_parent = true
 
-[node name="Pngtree-stone-portal-photo-png-image14369772" type="Sprite2D" parent="."]
+[node name="Pngtree-stone-portal-photo-png-image14369772" type="Sprite2D" parent="ArtAssets/Back"]
 position = Vector2(-1032, 520)
 scale = Vector2(0.084, 0.084)
 texture = ExtResource("4_guana")
 
+[node name="Pngtree-stone-portal-photo-png-image14369773" type="Sprite2D" parent="ArtAssets/Back"]
+position = Vector2(14168, 1408)
+scale = Vector2(0.084, 0.084)
+texture = ExtResource("4_guana")
+
 [node name="Platforms" type="Node2D" parent="."]
+show_behind_parent = true
 
 [node name="prefab_Solid_Platform" parent="Platforms" instance=ExtResource("5_ps7oy")]
 position = Vector2(-128, 704)
@@ -52,48 +58,66 @@ scale = Vector2(14, 1)
 
 [node name="Area2D" type="Area2D" parent="Platforms/prefab_Solid_Platform"]
 
-[node name="prefab_Solid_Platform" parent="." instance=ExtResource("5_ps7oy")]
+[node name="prefab_Solid_Platform2" parent="Platforms" instance=ExtResource("5_ps7oy")]
 position = Vector2(1408, 448)
 scale = Vector2(3, 1)
 
-[node name="prefab_Solid_Platform2" parent="." instance=ExtResource("5_ps7oy")]
+[node name="prefab_Solid_Platform3" parent="Platforms" instance=ExtResource("5_ps7oy")]
 position = Vector2(2240, 192)
 scale = Vector2(3, 1)
 
-[node name="prefab_Solid_Platform3" parent="." instance=ExtResource("5_ps7oy")]
+[node name="prefab_Solid_Platform4" parent="Platforms" instance=ExtResource("5_ps7oy")]
 position = Vector2(3072, -64)
 scale = Vector2(3, 1)
 
-[node name="prefab_Solid_Platform4" parent="." instance=ExtResource("5_ps7oy")]
-position = Vector2(4608, -64)
-scale = Vector2(3, 1)
-
-[node name="prefab_Solid_Platform6" parent="." instance=ExtResource("5_ps7oy")]
+[node name="prefab_Solid_Platform6" parent="Platforms" instance=ExtResource("5_ps7oy")]
 position = Vector2(4992, 768)
 scale = Vector2(3, 1)
 
-[node name="prefab_Solid_Platform7" parent="." instance=ExtResource("5_ps7oy")]
-position = Vector2(5824, 1472)
+[node name="prefab_Solid_Platform7" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(5888, 1472)
+scale = Vector2(5, 1)
+
+[node name="prefab_Solid_Platform8" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(9664, 1792)
 scale = Vector2(3, 1)
 
-[node name="prefab_Solid_Platform5" parent="." instance=ExtResource("5_ps7oy")]
+[node name="prefab_Solid_Platform9" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(10624, 1792)
+scale = Vector2(3, 1)
+
+[node name="prefab_Solid_Platform10" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(11584, 1792)
+scale = Vector2(3, 1)
+
+[node name="prefab_Solid_Platform11" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(12544, 1792)
+scale = Vector2(3, 1)
+
+[node name="prefab_Solid_Platform13" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(13632, 1600)
+scale = Vector2(10, 1)
+
+[node name="prefab_Solid_Platform12" parent="Platforms" instance=ExtResource("5_ps7oy")]
 position = Vector2(4224, 1024)
 scale = Vector2(3, 1)
 
-[node name="prefab_Deadly Zone" parent="." instance=ExtResource("6_lg5e4")]
+[node name="prefab_Deadly Zone" parent="Platforms" instance=ExtResource("6_lg5e4")]
 position = Vector2(8384, 1888)
 scale = Vector2(50, 1)
 
-[node name="prefab_OneWay_Platform" parent="." instance=ExtResource("7_tj7cj")]
-position = Vector2(6208, 1136)
+[node name="prefab_OneWay_Platform" parent="Platforms" instance=ExtResource("7_tj7cj")]
+position = Vector2(6392, 1136)
 scale = Vector2(3, 1)
 
-[node name="prefab_OneWay_Platform2" parent="." instance=ExtResource("7_tj7cj")]
-position = Vector2(6592, 848)
+[node name="prefab_OneWay_Platform2" parent="Platforms" instance=ExtResource("7_tj7cj")]
+position = Vector2(6776, 848)
 scale = Vector2(3, 1)
 
-[node name="moving_platform" parent="." instance=ExtResource("8_7hg64")]
-position = Vector2(7104, 864)
+[node name="moving_platform" parent="Platforms" instance=ExtResource("8_7hg64")]
+position = Vector2(7288, 864)
 
-[node name="moving_platform2" parent="." instance=ExtResource("8_7hg64")]
-position = Vector2(7936, 864)
+[node name="moving_platform2" parent="Platforms" instance=ExtResource("8_7hg64")]
+position = Vector2(9016, 1184)
+rotation = 3.14159
+speed = -2.0
