@@ -171,3 +171,5 @@ scale = Vector2(1, 2)
 [node name="prefab_Solid_Platform17" parent="Platforms" instance=ExtResource("3_oy31s")]
 position = Vector2(6656, 512)
 scale = Vector2(5, 1)
+
+[node name="Node2D" type="Node2D" parent="."]

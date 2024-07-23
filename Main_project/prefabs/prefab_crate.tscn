@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5qffhgkkcyq6"]
+
+[ext_resource type="Texture2D" uid="uid://iowa2jaymubs" path="res://textures/crate front.png" id="1_jluty"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnkwt"]
+size = Vector2(128, 128)
+
+[node name="Crate" type="RigidBody2D" groups=["pushable_block"]]
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3.05176e-05)
+scale = Vector2(0.165796, 0.165796)
+texture = ExtResource("1_jluty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dnkwt")
+debug_color = Color(0.694068, 0.49573, 0, 0.42)

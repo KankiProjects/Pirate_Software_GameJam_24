@@ -15,10 +15,6 @@ extends CharacterBody2D
 @export var DROP_THROUGH_TIME = 0.2  # Time to disable collision for drop-through
 @export var PLATFORM_HEIGHT_THRESHOLD = 64.0  # Maximum height of platforms to drop through
 
-# Pushing block constants
-@export var PUSH_FORCE = 160
-@export var BLOCK_MAX_VELOCITY = 120
-
 # Imports
 @onready var sprite = $Sprite2D
 @onready var cshape = $CollisionShape2D
@@ -47,7 +43,6 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("up") and on_floor:
 		velocity.y = JUMP_VELOCITY
-		print("Character jumped")
 
 	# Handle drop-through platform
 	if drop_through_timer > 0.0:
@@ -68,7 +63,6 @@ func _physics_process(delta):
 	
 	if is_crouching:
 		current_speed *= CROUCH_SPEED_MULTIPLIER
-		print("Character is crouching")
 	elif Input.is_action_pressed("run"):
 		current_speed *= RUN_SPEED_MULTIPLIER
 
@@ -89,15 +83,7 @@ func _physics_process(delta):
 		if direction:
 			velocity.x = lerp(velocity.x, direction * current_speed, AIR_CONTROL_MULTIPLIER * delta)
 
-	# Add the move block code here
-	for i in range(get_slide_collision_count()):
-		var collision = get_slide_collision(i)
-		var collision_block = collision.get_collider()
-		if collision_block.is_in_group("pushable_block") and abs(collision_block.get_linear_velocity().x) < BLOCK_MAX_VELOCITY: #ensure this is the name of the group
-			collision_block.apply_central_impulse(collision.get_normal() * -PUSH_FORCE)
-
 	move_and_slide()
-	# print("Character position: ", global_position)
 
 	# Update the air status for the next frame
 	was_in_air = not on_floor
@@ -107,14 +93,12 @@ func crouch():
 		return
 	is_crouching = true
 	cshape.shape = crouching_cshape
-	print("Character crouched")
 
 func stand():
 	if not is_crouching:
 		return
 	is_crouching = false
 	cshape.shape = standing_cshape
-	print("Character stood up")
 
 func check_and_drop_through():
 	platform_raycast.force_raycast_update()
@@ -130,4 +114,7 @@ func check_and_drop_through():
 func drop_through():
 	drop_through_timer = DROP_THROUGH_TIME
 	cshape.disabled = true
-	print("Character dropping through platform")
+
+
+func _on_deadly_zone_body_entered(body):
+	pass # Replace with function body.
