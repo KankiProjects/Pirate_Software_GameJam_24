@@ -36,35 +36,42 @@ position = Vector2(6912, 0)
 rotation = -1.57079
 
 [node name="ArtAssets" type="Node2D" parent="."]
+show_behind_parent = true
 
-[node name="ImgbinAreca-palm-areca-nut-arecaceae-drawing-png" type="Sprite2D" parent="ArtAssets"]
+[node name="Front" type="Node2D" parent="ArtAssets"]
+top_level = true
+
+[node name="Clipart1961948" type="Sprite2D" parent="ArtAssets/Front"]
+position = Vector2(2528, 432)
+scale = Vector2(0.222721, 0.222721)
+texture = ExtResource("7_vck4t")
+
+[node name="Back" type="Node2D" parent="ArtAssets"]
+show_behind_parent = true
+
+[node name="ImgbinAreca-palm-areca-nut-arecaceae-drawing-png" type="Sprite2D" parent="ArtAssets/Back"]
 position = Vector2(1024, 424)
 scale = Vector2(0.385305, 0.385305)
 texture = ExtResource("4_wcy1s")
 
-[node name="—pngtree—logCabinClipArt6025396" type="Sprite2D" parent="ArtAssets"]
+[node name="—pngtree—logCabinClipArt6025396" type="Sprite2D" parent="ArtAssets/Back"]
 position = Vector2(-1320, 200)
 scale = Vector2(0.82, 0.82)
 texture = ExtResource("6_t2muy")
 
-[node name="—pngtree—sharpRockClipArt5830708" type="Sprite2D" parent="ArtAssets"]
+[node name="—pngtree—sharpRockClipArt5830708" type="Sprite2D" parent="ArtAssets/Back"]
 position = Vector2(-1968, 360)
 rotation = 0.677904
 scale = Vector2(0.513333, 0.513333)
 texture = ExtResource("7_invw2")
 
-[node name="Clipart1961948" type="Sprite2D" parent="ArtAssets"]
-position = Vector2(2528, 432)
-scale = Vector2(0.222721, 0.222721)
-texture = ExtResource("7_vck4t")
-
-[node name="Blank" type="Sprite2D" parent="ArtAssets"]
+[node name="Blank" type="Sprite2D" parent="ArtAssets/Back"]
 self_modulate = Color(0.545098, 0.545098, 0.545098, 0.345098)
 position = Vector2(4803.87, -612)
 scale = Vector2(5.12077, 5.12077)
 texture = ExtResource("8_26f16")
 
-[node name="Pngtree-stone-portal-photo-png-image14369772" type="Sprite2D" parent="ArtAssets"]
+[node name="Pngtree-stone-portal-photo-png-image14369772" type="Sprite2D" parent="ArtAssets/Back"]
 position = Vector2(6416, 312)
 scale = Vector2(0.0968, 0.0968)
 texture = ExtResource("11_xgcsp")

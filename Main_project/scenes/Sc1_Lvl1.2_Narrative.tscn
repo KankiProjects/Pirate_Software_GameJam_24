@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://lvtclmu6jxev"]
+
+[ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_w2ykf"]
+[ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="2_j3ss0"]
+[ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="3_ewfs3"]
+[ext_resource type="PackedScene" uid="uid://beeu2iu24g3mh" path="res://prefabs/camera_2d.tscn" id="4_bov1d"]
+[ext_resource type="Texture2D" uid="uid://bbjkox4tijsqo" path="res://textures/2736899_gamesmashdash_pixel-art-bed.png" id="5_qt6li"]
+[ext_resource type="Texture2D" uid="uid://fbhmlyqfi5ct" path="res://textures/arturs-noviks-book-asset1.jpg" id="6_au3ct"]
+[ext_resource type="Texture2D" uid="uid://b3o2vfyf8ufpx" path="res://textures/pngtree-stone-portal-photo-png-image_14369772.png" id="7_4rsg0"]
+
+[node name="Sc1Lvl1_2Narrative" type="Node2D"]
+
+[node name="Ch_Lur" parent="." instance=ExtResource("1_w2ykf")]
+position = Vector2(-448, 480)
+
+[node name="Camera2D" parent="." instance=ExtResource("4_bov1d")]
+position = Vector2(-448, 480)
+
+[node name="Limits" type="Node2D" parent="."]
+
+[node name="MapLimit" parent="Limits" instance=ExtResource("2_j3ss0")]
+position = Vector2(0, 512)
+
+[node name="MapLimit2" parent="Limits" instance=ExtResource("2_j3ss0")]
+position = Vector2(-1024, 0)
+rotation = 1.57079
+
+[node name="MapLimit3" parent="Limits" instance=ExtResource("2_j3ss0")]
+position = Vector2(1024, 0)
+rotation = -1.5708
+
+[node name="prefab_Solid_Platform" parent="Limits" instance=ExtResource("3_ewfs3")]
+position = Vector2(0, -576)
+scale = Vector2(14, 1)
+
+[node name="Area2D" type="Area2D" parent="Limits/prefab_Solid_Platform"]
+
+[node name="ArtFront" type="Node2D" parent="."]
+top_level = true
+
+[node name="Arturs-noviks-book-asset1" type="Sprite2D" parent="ArtFront"]
+position = Vector2(-831.5, 384.5)
+scale = Vector2(0.129, 0.129)
+texture = ExtResource("6_au3ct")
+
+[node name="ArtBehind" type="Node2D" parent="."]
+show_behind_parent = true
+position = Vector2(-616, 344)
+
+[node name="2736899GamesmashdashPixel-art-bed" type="Sprite2D" parent="ArtBehind"]
+position = Vector2(304, 88)
+scale = Vector2(0.476401, 0.476401)
+texture = ExtResource("5_qt6li")
+
+[node name="Pngtree-stone-portal-photo-png-image14369772" type="Sprite2D" parent="ArtBehind"]
+position = Vector2(1640, 8)
+scale = Vector2(0.1128, 0.1128)
+texture = ExtResource("7_4rsg0")
