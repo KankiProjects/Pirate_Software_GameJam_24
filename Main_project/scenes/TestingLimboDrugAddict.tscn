@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://c74eqr8jvxk2w"]
+[gd_scene load_steps=15 format=3 uid="uid://c74eqr8jvxk2w"]
 
+[ext_resource type="PackedScene" uid="uid://ca7ufur3w6ilj" path="res://prefabs/prefab_moving_platform.tscn" id="1_iyt70"]
 [ext_resource type="Texture2D" uid="uid://c0jit5rdycts8" path="res://textures/TestScenario.png" id="1_mmfrh"]
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="2_yyvqa"]
 [ext_resource type="Script" path="res://scripts/Deadly Zone.gd" id="5_gvh5c"]
@@ -25,7 +26,11 @@ size = Vector2(1986.83, 41.0022)
 
 [node name="scene" type="Node2D"]
 
+[node name="moving_platform" parent="." instance=ExtResource("1_iyt70")]
+position = Vector2(64, 288)
+
 [node name="ScenarioArt" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.505344, 0.505344, 0.505344, 1)
 position = Vector2(1324, 144)
 scale = Vector2(0.936, 0.986957)
@@ -69,6 +74,7 @@ position = Vector2(1024, 704)
 shape = SubResource("RectangleShape2D_g3fbu")
 
 [node name="prefab_Solid_Platform" parent="." instance=ExtResource("5_lgol5")]
+visible = false
 position = Vector2(0, 256)
 scale = Vector2(4, 1)
 
@@ -116,5 +122,6 @@ rotation = 1.57079
 position = Vector2(0, 880)
 
 [node name="Crate" parent="." instance=ExtResource("9_538kf")]
+visible = false
 
 [connection signal="body_entered" from="Deadly Zone platforms" to="Deadly Zone platforms" method="_on_deadly_zone_body_entered"]

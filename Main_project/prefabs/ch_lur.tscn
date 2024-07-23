@@ -12,9 +12,9 @@ script = ExtResource("1_n13u7")
 [node name="DarkMask" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, -112)
-scale = Vector2(1.51111, 1.51111)
 texture = ExtResource("4_rgjn1")
 script = ExtResource("3_axmx4")
+initial_scale = Vector2(10, 10)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3.99998, -114)
