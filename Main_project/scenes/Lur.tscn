@@ -1525,7 +1525,6 @@ colors = PackedColorArray(0, 0, 0, 1, 0.8, 0.8, 0.8, 1, 1, 1, 1, 1)
 script = SubResource("GDScript_e1mqy")
 
 [node name="Polygons" type="Node2D" parent="."]
-visible = false
 scale = Vector2(2.00255, 2.00255)
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
@@ -1596,7 +1595,6 @@ bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 internal_vertex_count = 9
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
-visible = false
 modification_stack = SubResource("SkeletonModificationStack2D_ll7qp")
 
 [node name="Hip" type="Bone2D" parent="Skeleton2D"]
