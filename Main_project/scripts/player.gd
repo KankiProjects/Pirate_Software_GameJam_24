@@ -29,6 +29,7 @@ extends CharacterBody2D
 # Global variables
 var is_crouching = false
 var current_speed
+var jumping_state = false
 var was_in_air = false
 var drop_through_timer = 0.0
 
@@ -39,9 +40,16 @@ var crouching_cshape = preload("res://resources/crouching.tres")
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-func _process(delta):
+func _input(event):
 	
-	animate_Lur()
+	var any_key_pressed = false  # Variable to track if any key is pressed
+	
+	if event is InputEventKey and event.pressed:
+		any_key_pressed = true
+	elif event is InputEventKey and not event.pressed:
+		any_key_pressed = false
+	
+	animate_Lur(event, any_key_pressed)
 
 func _physics_process(delta):
 	
@@ -50,6 +58,9 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not on_floor:
 		velocity.y += gravity * delta * WEIGHT
+		jumping_state = true
+	else:
+		jumping_state = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("up") and on_floor:
@@ -143,34 +154,90 @@ func drop_through():
 	print("Character dropping through platform")
 
 
-func animate_Lur():
-	if Input.is_action_just_pressed("up"):
-		animated_Lur.play("Jump")
+func animate_Lur(event, any_key_pressed):
+	var current_state = "idle"
+	var input_state = current_state  # Default to current state
 	
-	if Input.is_action_just_pressed("left"):
-		flip_x_scale(Lur)
-		animated_Lur.play("Walk")
+	# Determine the current input state
+	if any_key_pressed == true:
+		if jumping_state:
+			if Input.is_action_pressed("left"):
+				input_state = "in_air_backward"
+			elif Input.is_action_pressed("right"):
+				input_state = "in_air_forward"
+			else:
+				input_state = "jump"
+		elif was_in_air and not jumping_state:
+			input_state = "land"
+			was_in_air = false  # Reset the was_in_air flag
+		else:
+			if Input.is_action_just_pressed("up"):
+				input_state = "jump"
+			elif Input.is_action_just_pressed("left"):
+				if Input.is_action_pressed("crouch"):
+					input_state = "crouch_walk_left"
+				elif Input.is_action_pressed("run"):
+					input_state = "run_walk_left"
+				else:
+					input_state = "walk_left"
+			elif Input.is_action_just_pressed("right"):
+				if Input.is_action_pressed("crouch"):
+					input_state = "crouch_walk_right"
+				elif Input.is_action_pressed("run"):
+					input_state = "run_walk_right"
+				else:
+					input_state = "walk_right"
+			elif Input.is_action_pressed("crouch"):
+				if current_state == "crouch_walk_left" or current_state == "crouch_walk_right":
+					input_state = "crouch_idle"
+			elif Input.is_action_pressed("run"):
+				if Input.is_action_just_pressed("left"):
+					input_state = "run_walk_left"
+				if Input.is_action_just_pressed("right"):
+					input_state = "run_walk_right"
+	else:
+		input_state = "idle"
 	
-	if Input.is_action_just_pressed("right"):
-		
-		reset_x_scale(Lur)
-		animated_Lur.play("Walk")
-	
-	if Input.is_action_pressed("run") and Input.is_action_just_pressed("left"):
-		flip_x_scale(Lur)
-		animated_Lur.speed_scale = RUN_SPEED_MULTIPLIER
-		animated_Lur.play("Walk")
-		
-	if Input.is_action_pressed("run") and Input.is_action_just_pressed("right"):
-		reset_x_scale(Lur)
-		animated_Lur.speed_scale = RUN_SPEED_MULTIPLIER
-		animated_Lur.play("Walk")
-		
-
-func invert_x_scale(node: Node2D):
-	# Invert the X scale
-	node.scale.x *= -1
-	print("X scale of ", node.name, " inverted to ", node.scale.x)
+	# Check if the input state has changed
+	if input_state != current_state:
+		current_state = input_state
+		# Use match statement to handle the input states
+		match input_state:
+			"jump":
+				animated_Lur.play("Jump")
+				was_in_air = true
+			"walk_left":
+				flip_x_scale(Lur)
+				animated_Lur.play("Walk")
+			"walk_right":
+				reset_x_scale(Lur)
+				animated_Lur.play("Walk")
+			"crouch_walk_left":
+				flip_x_scale(Lur)
+				animated_Lur.play("CrouchWalk")
+			"crouch_walk_right":
+				reset_x_scale(Lur)
+				animated_Lur.play("CrouchWalk")
+			"run_walk_left":
+				flip_x_scale(Lur)
+				animated_Lur.speed_scale = RUN_SPEED_MULTIPLIER
+				animated_Lur.play("Walk")
+			"run_walk_right":
+				reset_x_scale(Lur)
+				animated_Lur.speed_scale = RUN_SPEED_MULTIPLIER
+				animated_Lur.play("Walk")
+			"crouch_idle":
+				animated_Lur.play("CrouchIdle")
+			"in_air_backward":
+				reset_x_scale(Lur)
+				animated_Lur.play("InAirBackward")
+			"in_air_forward":
+				reset_x_scale(Lur)
+				animated_Lur.play("InAirForward")
+			"land":
+				animated_Lur.play("Land")
+			"idle":
+				animated_Lur.play("Idle")
 
 func flip_x_scale(node: Node2D):
 	# Check if the node has a valid scale and is not already flipped
