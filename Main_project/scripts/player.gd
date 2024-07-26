@@ -23,6 +23,8 @@ extends CharacterBody2D
 @onready var sprite = $Sprite2D
 @onready var cshape = $CollisionShape2D
 @onready var platform_raycast = $PlatformRayCast  # Ensure this is the correct path to the RayCast2D node
+@onready var animated_Lur = $AnimationPlayer
+@onready var Lur = $Lur 
 
 # Global variables
 var is_crouching = false
@@ -37,7 +39,12 @@ var crouching_cshape = preload("res://resources/crouching.tres")
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _process(delta):
+	
+	animate_Lur()
+
 func _physics_process(delta):
+	
 	var on_floor = is_on_floor()
 
 	# Add the gravity.
@@ -61,6 +68,9 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("crouch"):
 		crouch()
+		
+		animated_Lur.play("CrouchIdle")
+		
 		if on_floor and Input.is_action_pressed("down"):
 			check_and_drop_through()
 	else:
@@ -71,7 +81,7 @@ func _physics_process(delta):
 		print("Character is crouching")
 	elif Input.is_action_pressed("run"):
 		current_speed *= RUN_SPEED_MULTIPLIER
-
+		
 	# Apply horizontal movement with reduced influence if the character is in the air
 	if on_floor:
 		if direction:
@@ -131,3 +141,47 @@ func drop_through():
 	drop_through_timer = DROP_THROUGH_TIME
 	cshape.disabled = true
 	print("Character dropping through platform")
+
+
+func animate_Lur():
+	if Input.is_action_just_pressed("up"):
+		animated_Lur.play("Jump")
+	
+	if Input.is_action_just_pressed("left"):
+		flip_x_scale(Lur)
+		animated_Lur.play("Walk")
+	
+	if Input.is_action_just_pressed("right"):
+		
+		reset_x_scale(Lur)
+		animated_Lur.play("Walk")
+	
+	if Input.is_action_pressed("run") and Input.is_action_just_pressed("left"):
+		flip_x_scale(Lur)
+		animated_Lur.speed_scale = RUN_SPEED_MULTIPLIER
+		animated_Lur.play("Walk")
+		
+	if Input.is_action_pressed("run") and Input.is_action_just_pressed("right"):
+		reset_x_scale(Lur)
+		animated_Lur.speed_scale = RUN_SPEED_MULTIPLIER
+		animated_Lur.play("Walk")
+		
+
+func invert_x_scale(node: Node2D):
+	# Invert the X scale
+	node.scale.x *= -1
+	print("X scale of ", node.name, " inverted to ", node.scale.x)
+
+func flip_x_scale(node: Node2D):
+	# Check if the node has a valid scale and is not already flipped
+	if node.scale and node.scale.x > 0:
+		# Invert the X scale
+		node.scale.x *= -1
+		print("X scale of ", node.name, " flipped to ", node.scale.x)
+
+func reset_x_scale(node: Node2D):
+	# Check if the node has a valid scale and is currently flipped
+	if node.scale and node.scale.x < 0:
+		# Reset the X scale
+		node.scale.x *= -1
+		print("X scale of ", node.name, " reset to ", node.scale.x)

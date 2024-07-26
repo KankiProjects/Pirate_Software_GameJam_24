@@ -1,20 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://ddstmqfgc5ipx"]
+[gd_scene load_steps=21 format=3 uid="uid://w6xu7rmuidfa"]
 
 [ext_resource type="Texture2D" uid="uid://b6hs6xvqvaeqo" path="res://Sprites/Sp_LurResourcesNoline.png" id="1_wu5c7"]
-
-[sub_resource type="GDScript" id="GDScript_e1mqy"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var walking = true
-"
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_dogsb"]
 target_nodepath = NodePath("../IK Targets/FootR")
@@ -1522,7 +1508,6 @@ offsets = PackedFloat32Array(0, 0.33494, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.8, 0.8, 0.8, 1, 1, 1, 1, 1)
 
 [node name="Lur" type="Node2D"]
-script = SubResource("GDScript_e1mqy")
 
 [node name="Polygons" type="Node2D" parent="."]
 scale = Vector2(2.00255, 2.00255)
