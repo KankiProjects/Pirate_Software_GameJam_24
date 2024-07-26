@@ -34,11 +34,14 @@ var was_in_air = false
 var drop_through_timer = 0.0
 
 # Upload resources
-var standing_cshape = preload("res://resources/standing.tres")
-var crouching_cshape = preload("res://resources/crouching.tres")
+var standing_cshape = preload("res://resources/standing_polygon.tres")
+var crouching_cshape = preload("res://resources/crouching_polygon.tres")
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func _ready():
+	cshape.shape = standing_cshape
 
 func _input(event):
 	
