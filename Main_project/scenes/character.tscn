@@ -18,8 +18,15 @@ texture = ExtResource("2_g58pw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_csdqe")
 
-[node name="InventoryUI" parent="." instance=ExtResource("3_v11rn")]
-offset_left = 121.0
-offset_top = -167.0
-offset_right = 121.0
-offset_bottom = -167.0
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 3
+offset = Vector2(0, -22)
+zoom = Vector2(2.25, 2)
+position_smoothing_enabled = true
+editor_draw_drag_margin = true
+
+[node name="InventoryUI" parent="Camera2D" instance=ExtResource("3_v11rn")]
+offset_left = 131.0
+offset_top = -172.0
+offset_right = 131.0
+offset_bottom = -172.0

@@ -18,5 +18,7 @@ func _on_pickable_body_exited(body):
 # When inside press E to collect
 func _process(delta):
 	if can_interact && Input.is_action_just_pressed("interact"):
-		interacting_body.collect_item(self)
+		var item_resource_path = "res://inventory/items/" + self.name + ".tres"
+		var item = load(item_resource_path)
+		interacting_body.collect_item(item)
 		queue_free()

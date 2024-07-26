@@ -10,7 +10,7 @@ const JUMP_VELOCITY = -300.0
 # Class instance has these
 @onready var sprite = $Sprite2D
 @onready var cshape = $CollisionShape2D
-@onready var invUI = $InventoryUI
+@onready var invUI = $Camera2D/InventoryUI
 
 # Can't remember what this was so don't touch it
 #@export var inventory: Inventory
@@ -84,7 +84,8 @@ func stand():
 func collect_item(item):
 	if !ingredients[item.name]:
 		ingredients[item.name] = true
-		var collected_item: InventoryItem = InventoryItem.new()
-		collected_item.name = item.name
-		collected_item.texture = load("res://resources/assets/textures/" + item.name + ".png") as Texture2D
-		invUI.inv.items.append(collected_item)
+		for i in range(len(invUI.inv.items)):
+			if invUI.inv.items[i] == null:
+				invUI.inv.items[i] = item
+				invUI.update_slots()
+				break

@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5vf743x4skxe"]
+[gd_scene load_steps=2 format=3 uid="uid://c5vf743x4skxe"]
 
-[ext_resource type="Texture2D" uid="uid://2c8nkkl4mk5k" path="res://resources/assets/textures/blank.png" id="1_pte4d"]
 [ext_resource type="Script" path="res://scripts/inv_ui_slot.gd" id="1_sndui"]
 
 [node name="inv_UI_slot" type="Panel"]
@@ -8,9 +7,5 @@ offset_right = 20.0
 offset_bottom = 18.0
 script = ExtResource("1_sndui")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(10, 9)
-scale = Vector2(0.035, 0.035)
-texture = ExtResource("1_pte4d")
-
 [node name="ItemTexture" type="Sprite2D" parent="."]
+offset = Vector2(5, 10)
