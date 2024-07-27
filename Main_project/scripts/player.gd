@@ -1,7 +1,7 @@
 # Class Inheritance.
 extends CharacterBody2D
 
-# Dynamics onstants.
+# Dynamics constants.
 @export var SPEED = 400.0
 @export var RUN_SPEED_MULTIPLIER = 2.1
 @export var CROUCH_SPEED_MULTIPLIER = 0.7
@@ -15,6 +15,7 @@ extends CharacterBody2D
 @export var CROUCH_DECELERATION = 20000.0  # Deceleration when crouched
 @export var DROP_THROUGH_TIME = 0.2  # Time to disable collision for drop-through
 @export var PLATFORM_HEIGHT_THRESHOLD = 64.0  # Maximum height of platforms to drop through
+@export var CROUCH_OFFSET = Vector2(0, 30) # Vertical offset for crouching
 
 # Pushing block constants.
 @export var PUSH_FORCE = 380
@@ -28,8 +29,10 @@ extends CharacterBody2D
 @onready var Lur = $Lur 
 
 # Global variables.
+var corrected_crouch_shape
+var original_shape_pos
 var crouching = false
-var jumping = false
+var prev_velocity_y = 0.0
 var drop_through_timer = 0.0
 
 # Upload resources.
@@ -39,16 +42,21 @@ var crouching_cshape = preload("res://resources/crouching.tres")
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+
+# Plays idle anim when program starts.
 func _ready():
+	corrected_crouch_shape = cshape.position + CROUCH_OFFSET
+	original_shape_pos = cshape.position
 	stand()
-	
-# Handles player movement
+
+
+# Handles player dynamics every frame.
 func _physics_process(delta):
 	# Resets speed.
 	var current_speed = SPEED
 	
 	# Resets acceleration.
-	var current_acceleration = 1
+	var current_acceleration = ACCELERATION
 	
 	# Checks collision bellow.
 	var on_floor = is_on_floor()
@@ -62,62 +70,70 @@ func _physics_process(delta):
 		if drop_through_timer <= 0.0:
 			cshape.disabled = false
 	
-	if direction:
-		# Add the gravity, apply movement, manage acceleration and trigger animations.
-		if not on_floor:
-			velocity.y += gravity * delta * WEIGHT
-			# Arc if moving aside
+	# Handle movement, acceleration and trigger animations.
+	if not on_floor:
+		# Add gravity.
+		velocity.y += gravity * delta * WEIGHT
+		if direction:
+			# Arc properly if moving aside in air.
 			velocity.x = lerp(velocity.x, direction * current_speed, AIR_CONTROL_MULTIPLIER * delta)
-			if direction:
-				if direction < 0:
-					animated_Lur.play("InAirBackward")
-				else: animated_Lur.play("InAirForward")
-			# Apply stronger deceleration when landing
-			var effective_deceleration = DECELERATION_BASE + DECELERATION_MULTIPLIER * abs(velocity.x)
-			effective_deceleration *= LANDING_DECELERATION_MULTIPLIER
-			velocity.x = move_toward(velocity.x, 0, effective_deceleration * delta)
-			animated_Lur.play("Land")
+			if direction < 0:
+				animated_Lur.play("InAirBackward")
+			else: animated_Lur.play("InAirForward")
 			
-		else:
-			# Handle input actions on floor.
-			if Input.is_action_just_pressed("up"):
-				velocity.y = JUMP_VELOCITY
-				animated_Lur.play("Jump")
+	else: # Handle input actions on floor.
+		if Input.is_action_just_pressed("up"):
+			velocity.y = JUMP_VELOCITY
+			animated_Lur.play("Jump")
+			
+		elif Input.is_action_pressed("crouch"):
+			if not crouching:
+				crouching = true
+				cshape.shape = crouching_cshape
+				cshape.position = corrected_crouch_shape
+				animated_Lur.play("CrouchIdle")
+				# Platform raycast logic.
+				if Input.is_action_just_pressed("down"):
+					check_and_drop_through()
 				
-			elif Input.is_action_pressed("crouch"):
-				if !crouching:
-					crouching = true
-					cshape.shape = crouching_cshape
-					animated_Lur.play("CrouchIdle")
-					if Input.is_action_just_pressed("down"):
-						check_and_drop_through()
-				else:
-					crouching = false
-					stand()
-			
-			if Input.is_action_pressed("run"):
+		if Input.is_action_just_released("crouch"):
+				crouching = false
+				stand()
+	
+		if direction:
+			if Input.is_action_pressed("run"): 
 				current_speed *= RUN_SPEED_MULTIPLIER
-				current_acceleration = ACCELERATION
-				animated_Lur.play("Walk")
-			elif crouching:
+			if crouching: 
 				current_speed *= CROUCH_SPEED_MULTIPLIER
 				current_acceleration = CROUCH_DECELERATION
 				animated_Lur.play("CrouchWalk")
+			if not crouching: animated_Lur.play("Walk")
+			velocity.x = move_toward(velocity.x, direction * current_speed, current_acceleration * delta)
+		else:
+			# Apply stronger deceleration when landing
+			current_acceleration = DECELERATION_BASE + DECELERATION_MULTIPLIER * abs(velocity.x)
+			# Checks if the player has landed.
+			if prev_velocity_y < 0 && velocity.y >= 0:
+				current_acceleration *= LANDING_DECELERATION_MULTIPLIER
+			velocity.x = move_toward(velocity.x, 0, current_acceleration * delta)
+			if not crouching: stand()
+			else: animated_Lur.play("CrouchIdle")
 				
-	velocity.x = move_toward(velocity.x, direction * current_speed, current_acceleration * delta)
-		
 	# Add the moving block code here.
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var collision_block = collision.get_collider()
 		if collision_block.is_in_group("pushable_block") and abs(collision_block.get_linear_velocity().x) < BLOCK_MAX_VELOCITY: #ensure this is the name of the group
 			collision_block.apply_central_impulse(collision.get_normal() * -PUSH_FORCE)
-
+	
 	move_and_slide()
+	
+	prev_velocity_y = velocity.y
 
 
 func stand():
 	cshape.shape = standing_cshape
+	cshape.position = original_shape_pos
 	animated_Lur.play("Idle")
 
 

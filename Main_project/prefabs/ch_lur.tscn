@@ -1540,6 +1540,7 @@ remote_path = NodePath("../../Camera2D")
 target_position = Vector2(0, 64)
 
 [node name="Lur" type="Node2D" parent="."]
+position = Vector2(0, -2)
 scale = Vector2(0.665, 0.665)
 
 [node name="Polygons" type="Node2D" parent="Lur"]
