@@ -69,7 +69,8 @@ func _physics_process(delta):
 		drop_through_timer -= delta
 		if drop_through_timer <= 0.0:
 			cshape.disabled = false
-	
+
+
 	# Handle movement, acceleration and trigger animations.
 	if not on_floor:
 		# Add gravity.
@@ -80,8 +81,9 @@ func _physics_process(delta):
 			if direction < 0:
 				animated_Lur.play("InAirBackward")
 			else: animated_Lur.play("InAirForward")
-			
+
 	else: # Handle input actions on floor.
+
 		if Input.is_action_just_pressed("up"):
 			velocity.y = JUMP_VELOCITY
 			animated_Lur.play("Jump")
@@ -118,16 +120,18 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, current_acceleration * delta)
 			if not crouching: stand()
 			else: animated_Lur.play("CrouchIdle")
-				
+
 	# Add the moving block code here.
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var collision_block = collision.get_collider()
 		if collision_block.is_in_group("pushable_block") and abs(collision_block.get_linear_velocity().x) < BLOCK_MAX_VELOCITY: #ensure this is the name of the group
 			collision_block.apply_central_impulse(collision.get_normal() * -PUSH_FORCE)
-	
+
+	# Perform physics and modifies velocity values.
 	move_and_slide()
-	
+
+	# Store last vertical velocity value.
 	prev_velocity_y = velocity.y
 
 
@@ -141,9 +145,9 @@ func check_and_drop_through():
 	platform_raycast.force_raycast_update()
 	if platform_raycast.is_colliding():
 		var collider = platform_raycast.get_collider()
-		if collider and collider is StaticBody2D:
+		if collider is StaticBody2D:
 			var shape = collider.shape_owner_get_shape(0, 0)
-			if shape and shape is RectangleShape2D:
+			if shape is RectangleShape2D:
 				var rect_shape = shape as RectangleShape2D
 				if rect_shape.extents.y * 2 <= PLATFORM_HEIGHT_THRESHOLD:
 					drop_through()
