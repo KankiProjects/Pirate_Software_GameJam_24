@@ -107,7 +107,7 @@ func _physics_process(delta):
 				current_speed *= CROUCH_SPEED_MULTIPLIER
 				current_acceleration = CROUCH_DECELERATION
 				animated_Lur.play("CrouchWalk")
-			if not crouching: animated_Lur.play("Walk")
+			else: animated_Lur.play("Walk")
 			velocity.x = move_toward(velocity.x, direction * current_speed, current_acceleration * delta)
 		else:
 			# Apply stronger deceleration when landing
@@ -152,17 +152,3 @@ func check_and_drop_through():
 func drop_through():
 	drop_through_timer = DROP_THROUGH_TIME
 	cshape.disabled = true
-
-
-func flip_x_scale(node: Node2D):
-	# Check if the node has a valid scale and is not already flipped
-	if node.scale and node.scale.x > 0:
-		# Invert the X scale
-		node.scale.x *= -1
-
-
-func reset_x_scale(node: Node2D):
-	# Check if the node has a valid scale and is currently flipped
-	if node.scale and node.scale.x < 0:
-		# Reset the X scale
-		node.scale.x *= -1
