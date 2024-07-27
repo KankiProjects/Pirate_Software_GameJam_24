@@ -69,10 +69,12 @@ func _physics_process(delta):
 		drop_through_timer -= delta
 		if drop_through_timer <= 0.0:
 			cshape.disabled = false
+			stand()
 
 
 	# Handle movement, acceleration and trigger animations.
 	if not on_floor:
+		crouching = false
 		# Add gravity.
 		velocity.y += gravity * delta * WEIGHT
 		if direction:
@@ -103,7 +105,7 @@ func _physics_process(delta):
 				stand()
 	
 		if direction:
-			if Input.is_action_pressed("run"): 
+			if Input.is_action_pressed("run") && !crouching: 
 				current_speed *= RUN_SPEED_MULTIPLIER
 			if crouching: 
 				current_speed *= CROUCH_SPEED_MULTIPLIER
