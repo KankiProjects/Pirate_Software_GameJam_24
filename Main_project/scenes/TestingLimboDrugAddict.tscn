@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c74eqr8jvxk2w"]
+[gd_scene load_steps=15 format=3 uid="uid://hyrthemij1hk"]
 
 [ext_resource type="PackedScene" uid="uid://ca7ufur3w6ilj" path="res://prefabs/prefab_moving_platform.tscn" id="1_iyt70"]
 [ext_resource type="Texture2D" uid="uid://c0jit5rdycts8" path="res://textures/TestScenario.png" id="1_mmfrh"]
