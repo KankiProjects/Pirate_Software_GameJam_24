@@ -1,14 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://lsxp0d0kfb6x"]
+[gd_scene load_steps=24 format=3 uid="uid://lsxp0d0kfb6x"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_n13u7"]
-[ext_resource type="Texture2D" uid="uid://8t3p6nmqv88d" path="res://resources/assets/textures/alquimista 2.png" id="2_o3j22"]
-[ext_resource type="Script" path="res://scripts/DarkMask.gd" id="3_axmx4"]
 [ext_resource type="Texture2D" uid="uid://i1f2drre8sb" path="res://resources/DarkMask.svg" id="4_rgjn1"]
-[ext_resource type="PackedScene" uid="uid://ka5hpxuspxea" path="res://prefabs/inventory_ui.tscn" id="6_5htsj"]
-[ext_resource type="Texture2D" uid="uid://b6hs6xvqvaeqo" path="res://resources/assets/Sprites/Sp_LurResourcesNoline.png" id="6_bxwaq"]
+[ext_resource type="Texture2D" uid="uid://b6hs6xvqvaeqo" path="res://Sprites/Sp_LurResourcesNoline.png" id="6_bxwaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4b57i"]
-size = Vector2(128, 192)
+size = Vector2(128, 190)
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_aqxpt"]
 target_nodepath = NodePath("../IK Targets/FootR")
@@ -1518,24 +1515,22 @@ _data = {
 [node name="Ch_Lur" type="CharacterBody2D"]
 script = ExtResource("1_n13u7")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -136.995)
+zoom = Vector2(0.8, 0.8)
+position_smoothing_enabled = true
+
 [node name="DarkMask" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, -112)
+scale = Vector2(1.20395, 1.19926)
 texture = ExtResource("4_rgjn1")
-script = ExtResource("3_axmx4")
-initial_scale = Vector2(10, 10)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(3.99998, -114)
-scale = Vector2(0.22963, 0.22963)
-texture = ExtResource("2_o3j22")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4b57i")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
-remote_path = NodePath("../Lur/Camera2D")
+remote_path = NodePath("../../Camera2D")
 
 [node name="PlatformRayCast" type="RayCast2D" parent="."]
 target_position = Vector2(0, 64)
@@ -1639,10 +1634,12 @@ rest = Transform2D(0.118501, 0.992954, -0.992954, 0.118501, 27.1488, 4.1162)
 [node name="ArmR" type="Bone2D" parent="Lur/Skeleton2D/Hip/torso"]
 position = Vector2(62.2363, -55.0604)
 rest = Transform2D(1, 0, 0, 1, 62.2363, -55.0604)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ForearmR" type="Bone2D" parent="Lur/Skeleton2D/Hip/torso/ArmR"]
 position = Vector2(-55.1991, -5.20137)
 rest = Transform2D(1, 0, 0, 1, -55.1991, -5.20137)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="HandR" type="Bone2D" parent="Lur/Skeleton2D/Hip/torso/ArmR/ForearmR"]
 position = Vector2(-66.9643, 2.18652)
@@ -1652,10 +1649,12 @@ rest = Transform2D(0.99996, -0.00898883, 0.00898883, 0.99996, -66.9643, 2.18652)
 [node name="ArmL" type="Bone2D" parent="Lur/Skeleton2D/Hip/torso"]
 position = Vector2(66.2055, 35.8585)
 rest = Transform2D(1, 0, 0, 1, 66.2055, 35.8585)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ForearmL" type="Bone2D" parent="Lur/Skeleton2D/Hip/torso/ArmL"]
 position = Vector2(-50.8749, 4.66277)
 rest = Transform2D(1, 0, 0, 1, -50.8749, 4.66277)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="HandL" type="Bone2D" parent="Lur/Skeleton2D/Hip/torso/ArmL/ForearmL"]
 position = Vector2(-49.8102, 6.62907)
@@ -1667,11 +1666,13 @@ position = Vector2(-2.54599, -16.9259)
 rotation = 0.0571833
 scale = Vector2(0.999986, 0.999986)
 rest = Transform2D(0.999609, 0.0202287, -0.0202287, 0.999609, -2.55374, -16.9257)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ForelegR" type="Bone2D" parent="Lur/Skeleton2D/Hip/LegR"]
 position = Vector2(-58.6879, 9.32822)
 scale = Vector2(0.999989, 0.999989)
 rest = Transform2D(0.999994, 0, 0, 0.999994, -58.6907, 9.32841)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="FootR" type="Bone2D" parent="Lur/Skeleton2D/Hip/LegR/ForelegR"]
 position = Vector2(-69.2014, -3.36626)
@@ -1681,10 +1682,12 @@ rest = Transform2D(0.100349, 0.994952, -0.994952, 0.100349, -69.2014, -3.36626)
 [node name="LegL" type="Bone2D" parent="Lur/Skeleton2D/Hip"]
 position = Vector2(-0.0530766, 29.0172)
 rest = Transform2D(1, 0, 0, 1, -0.0530766, 29.0172)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ForelegL" type="Bone2D" parent="Lur/Skeleton2D/Hip/LegL"]
 position = Vector2(-57.1002, -2.1377)
 rest = Transform2D(1, 0, 0, 1, -57.1002, -2.1377)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="FootL" type="Bone2D" parent="Lur/Skeleton2D/Hip/LegL/ForelegL"]
 position = Vector2(-67.0296, 0.187585)
@@ -1706,16 +1709,6 @@ rotation = -0.149713
 
 [node name="ArmL" type="Node2D" parent="Lur/IK Targets"]
 position = Vector2(47, -139)
-
-[node name="Camera2D" type="Camera2D" parent="Lur"]
-position = Vector2(0, 3.00752)
-scale = Vector2(1.50376, 1.50376)
-
-[node name="InventoryUI" parent="Lur/Camera2D" instance=ExtResource("6_5htsj")]
-offset_left = 414.0
-offset_top = -294.0
-offset_right = 414.0
-offset_bottom = -294.0
 
 [node name="Particles" type="Node2D" parent="Lur"]
 

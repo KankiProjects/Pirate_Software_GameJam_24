@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://ivt6m6cqk5uh"]
+
+[ext_resource type="FontFile" uid="uid://bv8umrkqcqboa" path="res://resources/fonts/Rosarivo-Regular.ttf" id="1_hi6ta"]
+[ext_resource type="Script" path="res://scripts/text_logic.gd" id="1_w8h37"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nio66"]
+font = ExtResource("1_hi6ta")
+font_size = 128
+outline_size = 5
+
+[node name="Sc0Prelude" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w8h37")
+animation_duration = 10.0
+fade_duration = 3.0
+
+[node name="FadeRect" type="ColorRect" parent="."]
+top_level = true
+layout_mode = 0
+offset_right = 1926.0
+offset_bottom = 1087.0
+
+[node name="prelude1" type="RichTextLabel" parent="."]
+offset_left = 498.0
+offset_top = 535.0
+offset_right = 1498.0
+offset_bottom = 724.0
+theme_override_fonts/normal_font = ExtResource("1_hi6ta")
+theme_override_font_sizes/normal_font_size = 22
+text = "In 1491, the last Muslim stronghold in Granada faces the relentless siege of the Catholic Monarchs of Spain. Lur Mahdi Al-Fasi, born into a wealthy family within the Alhambra,
+had a promising future as an alchemist under the guidance of a skilled tutor. However, the violent invasion forces him to flee to the countryside, where his family is tragically killed, leaving him alone to continue his studies in isolation."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="prelude2" type="RichTextLabel" parent="."]
+offset_left = 498.0
+offset_top = 535.0
+offset_right = 1498.0
+offset_bottom = 724.0
+theme_override_fonts/normal_font = ExtResource("1_hi6ta")
+theme_override_font_sizes/normal_font_size = 22
+text = "Now 21, Lur lives as a hermit, hidden from the Spanish Inquisition and dependent on his own alchemical brews for daily survival. In this time of darkness and danger for his kind, Lur must confront his deepest fears and desires, seeking survival and self-acceptance amid the ruins of a once-great kingdom."
+
+[node name="Press button" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -141.0
+offset_right = 500.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("1_hi6ta")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[center]Press [wave]spacebar[/wave] to continue[/center]"
+scroll_active = false
+
+[node name="Title" type="Label" parent="."]
+offset_top = 193.0
+offset_right = 1920.0
+offset_bottom = 368.0
+text = "DARK ELIXIR"
+label_settings = SubResource("LabelSettings_nio66")
+horizontal_alignment = 1
