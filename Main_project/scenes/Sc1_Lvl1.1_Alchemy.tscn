@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://im8xdw0ha2ou"]
+[gd_scene load_steps=14 format=3 uid="uid://im8xdw0ha2ou"]
 
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_k60fx"]
 [ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="3_acsw4"]
@@ -10,7 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://2c8nkkl4mk5k" path="res://textures/blank.png" id="8_26f16"]
 [ext_resource type="PackedScene" uid="uid://ddd0b666rc56" path="res://prefabs/prefab_solid_ramp.tscn" id="8_nppxw"]
 [ext_resource type="Texture2D" uid="uid://b3o2vfyf8ufpx" path="res://textures/pngtree-stone-portal-photo-png-image_14369772.png" id="11_xgcsp"]
+[ext_resource type="Script" path="res://scripts/Lvl_Transition.gd" id="12_3nyri"]
 [ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="12_41vwv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2thb"]
+size = Vector2(160, 256)
 
 [node name="Sc1Lvl1_1Alchemy" type="Node2D"]
 
@@ -176,3 +180,12 @@ position = Vector2(6656, 512)
 scale = Vector2(5, 1)
 
 [node name="Actions" type="Node2D" parent="."]
+
+[node name="Lvl_Transition" type="Area2D" parent="Actions"]
+script = ExtResource("12_3nyri")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actions/Lvl_Transition"]
+shape = SubResource("RectangleShape2D_s2thb")
+
+[connection signal="body_entered" from="Actions/Lvl_Transition" to="Ch_Lur" method="_on_lvl_transition_body_entered"]
+[connection signal="body_exited" from="Actions/Lvl_Transition" to="Ch_Lur" method="_on_lvl_transition_body_exited"]

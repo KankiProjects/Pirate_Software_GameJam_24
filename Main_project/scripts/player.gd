@@ -159,3 +159,11 @@ func drop_through():
 	drop_through_timer = DROP_THROUGH_TIME
 	cshape.disabled = true
 
+
+
+func _on_lvl_transition_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_lvl_transition_body_exited(body):
+	pass # Replace with function body.
