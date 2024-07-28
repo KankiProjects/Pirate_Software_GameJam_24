@@ -1,0 +1,5 @@
+res://prefabs/crafting_table.tscn
+res://scripts/inventory.gd
+res://scripts/inventory_ui.gd
+res://scripts/item_2DArea.gd
+res://scripts/player.gd
