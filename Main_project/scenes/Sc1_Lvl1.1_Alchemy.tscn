@@ -1,9 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://im8xdw0ha2ou"]
+[gd_scene load_steps=26 format=3 uid="uid://im8xdw0ha2ou"]
 
+[ext_resource type="Texture2D" uid="uid://b5ml6jnprm1kx" path="res://resources/assets/Backgrounds/Forest0.png" id="1_7head"]
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_k60fx"]
+[ext_resource type="Texture2D" uid="uid://bw2yisnalrofp" path="res://resources/assets/Backgrounds/Forest1.png" id="2_1u1ig"]
 [ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="3_acsw4"]
 [ext_resource type="Texture2D" uid="uid://0bvnfqbs13fi" path="res://resources/assets/Sprites/CraftingTagable.png" id="3_g5ysj"]
+[ext_resource type="Texture2D" uid="uid://dxd7lx7jcu123" path="res://resources/assets/Backgrounds/Forest2.png" id="3_nqdb2"]
 [ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="3_oy31s"]
+[ext_resource type="Texture2D" uid="uid://33fwgwtj8jym" path="res://resources/assets/Backgrounds/Forest3.png" id="4_7g32i"]
 [ext_resource type="Texture2D" uid="uid://ddt5qqs5gemgm" path="res://resources/assets/Sprites/BetelPalmGlow.png" id="4_dmsyh"]
 [ext_resource type="Texture2D" uid="uid://dux4fi23vj8jj" path="res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png" id="6_t2muy"]
 [ext_resource type="Texture2D" uid="uid://dl170ldmiycdf" path="res://resources/assets/textures/—Pngtree—sharp rock clip art_5830708.png" id="7_invw2"]
@@ -14,11 +18,71 @@
 [ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="12_41vwv"]
 [ext_resource type="PackedScene" uid="uid://b8og74e8c3jmf" path="res://prefabs/ingredients/betel_leaf.tscn" id="13_qeiqn"]
 [ext_resource type="PackedScene" uid="uid://blejjc6kvhvbe" path="res://prefabs/ingredients/betel_nut.tscn" id="14_dajdc"]
+[ext_resource type="Texture2D" uid="uid://dnlpywwwgpi35" path="res://resources/assets/Patterns/Floor.png" id="19_adn5s"]
+[ext_resource type="Texture2D" uid="uid://cruc6ub7qeaa" path="res://resources/assets/Patterns/woodBackground.png" id="20_54ork"]
+[ext_resource type="PackedScene" uid="uid://c5jfo0ofjb3bt" path="res://prefabs/ingredients/scissors.tscn" id="21_puegl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bg8n6"]
+texture = ExtResource("19_adn5s")
+texture_region_size = Vector2i(540, 540)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_khd2p"]
+texture = ExtResource("20_54ork")
+texture_region_size = Vector2i(540, 540)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vu2xi"]
+tile_size = Vector2i(540, 540)
+sources/0 = SubResource("TileSetAtlasSource_bg8n6")
+sources/1 = SubResource("TileSetAtlasSource_khd2p")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2thb"]
 size = Vector2(160, 256)
 
 [node name="Sc1Lvl1_1Alchemy" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 288)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(4434.29, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(340.074, -260)
+scale = Vector2(0.577623, 0.577623)
+texture = ExtResource("1_7head")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 288)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(4434.29, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(340.074, -260)
+scale = Vector2(0.577623, 0.577623)
+texture = ExtResource("2_1u1ig")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 288)
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(4434.29, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(340.074, -260)
+scale = Vector2(0.577623, 0.577623)
+texture = ExtResource("3_nqdb2")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 288)
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(4434.29, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(340.074, -260)
+scale = Vector2(0.577623, 0.577623)
+texture = ExtResource("4_7g32i")
 
 [node name="Ch_Lur" parent="." instance=ExtResource("1_k60fx")]
 position = Vector2(-448, 480)
@@ -78,7 +142,12 @@ position = Vector2(1017, 247)
 scale = Vector2(0.961757, 0.961757)
 texture = ExtResource("4_dmsyh")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ArtAssets/Back"]
+[node name="TileMap" type="TileMap" parent="ArtAssets/Back"]
+position = Vector2(-225, 1068)
+scale = Vector2(0.825926, 0.825926)
+tile_set = SubResource("TileSet_vu2xi")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -2, 0, 0, -3, 0, 0, -5, 0, 0, -4, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, 17, 0, 0, 16, 0, 0, 15, 0, 0, 14, 0, 0, 13, 0, 0, 12, 0, 0, 11, 0, 0, 10, 0, 0, 9, 0, 0, 8, 0, 0, 7, 0, 0, 6, 0, 0, 5, 0, 0, 4, 0, 0, 3, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0, 65535, 0, 0, 65534, 0, 0, 65533, 0, 0, 65532, 0, 0, 65531, 0, 0, 65530, 0, 0, 65529, 0, 0, 131066, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 19, 0, 0, 18, 0, 0, -6, 0, 0, -7, 0, 0, 131065, 0, 0, 131064, 0, 0)
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -188,10 +257,16 @@ position = Vector2(1036, 107)
 scale = Vector2(4.24352, 4.15058)
 
 [node name="Lvl_Transition" type="Area2D" parent="Actions"]
+position = Vector2(6422, 327)
 script = ExtResource("12_3nyri")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actions/Lvl_Transition"]
 shape = SubResource("RectangleShape2D_s2thb")
+
+[node name="scissors" parent="Actions" instance=ExtResource("21_puegl")]
+position = Vector2(3888, -1291)
+rotation = 0.520013
+scale = Vector2(4.63163, 4.63163)
 
 [connection signal="body_entered" from="Actions/Lvl_Transition" to="Ch_Lur" method="_on_lvl_transition_body_entered"]
 [connection signal="body_exited" from="Actions/Lvl_Transition" to="Ch_Lur" method="_on_lvl_transition_body_exited"]
