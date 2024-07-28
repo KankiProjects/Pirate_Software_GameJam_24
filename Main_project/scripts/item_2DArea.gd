@@ -7,12 +7,12 @@ var interacting_body
 
 # Player's hitbox enters/exits 2D area
 func _on_pickable_body_entered(body):
-	if body.name == "character":
+	if body.name == "Ch_Lur":
 		interacting_body = body
 		can_interact = true
 		
 func _on_pickable_body_exited(body):
-	if body.name == "character":
+	if body.name == "Ch_Lur":
 		can_interact = false
 
 # When inside press E to collect

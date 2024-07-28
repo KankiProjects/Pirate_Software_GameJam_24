@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://t0chioc3bph4"]
+[gd_scene load_steps=6 format=3 uid="uid://t0chioc3bph4"]
 
 [ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="1_mxwf7"]
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="2_tcc7d"]
-[ext_resource type="PackedScene" uid="uid://beeu2iu24g3mh" path="res://prefabs/camera_2d.tscn" id="3_fnrnw"]
 [ext_resource type="Texture2D" uid="uid://b3o2vfyf8ufpx" path="res://textures/pngtree-stone-portal-photo-png-image_14369772.png" id="4_mnbsr"]
 [ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="5_mvnph"]
 [ext_resource type="Texture2D" uid="uid://8t3p6nmqv88d" path="res://textures/alquimista 2.png" id="6_ua04m"]
@@ -23,9 +22,6 @@ position = Vector2(4544, 0)
 rotation = -1.5708
 
 [node name="Ch_Lur" parent="." instance=ExtResource("2_tcc7d")]
-position = Vector2(-544, 352)
-
-[node name="Camera2D" parent="." instance=ExtResource("3_fnrnw")]
 position = Vector2(-544, 352)
 
 [node name="ArtAssets" type="Node2D" parent="."]

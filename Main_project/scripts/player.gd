@@ -26,7 +26,7 @@ extends CharacterBody2D
 @onready var cshape = $CollisionShape2D
 @onready var platform_raycast = $PlatformRayCast  # Ensure this is the correct path to the RayCast2D node
 @onready var animated_Lur = $AnimationPlayer
-@onready var invUI = $Camera2D/InventoryUI
+@onready var invUI = $Lur/Camera2D/InventoryUI
 @onready var Lur = $Lur 
 
 # Upload resources.

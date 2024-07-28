@@ -1,13 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://lsxp0d0kfb6x"]
+[gd_scene load_steps=24 format=3 uid="uid://lsxp0d0kfb6x"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_n13u7"]
-[ext_resource type="Texture2D" uid="uid://8t3p6nmqv88d" path="res://textures/alquimista 2.png" id="2_o3j22"]
-[ext_resource type="Script" path="res://scripts/DarkMask.gd" id="3_axmx4"]
 [ext_resource type="Texture2D" uid="uid://i1f2drre8sb" path="res://resources/DarkMask.svg" id="4_rgjn1"]
 [ext_resource type="Texture2D" uid="uid://b6hs6xvqvaeqo" path="res://Sprites/Sp_LurResourcesNoline.png" id="6_bxwaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4b57i"]
-size = Vector2(128, 192)
+size = Vector2(128, 190)
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_aqxpt"]
 target_nodepath = NodePath("../IK Targets/FootR")
@@ -1517,18 +1515,16 @@ _data = {
 [node name="Ch_Lur" type="CharacterBody2D"]
 script = ExtResource("1_n13u7")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -136.995)
+zoom = Vector2(0.8, 0.8)
+position_smoothing_enabled = true
+
 [node name="DarkMask" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, -112)
+scale = Vector2(1.20395, 1.19926)
 texture = ExtResource("4_rgjn1")
-script = ExtResource("3_axmx4")
-initial_scale = Vector2(10, 10)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(3.99998, -114)
-scale = Vector2(0.22963, 0.22963)
-texture = ExtResource("2_o3j22")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4b57i")
@@ -1622,7 +1618,7 @@ rest = Transform2D(0.0326346, -0.999467, 0.999467, 0.0326346, -6, -141)
 
 [node name="torso" type="Bone2D" parent="Lur/Skeleton2D/Hip"]
 position = Vector2(34.0471, 0.889358)
-scale = Vector2(0.999832, 0.999832)
+scale = Vector2(0.999835, 0.999835)
 rest = Transform2D(1, 0, 0, 1, 34.0471, 0.889358)
 
 [node name="Neck" type="Bone2D" parent="Lur/Skeleton2D/Hip/torso"]
@@ -1713,9 +1709,6 @@ rotation = -0.149713
 
 [node name="ArmL" type="Node2D" parent="Lur/IK Targets"]
 position = Vector2(47, -139)
-
-[node name="Camera2D" type="Camera2D" parent="Lur"]
-position = Vector2(0, -203)
 
 [node name="Particles" type="Node2D" parent="Lur"]
 
