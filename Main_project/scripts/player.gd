@@ -158,3 +158,4 @@ func check_and_drop_through():
 func drop_through():
 	drop_through_timer = DROP_THROUGH_TIME
 	cshape.disabled = true
+
