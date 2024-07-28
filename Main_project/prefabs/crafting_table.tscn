@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://drvorwpv1f7us"]
+
+[ext_resource type="Texture2D" uid="uid://8s7sn4u5pu75" path="res://textures/clipart1961948.png" id="1_o4hq3"]
+[ext_resource type="Script" path="res://scripts/crafting_table.gd" id="1_sikh8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ljyp"]
+
+[node name="crafting_table" type="Area2D"]
+script = ExtResource("1_sikh8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(12, 12)
+shape = SubResource("CircleShape2D_2ljyp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.223, 0.223)
+texture = ExtResource("1_o4hq3")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -93.0
+offset_top = -130.0
+offset_right = 95.0
+offset_bottom = -50.0
+text = "\"Maybe I can make
+        something useful\""
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -111.0
+offset_top = -150.0
+offset_right = 109.0
+offset_bottom = -116.0
+text = "\"I require an ingredient still\""
