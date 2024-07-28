@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=3 uid="uid://c74eqr8jvxk2w"]
+
+[ext_resource type="PackedScene" uid="uid://c426bgaslwpjs" path="res://scenes/character.tscn" id="1_2h8w3"]
+[ext_resource type="PackedScene" uid="uid://bs56vbwomshws" path="res://scenes/mandrake_root.tscn" id="2_qei65"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lnxlg"]
+a = Vector2(-535, -1)
+b = Vector2(617, -1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8l1b6"]
+b = Vector2(1, 650)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wkqul"]
+a = Vector2(207.547, 0)
+b = Vector2(206.826, 196.302)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0smhy"]
+size = Vector2(530, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f277l"]
+size = Vector2(65, 169)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ipde"]
+size = Vector2(523.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3fbu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bebco"]
+size = Vector2(42, 6)
+
+[node name="scene" type="Node2D"]
+
+[node name="limits" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="limits"]
+position = Vector2(535, 648)
+shape = SubResource("SegmentShape2D_lnxlg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limits"]
+shape = SubResource("SegmentShape2D_8l1b6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="limits"]
+scale = Vector2(5.58936, 3.30103)
+shape = SubResource("SegmentShape2D_wkqul")
+
+[node name="character" parent="." instance=ExtResource("1_2h8w3")]
+visibility_layer = 1
+z_index = 3
+position = Vector2(27, 595)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(887, 638)
+shape = SubResource("RectangleShape2D_0smhy")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1002.5, 543)
+shape = SubResource("RectangleShape2D_f277l")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(261.75, 638)
+shape = SubResource("RectangleShape2D_4ipde")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(234, 580)
+scale = Vector2(3.04213, 3.3636)
+shape = SubResource("RectangleShape2D_g3fbu")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(97, 593)
+shape = SubResource("RectangleShape2D_bebco")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+z_index = 1
+position = Vector2(-16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(162, 573)
+shape = SubResource("RectangleShape2D_bebco")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.556863)
+metadata/_edit_use_anchors_ = true
+
+[node name="mandrake_root" parent="." instance=ExtResource("2_qei65")]

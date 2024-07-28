@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5vf743x4skxe"]
+
+[ext_resource type="Script" path="res://scripts/inv_ui_slot.gd" id="1_sndui"]
+
+[node name="inv_UI_slot" type="Panel"]
+offset_right = 20.0
+offset_bottom = 18.0
+script = ExtResource("1_sndui")
+
+[node name="ItemTexture" type="Sprite2D" parent="."]
+offset = Vector2(5, 10)

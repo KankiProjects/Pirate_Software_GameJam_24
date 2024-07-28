@@ -26,7 +26,15 @@ extends CharacterBody2D
 @onready var cshape = $CollisionShape2D
 @onready var platform_raycast = $PlatformRayCast  # Ensure this is the correct path to the RayCast2D node
 @onready var animated_Lur = $AnimationPlayer
+@onready var invUI = $Camera2D/InventoryUI
 @onready var Lur = $Lur 
+
+# Upload resources.
+var standing_cshape = preload("res://resources/standing_polygon.tres")
+var crouching_cshape = preload("res://resources/crouching_polygon.tres")
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Global variables.
 var corrected_crouch_shape
@@ -35,12 +43,17 @@ var crouching = false
 var prev_velocity_y = 0.0
 var drop_through_timer = 0.0
 
-# Upload resources.
-var standing_cshape = preload("res://resources/standing_polygon.tres")
-var crouching_cshape = preload("res://resources/crouching_polygon.tres")
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+# Collectable ingredients
+var ingredients = {
+	"nut" : false,
+ 	"scissors" : false,
+ 	"leaf" : false,
+	"mushroom" : false,
+	"flower" : false,
+ 	"ginseng_root" : false,
+ 	"mandrake_root" : false,
+ 	"rose_water" : false
+}
 
 
 # Plays idle anim when program starts.
@@ -63,6 +76,7 @@ func _physics_process(delta):
 	
 	# Get input direction.
 	var direction = Input.get_axis("left", "right")
+
 	
 	# Handle drop-through platform time.
 	if drop_through_timer > 0.0:
@@ -158,3 +172,14 @@ func check_and_drop_through():
 func drop_through():
 	drop_through_timer = DROP_THROUGH_TIME
 	cshape.disabled = true
+  
+  
+# Handle item interaction and collection
+func collect_item(item):
+	if !ingredients[item.name]:
+		ingredients[item.name] = true
+		for i in range(len(invUI.inv.items)):
+			if invUI.inv.items[i] == null:
+				invUI.inv.items[i] = item
+				invUI.update_slots()
+				break
