@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5jfo0ofjb3bt"]
 
 [ext_resource type="Script" path="res://scripts/item_2DArea.gd" id="1_8ot1v"]
-[ext_resource type="Texture2D" uid="uid://cpvr2xfoprc46" path="res://resources/assets/Sprites/Scissors_halo.png" id="2_60veh"]
+[ext_resource type="Texture2D" uid="uid://bsj0hmk644py4" path="res://resources/assets/Sprites/Scissors_halo.png" id="2_60veh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_00gow"]
 

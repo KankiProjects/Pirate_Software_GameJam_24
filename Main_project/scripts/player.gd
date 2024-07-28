@@ -26,7 +26,7 @@ extends CharacterBody2D
 @onready var cshape = $CollisionShape2D
 @onready var platform_raycast = $PlatformRayCast  # Ensure this is the correct path to the RayCast2D node
 @onready var animated_Lur = $AnimationPlayer
-@onready var invUI = $Lur/Camera2D/InventoryUI
+@onready var invUI = $Camera2D/InventoryUI
 @onready var Lur = $Lur 
 
 # Upload resources.
@@ -45,9 +45,9 @@ var drop_through_timer = 0.0
 
 # Collectable ingredients
 var ingredients = {
-	"nut" : false,
+	"betel_nut" : false,
  	"scissors" : false,
- 	"leaf" : false,
+ 	"betel_leaf" : false,
 	"mushroom" : false,
 	"flower" : false,
  	"ginseng_root" : false,

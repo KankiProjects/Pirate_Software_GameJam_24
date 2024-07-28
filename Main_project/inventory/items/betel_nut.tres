@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://1x0c0lo2bbms"]
+
+[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_0kqo4"]
+[ext_resource type="Texture2D" uid="uid://k8pqm6wmttsi" path="res://resources/assets/Sprites/BetelNut.png" id="2_x8ni2"]
+
+[resource]
+script = ExtResource("1_0kqo4")
+name = "mandrake_root"
+texture = ExtResource("2_x8ni2")

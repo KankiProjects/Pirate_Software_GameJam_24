@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dmnejp1f4lw35"]
+
+[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_txcbu"]
+[ext_resource type="Texture2D" uid="uid://mcfu780qha06" path="res://resources/assets/Sprites/BetelLeaf.png" id="2_mlojn"]
+
+[resource]
+script = ExtResource("1_txcbu")
+name = "mandrake_root"
+texture = ExtResource("2_mlojn")

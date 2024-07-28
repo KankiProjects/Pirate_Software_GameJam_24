@@ -1,4 +1,4 @@
-res://prefabs/mandrake_root.tscn
+res://prefabs/ch_lur.tscn
 res://scripts/inventory.gd
 res://scripts/inventory_ui.gd
 res://inventory/inventory.tres
@@ -6,11 +6,8 @@ res://scripts/item_2DArea.gd
 res://scripts/player.gd
 res://resources/standing_polygon.tres
 res://resources/crouching_polygon.tres
-res://prefabs/ingredients/betel_leaf.tscn
 res://scenes/Sc1_Lvl1.1_Alchemy.tscn
-res://prefabs/ch_lur.tscn
-res://prefabs/crafting_table.tscn
-res://prefabs/inventory_ui.tscn
-res://prefabs/ingredients/ingredients.tscn
-res://prefabs/ingredients/betel_nut.tscn
 res://prefabs/ingredients/scissors.tscn
+res://scenes/Sc2_Lvl2.2.1_Platform.tscn
+res://inventory/items/mandrake_root.tres
+res://inventory/items/betel_nut.tres

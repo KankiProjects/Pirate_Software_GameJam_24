@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_k60fx"]
 [ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="3_acsw4"]
 [ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="3_oy31s"]
-[ext_resource type="Texture2D" uid="uid://bn1ab7ex4h8by" path="res://resources/assets/textures/imgbin_areca-palm-areca-nut-arecaceae-drawing-png.png" id="4_wcy1s"]
-[ext_resource type="Texture2D" uid="uid://dhqxmj0h5v6s5" path="res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png" id="6_t2muy"]
-[ext_resource type="Texture2D" uid="uid://du5o127pg0g0t" path="res://resources/assets/textures/—Pngtree—sharp rock clip art_5830708.png" id="7_invw2"]
-[ext_resource type="Texture2D" uid="uid://bqci6drok82dr" path="res://resources/assets/textures/clipart1961948.png" id="7_vck4t"]
+[ext_resource type="Texture2D" uid="uid://ddt5qqs5gemgm" path="res://resources/assets/Sprites/BetelPalmGlow.png" id="4_dmsyh"]
+[ext_resource type="Texture2D" uid="uid://dux4fi23vj8jj" path="res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png" id="6_t2muy"]
+[ext_resource type="Texture2D" uid="uid://dl170ldmiycdf" path="res://resources/assets/textures/—Pngtree—sharp rock clip art_5830708.png" id="7_invw2"]
+[ext_resource type="Texture2D" uid="uid://b2bnqvv12xtbn" path="res://resources/assets/textures/clipart1961948.png" id="7_vck4t"]
 [ext_resource type="Texture2D" uid="uid://2c8nkkl4mk5k" path="res://resources/assets/textures/blank.png" id="8_26f16"]
 [ext_resource type="PackedScene" uid="uid://ddd0b666rc56" path="res://prefabs/prefab_solid_ramp.tscn" id="8_nppxw"]
-[ext_resource type="Texture2D" uid="uid://bahwhdp5r0gpl" path="res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png" id="11_xgcsp"]
+[ext_resource type="Texture2D" uid="uid://dksytjvccnndy" path="res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png" id="11_xgcsp"]
 [ext_resource type="Script" path="res://scripts/Lvl_Transition.gd" id="12_3nyri"]
 [ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="12_41vwv"]
 [ext_resource type="PackedScene" uid="uid://b8og74e8c3jmf" path="res://prefabs/ingredients/betel_leaf.tscn" id="13_qeiqn"]
@@ -51,11 +51,6 @@ texture = ExtResource("7_vck4t")
 [node name="Back" type="Node2D" parent="ArtAssets"]
 show_behind_parent = true
 
-[node name="ImgbinAreca-palm-areca-nut-arecaceae-drawing-png" type="Sprite2D" parent="ArtAssets/Back"]
-position = Vector2(1024, 424)
-scale = Vector2(0.385305, 0.385305)
-texture = ExtResource("4_wcy1s")
-
 [node name="—pngtree—logCabinClipArt6025396" type="Sprite2D" parent="ArtAssets/Back"]
 position = Vector2(-1320, 200)
 scale = Vector2(0.82, 0.82)
@@ -78,6 +73,11 @@ position = Vector2(6416, 312)
 scale = Vector2(0.0968, 0.0968)
 texture = ExtResource("11_xgcsp")
 
+[node name="Palm" type="Sprite2D" parent="ArtAssets/Back"]
+position = Vector2(1017, 247)
+scale = Vector2(0.961757, 0.961757)
+texture = ExtResource("4_dmsyh")
+
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="prefab_Solid_Platform" parent="Platforms" instance=ExtResource("3_oy31s")]
@@ -90,19 +90,13 @@ scale = Vector2(14, 1)
 position = Vector2(1024, 640)
 scale = Vector2(12, 1)
 
-[node name="Area2D" type="Area2D" parent="Platforms/prefab_Solid_Platform2"]
-
 [node name="prefab_Solid_Platform4" parent="Platforms" instance=ExtResource("3_oy31s")]
 position = Vector2(4800, 512)
 scale = Vector2(24, 1)
 
-[node name="Area2D" type="Area2D" parent="Platforms/prefab_Solid_Platform4"]
-
 [node name="prefab_Solid_Platform3" parent="Platforms" instance=ExtResource("3_oy31s")]
 position = Vector2(2624, 576)
 scale = Vector2(9, 1)
-
-[node name="Area2D" type="Area2D" parent="Platforms/prefab_Solid_Platform3"]
 
 [node name="Solid_Ramp" parent="Platforms" instance=ExtResource("8_nppxw")]
 position = Vector2(0, 576)
@@ -183,19 +177,19 @@ scale = Vector2(5, 1)
 
 [node name="Actions" type="Node2D" parent="."]
 
+[node name="betel_nut" parent="Actions" instance=ExtResource("14_dajdc")]
+position = Vector2(1001, 155)
+scale = Vector2(4.28741, 4.28741)
+
+[node name="betel_leaf" parent="Actions" instance=ExtResource("13_qeiqn")]
+position = Vector2(1036, 107)
+scale = Vector2(4.24352, 4.15058)
+
 [node name="Lvl_Transition" type="Area2D" parent="Actions"]
 script = ExtResource("12_3nyri")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actions/Lvl_Transition"]
 shape = SubResource("RectangleShape2D_s2thb")
-
-[node name="betel_leaf" parent="." instance=ExtResource("13_qeiqn")]
-position = Vector2(974, 534)
-scale = Vector2(2.15473, 2.10754)
-
-[node name="betel_nut" parent="." instance=ExtResource("14_dajdc")]
-position = Vector2(1085, 524)
-scale = Vector2(2.32288, 2.32288)
 
 [connection signal="body_entered" from="Actions/Lvl_Transition" to="Ch_Lur" method="_on_lvl_transition_body_entered"]
 [connection signal="body_exited" from="Actions/Lvl_Transition" to="Ch_Lur" method="_on_lvl_transition_body_exited"]
