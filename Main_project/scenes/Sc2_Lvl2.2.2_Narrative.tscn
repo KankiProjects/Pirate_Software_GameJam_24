@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="1_mxwf7"]
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="2_tcc7d"]
-[ext_resource type="Texture2D" uid="uid://b3o2vfyf8ufpx" path="res://textures/pngtree-stone-portal-photo-png-image_14369772.png" id="4_mnbsr"]
+[ext_resource type="Texture2D" uid="uid://dksytjvccnndy" path="res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png" id="4_mnbsr"]
 [ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="5_mvnph"]
-[ext_resource type="Texture2D" uid="uid://8t3p6nmqv88d" path="res://textures/alquimista 2.png" id="6_ua04m"]
+[ext_resource type="Texture2D" uid="uid://dkr1fyvinqkkw" path="res://resources/assets/textures/alquimista 2.png" id="6_ua04m"]
 
 [node name="Sc2Lvl2_2_1Platform" type="Node2D"]
 

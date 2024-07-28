@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_k60fx"]
 [ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="3_acsw4"]
+[ext_resource type="Texture2D" uid="uid://0bvnfqbs13fi" path="res://resources/assets/Sprites/CraftingTagable.png" id="3_g5ysj"]
 [ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="3_oy31s"]
 [ext_resource type="Texture2D" uid="uid://ddt5qqs5gemgm" path="res://resources/assets/Sprites/BetelPalmGlow.png" id="4_dmsyh"]
 [ext_resource type="Texture2D" uid="uid://dux4fi23vj8jj" path="res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png" id="6_t2muy"]
 [ext_resource type="Texture2D" uid="uid://dl170ldmiycdf" path="res://resources/assets/textures/—Pngtree—sharp rock clip art_5830708.png" id="7_invw2"]
-[ext_resource type="Texture2D" uid="uid://b2bnqvv12xtbn" path="res://resources/assets/textures/clipart1961948.png" id="7_vck4t"]
 [ext_resource type="Texture2D" uid="uid://2c8nkkl4mk5k" path="res://resources/assets/textures/blank.png" id="8_26f16"]
 [ext_resource type="PackedScene" uid="uid://ddd0b666rc56" path="res://prefabs/prefab_solid_ramp.tscn" id="8_nppxw"]
 [ext_resource type="Texture2D" uid="uid://dksytjvccnndy" path="res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png" id="11_xgcsp"]
@@ -44,9 +44,9 @@ show_behind_parent = true
 top_level = true
 
 [node name="Clipart1961948" type="Sprite2D" parent="ArtAssets/Front"]
-position = Vector2(2528, 432)
-scale = Vector2(0.222721, 0.222721)
-texture = ExtResource("7_vck4t")
+position = Vector2(2555.62, 411.544)
+scale = Vector2(0.273861, 0.273861)
+texture = ExtResource("3_g5ysj")
 
 [node name="Back" type="Node2D" parent="ArtAssets"]
 show_behind_parent = true
@@ -77,6 +77,8 @@ texture = ExtResource("11_xgcsp")
 position = Vector2(1017, 247)
 scale = Vector2(0.961757, 0.961757)
 texture = ExtResource("4_dmsyh")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ArtAssets/Back"]
 
 [node name="Platforms" type="Node2D" parent="."]
 
