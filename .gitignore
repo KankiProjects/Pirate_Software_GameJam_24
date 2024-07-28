@@ -1,6 +1,7 @@
 # Ignore specific file types globally
 *.tmp
 *.import
+.godot
 
 # Ignore specific directories globally
 /.import/
