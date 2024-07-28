@@ -1,16 +1,22 @@
-# Godot 4+ specific ignores
-.godot/
+# Ignore all files by default
+*
 
-# Godot-specific files
-.import/
-export.cfg
-export_presets.cfg
-.tcsn
+# Allow these specific directories and files to be included
+!/.gitignore
+!/project.godot
+!/default_env.tres
+!/icon.png
 
-# OS-specific files
-.DS_Store
-Thumbs.db
+# Allow specific directories and their contents
+!/scenes/
+!/scripts/
+!/resources/
+!/inventory/
 
-# General files
-*.log
+# Ignore specific file types globally
 *.tmp
+*.import
+
+# Ignore specific directories globally
+/.import/
+.cache/
