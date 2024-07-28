@@ -8,7 +8,12 @@
 !/icon.png
 
 # Allow specific directories and their contents
-!/scenes/
+/scenes/*
+!/scenes
+!/scenes/inv_ui_slot.tscn
+!/scenes/inventory_ui.tscn
+!/scenes/mandrake_root.tscn
+
 !/scripts/
 !/resources/
 !/inventory/
