@@ -1,5 +1,10 @@
-res://prefabs/crafting_table.tscn
+res://prefabs/mandrake_root.tscn
 res://scripts/inventory.gd
 res://scripts/inventory_ui.gd
+res://inventory/inventory.tres
 res://scripts/item_2DArea.gd
 res://scripts/player.gd
+res://prefabs/inventory_ui.tscn
+res://prefabs/ch_lur.tscn
+res://scenes/Sc1_Lvl1.1_Alchemy.tscn
+res://prefabs/crafting_table.tscn
