@@ -1,0 +1,28 @@
+# Ignore all files by default
+*
+
+# Allow the .gitignore file itself
+!/.gitignore
+
+# Allow the Godot project file
+!/project.godot
+
+# Allow the project-specific icon file
+!/icon.png
+
+# Allow specific directories
+!/scenes/
+!/scripts/
+!/resources/
+!/prefabs/
+!/inventory/
+
+# Ignore specific file types globally
+*.import
+*.tmp
+*.log
+*.cache
+
+# Ignore specific directories globally
+/.import/
+.cache/

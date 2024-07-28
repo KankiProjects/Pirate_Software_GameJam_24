@@ -35,12 +35,26 @@ var crouching = false
 var prev_velocity_y = 0.0
 var drop_through_timer = 0.0
 
+<<<<<<< Updated upstream
 # Upload resources.
 var standing_cshape = preload("res://resources/standing.tres")
 var crouching_cshape = preload("res://resources/crouching.tres")
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+=======
+# Collectable items.
+var ingredients = {
+	"nut" : false,
+ 	"scissors" : false,
+ 	"leaf" : false,
+	"mushroom" : false,
+	"flower" : false,
+ 	"ginseng_root" : false,
+ 	"mandrake_root" : false,
+ 	"rose_water" : false
+}
+>>>>>>> Stashed changes
 
 
 # Plays idle anim when program starts.
@@ -158,3 +172,22 @@ func check_and_drop_through():
 func drop_through():
 	drop_through_timer = DROP_THROUGH_TIME
 	cshape.disabled = true
+<<<<<<< Updated upstream
+=======
+  
+  
+# Handle item interaction and collection
+func collect_item(item):
+	if !ingredients[item.name]:
+		ingredients[item.name] = true
+		for i in range(len(invUI.inv.items)):
+			if invUI.inv.items[i] == null:
+				invUI.inv.items[i] = item
+				invUI.update_slots()
+				break
+				
+
+func get_ingredients():
+	return ingredients
+	
+>>>>>>> Stashed changes
