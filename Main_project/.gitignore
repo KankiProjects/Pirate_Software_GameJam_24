@@ -16,6 +16,7 @@
 
 !/scripts/
 !/resources/
+!/prefabs/
 !/inventory/
 
 # Ignore specific file types globally
