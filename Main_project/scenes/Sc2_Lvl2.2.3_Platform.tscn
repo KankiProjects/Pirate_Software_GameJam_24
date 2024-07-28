@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=3 uid="uid://ydrhmwisfhdq"]
+
+[ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="1_s1vag"]
+[ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="2_2rc0f"]
+[ext_resource type="PackedScene" uid="uid://beeu2iu24g3mh" path="res://prefabs/camera_2d.tscn" id="3_rpxj7"]
+[ext_resource type="Texture2D" uid="uid://b3o2vfyf8ufpx" path="res://textures/pngtree-stone-portal-photo-png-image_14369772.png" id="4_guana"]
+[ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="5_ps7oy"]
+[ext_resource type="PackedScene" uid="uid://hifwmp353sk3" path="res://prefabs/prefab_deadly_zone.tscn" id="6_lg5e4"]
+[ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="7_tj7cj"]
+[ext_resource type="PackedScene" uid="uid://ca7ufur3w6ilj" path="res://prefabs/prefab_moving_platform.tscn" id="8_7hg64"]
+
+[node name="Sc2Lvl2_2_1Platform" type="Node2D"]
+
+[node name="Limits" type="Node2D" parent="."]
+
+[node name="MapLimit" parent="Limits" instance=ExtResource("1_s1vag")]
+position = Vector2(0, 1928)
+
+[node name="MapLimit2" parent="Limits" instance=ExtResource("1_s1vag")]
+position = Vector2(-1024, 0)
+rotation = 1.57079
+
+[node name="MapLimit3" parent="Limits" instance=ExtResource("1_s1vag")]
+position = Vector2(16640, 0)
+rotation = -1.5708
+
+[node name="Ch_Lur" parent="." instance=ExtResource("2_2rc0f")]
+position = Vector2(-544, 352)
+
+[node name="Camera2D" parent="." instance=ExtResource("3_rpxj7")]
+position = Vector2(-544, 352)
+
+[node name="ArtAssets" type="Node2D" parent="."]
+show_behind_parent = true
+
+[node name="Front" type="Node2D" parent="ArtAssets"]
+top_level = true
+
+[node name="Back" type="Node2D" parent="ArtAssets"]
+show_behind_parent = true
+
+[node name="Pngtree-stone-portal-photo-png-image14369772" type="Sprite2D" parent="ArtAssets/Back"]
+position = Vector2(-1032, 520)
+scale = Vector2(0.084, 0.084)
+texture = ExtResource("4_guana")
+
+[node name="Pngtree-stone-portal-photo-png-image14369773" type="Sprite2D" parent="ArtAssets/Back"]
+position = Vector2(14168, 1408)
+scale = Vector2(0.084, 0.084)
+texture = ExtResource("4_guana")
+
+[node name="Platforms" type="Node2D" parent="."]
+show_behind_parent = true
+
+[node name="prefab_Solid_Platform" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(-128, 704)
+scale = Vector2(14, 1)
+
+[node name="Area2D" type="Area2D" parent="Platforms/prefab_Solid_Platform"]
+
+[node name="prefab_Solid_Platform2" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(1408, 448)
+scale = Vector2(3, 1)
+
+[node name="prefab_Solid_Platform3" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(2240, 192)
+scale = Vector2(3, 1)
+
+[node name="prefab_Solid_Platform4" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(3072, -64)
+scale = Vector2(3, 1)
+
+[node name="prefab_Solid_Platform6" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(4992, 768)
+scale = Vector2(3, 1)
+
+[node name="prefab_Solid_Platform7" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(5888, 1472)
+scale = Vector2(5, 1)
+
+[node name="prefab_Solid_Platform8" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(9664, 1792)
+scale = Vector2(3, 1)
+
+[node name="prefab_Solid_Platform9" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(10624, 1792)
+scale = Vector2(3, 1)
+
+[node name="prefab_Solid_Platform10" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(11584, 1792)
+scale = Vector2(3, 1)
+
+[node name="prefab_Solid_Platform11" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(12544, 1792)
+scale = Vector2(3, 1)
+
+[node name="prefab_Solid_Platform13" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(13632, 1600)
+scale = Vector2(10, 1)
+
+[node name="prefab_Solid_Platform12" parent="Platforms" instance=ExtResource("5_ps7oy")]
+position = Vector2(4224, 1024)
+scale = Vector2(3, 1)
+
+[node name="prefab_Deadly Zone" parent="Platforms" instance=ExtResource("6_lg5e4")]
+position = Vector2(8384, 1888)
+scale = Vector2(50, 1)
+
+[node name="prefab_OneWay_Platform" parent="Platforms" instance=ExtResource("7_tj7cj")]
+position = Vector2(6392, 1136)
+scale = Vector2(3, 1)
+
+[node name="prefab_OneWay_Platform2" parent="Platforms" instance=ExtResource("7_tj7cj")]
+position = Vector2(6776, 848)
+scale = Vector2(3, 1)
+
+[node name="moving_platform" parent="Platforms" instance=ExtResource("8_7hg64")]
+position = Vector2(7288, 864)
+
+[node name="moving_platform2" parent="Platforms" instance=ExtResource("8_7hg64")]
+position = Vector2(9016, 1184)
+rotation = 3.14159
+speed = -2.0

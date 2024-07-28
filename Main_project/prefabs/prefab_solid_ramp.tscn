@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ddd0b666rc56"]
+
+[node name="Solid_Ramp" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+modulate = Color(0, 3.956, 100, 0.507)
+position = Vector2(0, -64)
+polygon = PackedVector2Array(0, 0, 0, 64, 256, 64)

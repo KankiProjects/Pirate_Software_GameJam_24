@@ -1,0 +1,134 @@
+[gd_scene load_steps=15 format=3 uid="uid://hyrthemij1hk"]
+
+[ext_resource type="PackedScene" uid="uid://ca7ufur3w6ilj" path="res://prefabs/prefab_moving_platform.tscn" id="1_iyt70"]
+[ext_resource type="Texture2D" uid="uid://c0jit5rdycts8" path="res://textures/TestScenario.png" id="1_mmfrh"]
+[ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="2_yyvqa"]
+[ext_resource type="Script" path="res://scripts/Deadly Zone.gd" id="5_gvh5c"]
+[ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="5_lgol5"]
+[ext_resource type="PackedScene" uid="uid://beeu2iu24g3mh" path="res://prefabs/camera_2d.tscn" id="5_q4rfr"]
+[ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="6_4bmo3"]
+[ext_resource type="PackedScene" uid="uid://hifwmp353sk3" path="res://prefabs/prefab_deadly_zone.tscn" id="6_tfxlj"]
+[ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="8_w28ny"]
+[ext_resource type="PackedScene" uid="uid://b5qffhgkkcyq6" path="res://prefabs/prefab_crate.tscn" id="9_538kf"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lnxlg"]
+a = Vector2(1920, -8)
+b = Vector2(-64, -8)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_8l1b6"]
+b = Vector2(5000, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3fbu"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixcbv"]
+size = Vector2(1986.83, 41.0022)
+
+[node name="scene" type="Node2D"]
+
+[node name="moving_platform" parent="." instance=ExtResource("1_iyt70")]
+position = Vector2(64, 288)
+
+[node name="ScenarioArt" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.505344, 0.505344, 0.505344, 1)
+position = Vector2(1324, 144)
+scale = Vector2(0.936, 0.986957)
+texture = ExtResource("1_mmfrh")
+
+[node name="limits" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="limits"]
+position = Vector2(-960, 648)
+shape = SubResource("SegmentShape2D_lnxlg")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="limits"]
+position = Vector2(1064, 776)
+shape = SubResource("SegmentShape2D_lnxlg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limits"]
+position = Vector2(-960, -440)
+shape = SubResource("SegmentShape2D_8l1b6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="limits"]
+position = Vector2(4144, -432)
+shape = SubResource("SegmentShape2D_8l1b6")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="limits"]
+position = Vector2(3072, 648)
+shape = SubResource("SegmentShape2D_lnxlg")
+
+[node name="limits2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limits2"]
+position = Vector2(-960, -440)
+shape = SubResource("SegmentShape2D_8l1b6")
+debug_color = Color(0.964706, 0, 0.494118, 0.776471)
+
+[node name="Ch_Lur" parent="." instance=ExtResource("2_yyvqa")]
+position = Vector2(-512, 24)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(1024, 704)
+shape = SubResource("RectangleShape2D_g3fbu")
+
+[node name="prefab_Solid_Platform" parent="." instance=ExtResource("5_lgol5")]
+position = Vector2(-320, 256)
+scale = Vector2(4, 1)
+
+[node name="prefab_OneWay_Platform" parent="." instance=ExtResource("6_4bmo3")]
+position = Vector2(-1088, 400)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(1344, 704)
+shape = SubResource("RectangleShape2D_g3fbu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(1984, 704)
+shape = SubResource("RectangleShape2D_g3fbu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(2944, 704)
+shape = SubResource("RectangleShape2D_g3fbu")
+
+[node name="Camera2D" parent="." instance=ExtResource("5_q4rfr")]
+position = Vector2(-512, 24)
+
+[node name="Deadly Zone platforms" type="Area2D" parent="."]
+position = Vector2(1324, 144)
+scale = Vector2(0.936, 0.986957)
+collision_layer = 0
+script = ExtResource("5_gvh5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deadly Zone platforms"]
+position = Vector2(677.528, 616.035)
+shape = SubResource("RectangleShape2D_ixcbv")
+debug_color = Color(0.983662, 0, 0.350934, 0.42)
+
+[node name="prefab_Deadly Zone" parent="." instance=ExtResource("6_tfxlj")]
+position = Vector2(2240, -160)
+
+[node name="prefab_Solid_Platform2" parent="." instance=ExtResource("5_lgol5")]
+position = Vector2(-704, 448)
+
+[node name="MapLimit" parent="." instance=ExtResource("8_w28ny")]
+position = Vector2(-1624, 0)
+rotation = 1.57079
+
+[node name="MapLimit2" parent="." instance=ExtResource("8_w28ny")]
+position = Vector2(0, 880)
+
+[node name="Crate" parent="." instance=ExtResource("9_538kf")]
+position = Vector2(-320, 64)
+mass = 3.0
+
+[node name="moving_platform2" parent="." instance=ExtResource("1_iyt70")]
+position = Vector2(1472, 288)
+rotation = 3.14159
+invert = true
+
+[connection signal="body_entered" from="Deadly Zone platforms" to="Deadly Zone platforms" method="_on_deadly_zone_body_entered"]
