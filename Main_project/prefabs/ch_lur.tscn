@@ -1515,6 +1515,7 @@ _data = {
 [node name="Ch_Lur" type="CharacterBody2D"]
 script = ExtResource("1_n13u7")
 
+<<<<<<< Updated upstream
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -136.995)
 zoom = Vector2(0.8, 0.8)
@@ -1529,6 +1530,8 @@ offset_top = -589.005
 offset_right = 592.0
 offset_bottom = -589.005
 
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 [node name="DarkMask" type="Sprite2D" parent="."]
 visible = false
@@ -1743,6 +1746,15 @@ scale_amount_max = 100.0
 scale_amount_curve = SubResource("Curve_qs7nq")
 color_ramp = SubResource("Gradient_tge87")
 color_initial_ramp = SubResource("Gradient_6b22t")
+
+[node name="Camera2D" type="Camera2D" parent="Lur"]
+position = Vector2(0, -216.541)
+
+[node name="InventoryUI" parent="Lur" instance=ExtResource("4_jijkq")]
+offset_left = 869.173
+offset_top = -936.842
+offset_right = 869.173
+offset_bottom = -936.842
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Lur")

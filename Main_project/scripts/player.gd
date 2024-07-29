@@ -3,11 +3,14 @@ extends CharacterBody2D
 
 # Dynamics constants.
 @export var SPEED = 400.0
+@export var ENHANCED_SPEED = 400.0
 @export var RUN_SPEED_MULTIPLIER = 2.1
 @export var CROUCH_SPEED_MULTIPLIER = 0.7
+@export var ENHANCED_CROUCH_SPEED_MULTIPLIER = 1.0
 @export var JUMP_VELOCITY = -1500.0
 @export var WEIGHT = 5.0
 @export var AIR_CONTROL_MULTIPLIER = 0.5  # Influence multiplier for air control
+@export var ENHANCED_AIR_CONTROL_MULTIPLIER = 0.8
 @export var ACCELERATION = 2000.0  # Acceleration when running
 @export var DECELERATION_BASE = 2000.0  # Base deceleration when stopping
 @export var DECELERATION_MULTIPLIER = 1.5  # Multiplier for deceleration based on speed
@@ -26,7 +29,7 @@ extends CharacterBody2D
 @onready var cshape = $CollisionShape2D
 @onready var platform_raycast = $PlatformRayCast  # Ensure this is the correct path to the RayCast2D node
 @onready var animated_Lur = $AnimationPlayer
-@onready var invUI = $Lur/Camera2D/InventoryUI
+@onready var invUI = $Lur/InventoryUI
 @onready var Lur = $Lur 
 
 # Upload resources.
@@ -36,6 +39,9 @@ var crouching_cshape = preload("res://resources/crouching_polygon.tres")
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var player_states: Array[String] = ["DEFAULT", "ENHANCED"]
+var actual_state: String
+
 # Global variables.
 var corrected_crouch_shape
 var original_shape_pos
@@ -43,11 +49,11 @@ var crouching = false
 var prev_velocity_y = 0.0
 var drop_through_timer = 0.0
 
-# Collectable ingredients
-var ingredients = {
-	"nut" : false,
+# Collectible items.
+var ingredients: Dictionary = {
+	"betle_nut" : false,
  	"scissors" : false,
- 	"leaf" : false,
+ 	"betle_leaf" : false,
 	"mushroom" : false,
 	"flower" : false,
  	"ginseng_root" : false,
@@ -58,6 +64,7 @@ var ingredients = {
 
 # Plays idle anim when program starts.
 func _ready():
+	# Update the dictionary
 	corrected_crouch_shape = cshape.position + CROUCH_OFFSET
 	original_shape_pos = cshape.position
 	stand()
@@ -176,14 +183,34 @@ func drop_through():
   
 # Handle item interaction and collection
 func collect_item(item):
-	if !ingredients[item.name]:
+	if !ingredients[item.name] || item.name == "scissors":
 		ingredients[item.name] = true
 		for i in range(len(invUI.inv.items)):
 			if invUI.inv.items[i] == null:
 				invUI.inv.items[i] = item
 				invUI.update_slots()
 				break
+<<<<<<< Updated upstream
 
 
 func get_ingredients():
 	return ingredients
+=======
+	
+				
+func get_ingredients() -> Dictionary:
+	return ingredients
+	
+	
+func set_ingredients():
+	for key in ingredients.keys():
+		ingredients[key] = false
+
+
+func _on_pickable_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_pickable_body_exited(body):
+	pass # Replace with function body.
+>>>>>>> Stashed changes

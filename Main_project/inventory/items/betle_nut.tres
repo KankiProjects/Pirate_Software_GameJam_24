@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://didcrk0wmgkr2"]
+
+[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_2nvhv"]
+[ext_resource type="Texture2D" uid="uid://cduxshv304s4x" path="res://resources/assets/textures/mandrake_root.png" id="2_rnypy"]
+
+[resource]
+script = ExtResource("1_2nvhv")
+name = "betle_nut"
+texture = ExtResource("2_rnypy")

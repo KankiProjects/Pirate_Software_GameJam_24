@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://oihbuwtesopd"]
 
-[ext_resource type="Texture2D" uid="uid://b6hs6xvqvaeqo" path="res://Sprites/Sp_LurResourcesNoline.png" id="1_wu5c7"]
+[ext_resource type="Texture2D" uid="uid://b6hs6xvqvaeqo" path="res://resources/assets/Sprites/Sp_LurResourcesNoline.png" id="1_wu5c7"]
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_dogsb"]
 target_nodepath = NodePath("../IK Targets/FootR")
@@ -1687,9 +1687,6 @@ libraries = {
 "": SubResource("AnimationLibrary_ra8p4")
 }
 autoplay = "Idle"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -203)
 
 [node name="Particles" type="Node2D" parent="."]
 

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2bresfu5fvhq"]
+
+[ext_resource type="Script" path="res://scripts/item_2DArea.gd" id="1_q7kcm"]
+[ext_resource type="Texture2D" uid="uid://cduxshv304s4x" path="res://resources/assets/textures/mandrake_root.png" id="2_uoqi1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_00gow"]
+
+[node name="betle_nut" type="Area2D"]
+z_index = 2
+script = ExtResource("1_q7kcm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(233, 535)
+shape = SubResource("CircleShape2D_00gow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+<<<<<<< Updated upstream:Main_project/prefabs/mandrake_root.tscn
+position = Vector2(233, 534)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_vhu6u")
+=======
+position = Vector2(0.25, -1.2)
+scale = Vector2(3, 3)
+texture = ExtResource("2_uoqi1")
+>>>>>>> Stashed changes:Main_project/prefabs/betle_nut.tscn
+
+[connection signal="body_entered" from="." to="." method="_on_pickable_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_pickable_body_exited"]

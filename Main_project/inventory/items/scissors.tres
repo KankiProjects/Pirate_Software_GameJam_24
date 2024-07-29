@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dhfuvxctwyeyl"]
+
+[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_2tjk7"]
+[ext_resource type="Texture2D" uid="uid://cduxshv304s4x" path="res://resources/assets/textures/mandrake_root.png" id="2_o0ov4"]
+
+[resource]
+script = ExtResource("1_2tjk7")
+name = "scissors"
+texture = ExtResource("2_o0ov4")
