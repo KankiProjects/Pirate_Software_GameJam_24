@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://uuhw8odrt1h4"]
+
+[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="1_unwn2"]
+[ext_resource type="Texture2D" uid="uid://bsj0hmk644py4" path="res://resources/assets/Sprites/Scissors_halo.png" id="2_s5jrt"]
+
+[resource]
+script = ExtResource("1_unwn2")
+name = "mandrake_root"
+texture = ExtResource("2_s5jrt")

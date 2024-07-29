@@ -1,5 +1,9 @@
-Label
+Node2D
+TileMap
 Sprite2D
+ParallaxLayer
+ParallaxBackground
+Label
 CollisionShape2D
 Area2D
 RemoteTransform2D
@@ -9,7 +13,3 @@ Panel
 ColorRect
 CharacterBody2D
 NinePatchRect
-Node2D
-HBoxContainer
-StaticBody2D
-Line2D
