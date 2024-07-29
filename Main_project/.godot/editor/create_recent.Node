@@ -1,6 +1,6 @@
-RichTextLabel
 Node2D
 TileMap
+RichTextLabel
 Sprite2D
 ParallaxLayer
 ParallaxBackground
@@ -12,4 +12,3 @@ Camera2D
 GridContainer
 Panel
 ColorRect
-CharacterBody2D
