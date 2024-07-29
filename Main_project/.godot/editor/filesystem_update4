@@ -1,4 +1,4 @@
-res://scenes/Sc1_Lvl1.1_Alchemy.tscn
+res://prefabs/ch_lur.tscn
 res://scripts/inventory.gd
 res://scripts/inventory_ui.gd
 res://inventory/inventory.tres
@@ -6,5 +6,7 @@ res://scripts/item_2DArea.gd
 res://scripts/player.gd
 res://resources/standing_polygon.tres
 res://resources/crouching_polygon.tres
-res://prefabs/ch_lur.tscn
-res://inventory/items/scissors.tres
+res://scenes/Sc1_Lvl1.2_Narrative.tscn
+res://scenes/All_lvls.tscn
+res://scenes/Sc1_Lvl1.1_Alchemy.tscn
+res://scenes/Sc2_Lvl2.2.1_Platform.tscn

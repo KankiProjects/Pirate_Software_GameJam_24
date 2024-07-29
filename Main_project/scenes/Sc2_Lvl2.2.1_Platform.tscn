@@ -15,8 +15,6 @@ scale = Vector2(14, 1)
 
 [node name="prefab_Solid_Platform" parent="Platforms" instance=ExtResource("2_rmajv")]
 
-[node name="Area2D" type="Area2D" parent="Platforms/prefab_Solid_Platform"]
-
 [node name="prefab_Solid_Platform2" parent="Platforms" instance=ExtResource("2_rmajv")]
 position = Vector2(105.143, -64)
 scale = Vector2(0.214286, 1)
