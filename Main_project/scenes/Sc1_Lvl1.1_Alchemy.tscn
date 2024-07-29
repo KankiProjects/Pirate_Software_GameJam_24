@@ -1,17 +1,9 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=15 format=3 uid="uid://im8xdw0ha2ou"]
-
-[ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_k60fx"]
-[ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="3_acsw4"]
-[ext_resource type="PackedScene" uid="uid://ca7ufur3w6ilj" path="res://prefabs/prefab_moving_platform.tscn" id="3_oy31s"]
-=======
 [gd_scene load_steps=17 format=3 uid="uid://im8xdw0ha2ou"]
 
-[ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_k60fx"]
+[ext_resource type="PackedScene" uid="uid://beeu2iu24g3mh" path="res://prefabs/camera_2d.tscn" id="1_k60fx"]
 [ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="3_acsw4"]
 [ext_resource type="PackedScene" uid="uid://drvorwpv1f7us" path="res://prefabs/crafting_table.tscn" id="3_m6hgd"]
 [ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="3_oy31s"]
->>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://mufcr4awut21" path="res://resources/assets/textures/imgbin_areca-palm-areca-nut-arecaceae-drawing-png.png" id="4_wcy1s"]
 [ext_resource type="Texture2D" uid="uid://cb2u6x4p3tnf3" path="res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png" id="6_t2muy"]
 [ext_resource type="Texture2D" uid="uid://s4w7x85c0mfp" path="res://resources/assets/textures/—Pngtree—sharp rock clip art_5830708.png" id="7_invw2"]
@@ -20,13 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://b3o2vfyf8ufpx" path="res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png" id="11_xgcsp"]
 [ext_resource type="Script" path="res://scripts/Lvl_Transition.gd" id="12_3nyri"]
 [ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="12_41vwv"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" uid="uid://bs56vbwomshws" path="res://prefabs/mandrake_root.tscn" id="13_sl6l8"]
-=======
 [ext_resource type="PackedScene" uid="uid://ij74gv3om37x" path="res://prefabs/scissors.tscn" id="13_1qyky"]
 [ext_resource type="PackedScene" uid="uid://c2bresfu5fvhq" path="res://prefabs/betle_nut.tscn" id="14_djogi"]
 [ext_resource type="PackedScene" uid="uid://bs56vbwomshws" path="res://prefabs/betle_leaf.tscn" id="15_fce5o"]
->>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2thb"]
 size = Vector2(160, 256)
@@ -200,12 +188,6 @@ script = ExtResource("12_3nyri")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actions/Lvl_Transition"]
 shape = SubResource("RectangleShape2D_s2thb")
 
-<<<<<<< Updated upstream
-[node name="mandrake_root" parent="." instance=ExtResource("13_sl6l8")]
-position = Vector2(541, 537)
-scale = Vector2(3, 3)
-
-=======
 [node name="scissors" parent="." instance=ExtResource("13_1qyky")]
 position = Vector2(1221, 483)
 
@@ -217,12 +199,7 @@ position = Vector2(1401, 523)
 
 [connection signal="body_entered" from="ArtAssets/Front/crafting_table" to="Ch_Lur" method="_on_pickable_body_entered"]
 [connection signal="body_exited" from="ArtAssets/Front/crafting_table" to="Ch_Lur" method="_on_pickable_body_exited"]
->>>>>>> Stashed changes
 [connection signal="body_entered" from="Actions/Lvl_Transition" to="Ch_Lur" method="_on_lvl_transition_body_entered"]
-<<<<<<< Updated upstream
+
 [connection signal="body_exited" from="Actions/Lvl_Transition" to="Ch_Lur" method="_on_lvl_transition_body_exited"]
-[connection signal="body_entered" from="betle_leaf" to="betle_leaf" method="_on_pickable_body_entered"]
-[connection signal="body_exited" from="betle_leaf" to="betle_leaf" method="_on_pickable_body_exited"]
-=======
-[connection signal="body_exited" from="Actions/Lvl_Transition" to="Ch_Lur" method="_on_lvl_transition_body_exited"]
->>>>>>> Stashed changes
+

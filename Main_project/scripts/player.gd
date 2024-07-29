@@ -190,12 +190,6 @@ func collect_item(item):
 				invUI.inv.items[i] = item
 				invUI.update_slots()
 				break
-<<<<<<< Updated upstream
-
-
-func get_ingredients():
-	return ingredients
-=======
 	
 				
 func get_ingredients() -> Dictionary:

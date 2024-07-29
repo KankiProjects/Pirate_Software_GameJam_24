@@ -44,12 +44,6 @@ func _on_pickable_body_exited(body):
 # When inside press E to collect
 func _process(delta):
 	if can_interact:
-<<<<<<< Updated upstream
-		var items = interacting_body.get_ingredients()
-		if items["betle_nut"] && items["betle_leaf"]:
-			text1.visible = true
-			
-=======
 		check_required_items()
 		
 		
