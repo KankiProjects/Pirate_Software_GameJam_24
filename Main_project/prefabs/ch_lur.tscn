@@ -1520,6 +1520,16 @@ position = Vector2(0, -136.995)
 zoom = Vector2(0.8, 0.8)
 position_smoothing_enabled = true
 
+<<<<<<< Updated upstream
+=======
+[node name="InventoryUI" parent="Camera2D" instance=ExtResource("4_jijkq")]
+anchor_right = 0.925
+offset_left = 592.0
+offset_top = -589.005
+offset_right = 592.0
+offset_bottom = -589.005
+
+>>>>>>> Stashed changes
 [node name="DarkMask" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, -112)
