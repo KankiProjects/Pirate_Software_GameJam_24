@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcuscijbdxksj"]
+
+[ext_resource type="Theme" uid="uid://d25w31o1i41hr" path="res://resources/fonts/main_text.tres" id="1_yl1s4"]
+[ext_resource type="Theme" uid="uid://wc1ba71tesn8" path="res://resources/fonts/buttondeftypo.tres" id="2_4qpd5"]
+
+[sub_resource type="GDScript" id="GDScript_gq67q"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_return_pressed():
+	get_tree().change_scene_to_file(\"res://scenes/MainMenu.tscn\")
+"
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_gq67q")
+
+[node name="Credits" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 102.0
+offset_right = 1857.0
+offset_bottom = 874.0
+theme = ExtResource("1_yl1s4")
+text = "Jon
+Joan
+Eudald
+Dani
+Iago"
+
+[node name="Return" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.5
+offset_top = -54.0
+offset_right = 56.5
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_4qpd5")
+text = "Return"
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

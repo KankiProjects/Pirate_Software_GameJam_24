@@ -1,23 +1,23 @@
 [gd_scene load_steps=23 format=3 uid="uid://im8xdw0ha2ou"]
 
-[ext_resource type="Texture2D" uid="uid://b5ml6jnprm1kx" path="res://resources/assets/Backgrounds/Forest0.png" id="1_7head"]
+[ext_resource type="Texture2D" uid="uid://cl5n0f7h4wid3" path="res://resources/assets/Backgrounds/Forest0.png" id="1_7head"]
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_k60fx"]
-[ext_resource type="Texture2D" uid="uid://bw2yisnalrofp" path="res://resources/assets/Backgrounds/Forest1.png" id="2_1u1ig"]
+[ext_resource type="Texture2D" uid="uid://cc0d0xvm8d7r4" path="res://resources/assets/Backgrounds/Forest1.png" id="2_1u1ig"]
 [ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="3_acsw4"]
-[ext_resource type="Texture2D" uid="uid://0bvnfqbs13fi" path="res://resources/assets/Sprites/CraftingTagable.png" id="3_g5ysj"]
-[ext_resource type="Texture2D" uid="uid://dxd7lx7jcu123" path="res://resources/assets/Backgrounds/Forest2.png" id="3_nqdb2"]
+[ext_resource type="Texture2D" uid="uid://bcimfs4s0i2eq" path="res://resources/assets/Sprites/CraftingTagable.png" id="3_g5ysj"]
+[ext_resource type="Texture2D" uid="uid://cfj0ik5f31odg" path="res://resources/assets/Backgrounds/Forest2.png" id="3_nqdb2"]
 [ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="3_oy31s"]
-[ext_resource type="Texture2D" uid="uid://33fwgwtj8jym" path="res://resources/assets/Backgrounds/Forest3.png" id="4_7g32i"]
-[ext_resource type="Texture2D" uid="uid://ddt5qqs5gemgm" path="res://resources/assets/Sprites/BetelPalmGlow.png" id="4_dmsyh"]
-[ext_resource type="Texture2D" uid="uid://dux4fi23vj8jj" path="res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png" id="6_t2muy"]
-[ext_resource type="Texture2D" uid="uid://dl170ldmiycdf" path="res://resources/assets/textures/—Pngtree—sharp rock clip art_5830708.png" id="7_invw2"]
+[ext_resource type="Texture2D" uid="uid://477w0p7hny8p" path="res://resources/assets/Backgrounds/Forest3.png" id="4_7g32i"]
+[ext_resource type="Texture2D" uid="uid://ltpkknteqgjk" path="res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png" id="6_t2muy"]
+[ext_resource type="Texture2D" uid="uid://x0kawf2aobnt" path="res://resources/assets/textures/—Pngtree—sharp rock clip art_5830708.png" id="7_invw2"]
 [ext_resource type="Texture2D" uid="uid://2c8nkkl4mk5k" path="res://resources/assets/textures/blank.png" id="8_26f16"]
 [ext_resource type="PackedScene" uid="uid://ddd0b666rc56" path="res://prefabs/prefab_solid_ramp.tscn" id="8_nppxw"]
-[ext_resource type="Texture2D" uid="uid://dksytjvccnndy" path="res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png" id="11_xgcsp"]
+[ext_resource type="Texture2D" uid="uid://c33lh1s7gs8pk" path="res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png" id="11_xgcsp"]
 [ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="12_41vwv"]
+[ext_resource type="Texture2D" uid="uid://fblyuv3g5x2b" path="res://resources/assets/Sprites/BetelPalm.png" id="12_801o8"]
 [ext_resource type="PackedScene" uid="uid://b8og74e8c3jmf" path="res://prefabs/ingredients/betel_leaf.tscn" id="13_qeiqn"]
 [ext_resource type="PackedScene" uid="uid://blejjc6kvhvbe" path="res://prefabs/ingredients/betel_nut.tscn" id="14_dajdc"]
-[ext_resource type="Texture2D" uid="uid://dnlpywwwgpi35" path="res://resources/assets/Patterns/Floor.png" id="19_adn5s"]
+[ext_resource type="Texture2D" uid="uid://c6udwnd38i133" path="res://resources/assets/Patterns/Floor.png" id="19_adn5s"]
 [ext_resource type="PackedScene" uid="uid://b3cf3x2slv3kx" path="res://prefabs/lvl_transition.tscn" id="21_ba2vk"]
 [ext_resource type="PackedScene" uid="uid://c5jfo0ofjb3bt" path="res://prefabs/ingredients/scissors.tscn" id="21_puegl"]
 
@@ -128,9 +128,9 @@ scale = Vector2(0.0968, 0.0968)
 texture = ExtResource("11_xgcsp")
 
 [node name="Palm" type="Sprite2D" parent="ArtAssets/Back"]
-position = Vector2(1017, 247)
+position = Vector2(1017, 239)
 scale = Vector2(0.961757, 0.961757)
-texture = ExtResource("4_dmsyh")
+texture = ExtResource("12_801o8")
 
 [node name="TileMap" type="TileMap" parent="ArtAssets/Back"]
 position = Vector2(-225, 1068)

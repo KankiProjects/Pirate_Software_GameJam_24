@@ -15,7 +15,8 @@ extends CharacterBody2D
 @export var CROUCH_DECELERATION = 20000.0  # Deceleration when crouched
 @export var DROP_THROUGH_TIME = 0.2  # Time to disable collision for drop-through
 @export var PLATFORM_HEIGHT_THRESHOLD = 64.0  # Maximum height of platforms to drop through
-@export var CROUCH_OFFSET = Vector2(0, 1) # Vertical offset for crouching
+@export var VERTICAL_OFFSET = Vector2(0, -96) # Vertical offset for crouching
+@export var CROUCH_OFFSET = Vector2(0, -64) # Vertical offset for crouching
 
 # Pushing block constants.
 @export var PUSH_FORCE = 380
@@ -30,8 +31,8 @@ extends CharacterBody2D
 @onready var Lur = $Lur 
 
 # Upload resources.
-var standing_cshape = preload("res://resources/standing_polygon.tres")
-var crouching_cshape = preload("res://resources/crouching_polygon.tres")
+var standing_cshape = preload("res://resources/standing.tres")
+var crouching_cshape = preload("res://resources/crouching.tres")
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -60,6 +61,7 @@ var ingredients = {
 func _ready():
 	corrected_crouch_shape = cshape.position + CROUCH_OFFSET
 	original_shape_pos = cshape.position
+	original_shape_pos = VERTICAL_OFFSET
 	stand()
 
 

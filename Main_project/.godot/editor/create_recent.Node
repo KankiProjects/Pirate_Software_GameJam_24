@@ -1,3 +1,4 @@
+RichTextLabel
 Node2D
 TileMap
 Sprite2D
@@ -12,4 +13,3 @@ GridContainer
 Panel
 ColorRect
 CharacterBody2D
-NinePatchRect

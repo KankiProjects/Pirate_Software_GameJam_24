@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_w2ykf"]
 [ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="2_j3ss0"]
 [ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="3_ewfs3"]
-[ext_resource type="Texture2D" uid="uid://b7a62hvhgikdb" path="res://resources/assets/textures/2736899_gamesmashdash_pixel-art-bed.png" id="5_qt6li"]
+[ext_resource type="Texture2D" uid="uid://cr3bvolppq3tv" path="res://resources/assets/textures/2736899_gamesmashdash_pixel-art-bed.png" id="5_qt6li"]
 [ext_resource type="PackedScene" uid="uid://b3cf3x2slv3kx" path="res://prefabs/lvl_transition.tscn" id="6_qs7tk"]
-[ext_resource type="Texture2D" uid="uid://dksytjvccnndy" path="res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png" id="7_4rsg0"]
+[ext_resource type="Texture2D" uid="uid://c33lh1s7gs8pk" path="res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png" id="7_4rsg0"]
 
 [node name="Sc1Lvl1_2Narrative" type="Node2D"]
 
