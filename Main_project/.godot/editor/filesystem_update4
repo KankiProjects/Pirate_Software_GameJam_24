@@ -1,16 +1,1 @@
-<<<<<<< Updated upstream
-res://prefabs/crafting_table.tscn
-=======
-res://prefabs/ch_lur.tscn
->>>>>>> Stashed changes
-res://scripts/inventory.gd
-res://scripts/inventory_ui.gd
-res://scripts/item_2DArea.gd
-res://scripts/player.gd
-<<<<<<< Updated upstream
-=======
-res://scenes/Sc1_Lvl1.1_Alchemy.tscn
-res://prefabs/crafting_table.tscn
-res://prefabs/inventory_ui.tscn
-res://scripts/crafting_table.gd
->>>>>>> Stashed changes
+res://scenes/TestingLimboDrugAddict.tscn

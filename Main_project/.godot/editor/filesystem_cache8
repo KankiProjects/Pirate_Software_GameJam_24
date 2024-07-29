@@ -1,10 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1722237256
+::res://::1722237375
 export_presets.cfg::TextFile::-1::1722195824::0::1::::<><>::
 game_states.gd::GDScript::-1::1722202548::0::1::::<>Node<>::
 README.md::TextFile::-1::1721407118::0::1::::<><>::
 ::res://inventory/::1722197836
-inventory.tres::Resource/Inventory::5325878531170920963::1722197836::0::1::::<><>::res://scripts/inventory.gd
+inventory.tres::Resource/Resource::5325878531170920963::1722197836::0::1::::<><>::res://scripts/inventory.gd
 ::res://inventory/items/::1722194679
 mandrake_root.tres::Resource/Resource::4716273132981099872::1722194679::0::1::::<><>::res://scripts/inventory_item.gd<>uid://cduxshv304s4x::::res://resources/assets/textures/mandrake_root.png
 ::res://prefabs/::1722202549
@@ -22,7 +22,7 @@ prefab_moving_platform.tscn::PackedScene::4840125802372465975::1722166950::0::1:
 prefab_one_way_platform.tscn::PackedScene::8955861286816613515::1722166950::0::1::::<><>::uid://2c8nkkl4mk5k::::res://textures/blank.png
 prefab_solid_platform.tscn::PackedScene::7532094040326129620::1722166950::0::1::::<><>::uid://2c8nkkl4mk5k::::res://textures/blank.png
 prefab_solid_ramp.tscn::PackedScene::216986561865081403::1722166950::0::1::::<><>::
-::res://resources/::1722195849
+::res://resources/::1722237258
 crouching.tres::RectangleShape2D::5374082768294309704::1722166950::0::1::::<><>::
 crouching_polygon.tres::ConvexPolygonShape2D::3425312244965422151::1722195816::0::1::::<><>::
 DarkMask.svg::CompressedTexture2D::18104016374113785::1722195816::1722237258::1::::<><>::
