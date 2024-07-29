@@ -219,6 +219,10 @@ position = Vector2(1401, 523)
 [connection signal="body_exited" from="ArtAssets/Front/crafting_table" to="Ch_Lur" method="_on_pickable_body_exited"]
 >>>>>>> Stashed changes
 [connection signal="body_entered" from="Actions/Lvl_Transition" to="Ch_Lur" method="_on_lvl_transition_body_entered"]
+<<<<<<< Updated upstream
 [connection signal="body_exited" from="Actions/Lvl_Transition" to="Ch_Lur" method="_on_lvl_transition_body_exited"]
 [connection signal="body_entered" from="betle_leaf" to="betle_leaf" method="_on_pickable_body_entered"]
 [connection signal="body_exited" from="betle_leaf" to="betle_leaf" method="_on_pickable_body_exited"]
+=======
+[connection signal="body_exited" from="Actions/Lvl_Transition" to="Ch_Lur" method="_on_lvl_transition_body_exited"]
+>>>>>>> Stashed changes

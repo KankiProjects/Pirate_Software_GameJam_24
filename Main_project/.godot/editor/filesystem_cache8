@@ -1,13 +1,17 @@
 ea4bc82a6ad023ab7ee23ee620429895
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ::res://::1722238126
 export_presets.cfg::TextFile::-1::1722195824::0::1::::<><>::
+=======
+::res://::1722239381
+>>>>>>> Stashed changes
 game_states.gd::GDScript::-1::1722202548::0::1::::<>Node<>::
 README.md::TextFile::-1::1721407118::0::1::::<><>::
 ::res://inventory/::1722197836
-inventory.tres::Resource/Inventory::5325878531170920963::1722197836::0::1::::<><>::res://scripts/inventory.gd
+inventory.tres::Resource/Resource::5325878531170920963::1722197836::0::1::::<><>::res://scripts/inventory.gd
 ::res://inventory/items/::1722194679
-mandrake_root.tres::Resource/InventoryItem::4716273132981099872::1722194679::0::1::::<><>::res://scripts/inventory_item.gd<>uid://cduxshv304s4x::::res://resources/assets/textures/mandrake_root.png
+mandrake_root.tres::Resource/Resource::4716273132981099872::1722194679::0::1::::<><>::res://scripts/inventory_item.gd<>uid://cduxshv304s4x::::res://resources/assets/textures/mandrake_root.png
 ::res://prefabs/::1722202549
 camera_2d.tscn::PackedScene::2676696577900899439::1722166950::0::1::::<><>::
 ch_lur.tscn::PackedScene::810660676201248865::1722202549::0::1::::<><>::res://scripts/player.gd<>uid://i1f2drre8sb::::res://resources/DarkMask.svg<>uid://b6hs6xvqvaeqo::::res://Sprites/Sp_LurResourcesNoline.png
@@ -44,6 +48,7 @@ prefab_one_way_platform.tscn::PackedScene::8955861286816613515::1722166950::0::1
 prefab_solid_platform.tscn::PackedScene::7532094040326129620::1722166950::0::1::::<><>::uid://2c8nkkl4mk5k::::res://textures/blank.png
 prefab_solid_ramp.tscn::PackedScene::216986561865081403::1722166950::0::1::::<><>::
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ::res://resources/::1722237258
 crouching.tres::RectangleShape2D::5374082768294309704::1722166950::0::1::::<><>::
 crouching_polygon.tres::ConvexPolygonShape2D::3425312244965422151::1722195816::0::1::::<><>::
@@ -55,10 +60,17 @@ crouching.tres::RectangleShape2D::5374082768294309704::1722166950::0::1::::<><>:
 crouching_polygon.tres::ConvexPolygonShape2D::3425312244965422151::1722195816::0::1::::<><>::
 DarkMask.svg::CompressedTexture2D::18104016374113785::1722195816::1722239019::1::::<><>::
 >>>>>>> Stashed changes
+=======
+::res://resources/::1722239019
+crouching.tres::RectangleShape2D::5374082768294309704::1722166950::0::1::::<><>::
+crouching_polygon.tres::ConvexPolygonShape2D::3425312244965422151::1722195816::0::1::::<><>::
+DarkMask.svg::CompressedTexture2D::18104016374113785::1722195816::1722239019::1::::<><>::
+>>>>>>> Stashed changes
 psychotropic_effect.tscn::PackedScene::6931904763260090533::1722195816::0::1::::<><>::
 standing.tres::RectangleShape2D::3962098893948556137::1722166950::0::1::::<><>::
 standing_polygon.tres::ConvexPolygonShape2D::7523135855212245529::1722195816::0::1::::<><>::
 ::res://resources/assets/::1722168691
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 ::res://resources/assets/Sprites/::1722195824
 alquimista 2.png::CompressedTexture2D::6048482360671466777::1722195824::1722238128::1::::<><>::
@@ -85,11 +97,39 @@ TestScenario.png::CompressedTexture2D::6546663126280533377::1722195824::17222381
 ::res://resources/fonts/::1722195848
 Rosarivo-Italic.ttf::FontFile::666144319092643930::1722195816::1722238127::1::::<><>::
 Rosarivo-Regular.ttf::FontFile::3929747544433208320::1722195816::1722238127::1::::<><>::
+=======
+::res://resources/assets/Sprites/::1722239018
+alquimista 2.png::CompressedTexture2D::6048482360671466777::1722195824::1722239018::1::::<><>::
+Sp_LurResources.png::CompressedTexture2D::1429423522127306036::1722195824::1722239018::1::::<><>::
+Sp_LurResourcesNoline.png::CompressedTexture2D::4577874987464352590::1722195824::1722239018::1::::<><>::
+::res://resources/assets/textures/::1722239019
+2736899_gamesmashdash_pixel-art-bed.png::CompressedTexture2D::2475822351870724830::1722195824::1722239018::1::::<><>::
+alquimista 2.png::CompressedTexture2D::2357183528962021841::1722195824::1722239018::1::::<><>::
+arturs-noviks-book-asset1.jpg::CompressedTexture2D::353455659986600927::1722195824::1722239018::1::::<><>::
+blank.png::CompressedTexture2D::1901254951037624126::1722194679::1722239018::1::::<><>::
+CircleMask.png::CompressedTexture2D::7628886594192502772::1722195824::1722239018::1::::<><>::
+clipart1961948.png::CompressedTexture2D::2355366456239251910::1722195824::1722239018::1::::<><>::
+crate front.png::CompressedTexture2D::591749243568218660::1722195824::1722239018::1::::<><>::
+icon.png::CompressedTexture2D::2780513677359675292::1722194679::1722239018::1::::<><>::
+imgbin_areca-palm-areca-nut-arecaceae-drawing-png.png::CompressedTexture2D::883861773015715132::1722195824::1722239017::1::::<><>::
+inventory.tres::Resource/Resource::4262445192830178116::1722194679::0::1::::<><>::res://scripts/inventory.gd
+mandragora.png::CompressedTexture2D::1499830474066471304::1722195824::1722239017::1::::<><>::
+mandrake_root.png::CompressedTexture2D::5026124489916517233::1722194679::1722239017::1::::<><>::
+mandrake_root_large.png::CompressedTexture2D::7964571929269936209::1722194679::1722239017::1::::<><>::
+pngtree-stone-portal-photo-png-image_14369772.png::CompressedTexture2D::4382286754555667321::1722195824::1722239019::1::::<><>::
+TestScenario.png::CompressedTexture2D::6546663126280533377::1722195824::1722239018::1::::<><>::
+—Pngtree—log cabin clip art_6025396.png::CompressedTexture2D::4900039363406321650::1722195824::1722239018::1::::<><>::
+—Pngtree—sharp rock clip art_5830708.png::CompressedTexture2D::1324660319980466385::1722195824::1722239018::1::::<><>::
+::res://resources/fonts/::1722239017
+Rosarivo-Italic.ttf::FontFile::666144319092643930::1722195816::1722239017::1::::<><>::
+Rosarivo-Regular.ttf::FontFile::3929747544433208320::1722195816::1722239017::1::::<><>::
+>>>>>>> Stashed changes
 ::res://resources/shaders/::1722195824
 blur.gdshader::Shader::-1::1722195824::0::1::::<><>::
-::res://scenes/::1722237674
+::res://scenes/::1722238566
 LevelGuidelines.tscn::PackedScene::2260579903666006643::1722166950::0::1::::<><>::uid://lsxp0d0kfb6x::::res://prefabs/ch_lur.tscn<>uid://beeu2iu24g3mh::::res://prefabs/camera_2d.tscn<>uid://blvb6lomyadwd::::res://prefabs/prefab_map_limit.tscn<>uid://dfkuqut0db8jg::::res://prefabs/prefab_solid_platform.tscn<>uid://d0ujyyldukj60::::res://prefabs/prefab_one_way_platform.tscn<>uid://hifwmp353sk3::::res://prefabs/prefab_deadly_zone.tscn<>res://scripts/Deadly Zone.gd<>uid://ddd0b666rc56::::res://prefabs/prefab_solid_ramp.tscn
 Sc0_prelude.tscn::PackedScene::606072342694948215::1722195816::0::1::::<><>::uid://bv8umrkqcqboa::::res://resources/fonts/Rosarivo-Regular.ttf<>res://scripts/text_logic.gd
+<<<<<<< Updated upstream
 Sc1_Lvl1.1_Alchemy.tscn::PackedScene::588328208875101548::1722237674::0::1::::<><>::uid://lsxp0d0kfb6x::::res://prefabs/ch_lur.tscn<>uid://blvb6lomyadwd::::res://prefabs/prefab_map_limit.tscn<>uid://ca7ufur3w6ilj::::res://prefabs/prefab_moving_platform.tscn<>uid://mufcr4awut21::::res://resources/assets/textures/imgbin_areca-palm-areca-nut-arecaceae-drawing-png.png<>uid://cb2u6x4p3tnf3::::res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png<>uid://s4w7x85c0mfp::::res://resources/assets/textures/—Pngtree—sharp rock clip art_5830708.png<>uid://8s7sn4u5pu75::::res://resources/assets/textures/clipart1961948.png<>uid://2c8nkkl4mk5k::::res://resources/assets/textures/blank.png<>uid://ddd0b666rc56::::res://prefabs/prefab_solid_ramp.tscn<>uid://b3o2vfyf8ufpx::::res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png<>res://scripts/Lvl_Transition.gd<>uid://d0ujyyldukj60::::res://prefabs/prefab_one_way_platform.tscn<>uid://bs56vbwomshws::::res://prefabs/mandrake_root.tscn
 =======
 ::res://resources/assets/Sprites/::1722239018
@@ -124,12 +164,19 @@ LevelGuidelines.tscn::PackedScene::2260579903666006643::1722166950::0::1::::<><>
 Sc0_prelude.tscn::PackedScene::606072342694948215::1722195816::0::1::::<><>::uid://bv8umrkqcqboa::::res://resources/fonts/Rosarivo-Regular.ttf<>res://scripts/text_logic.gd
 Sc1_Lvl1.1_Alchemy.tscn::PackedScene::588328208875101548::1722292474::0::1::::<><>::uid://lsxp0d0kfb6x::::res://prefabs/ch_lur.tscn<>uid://blvb6lomyadwd::::res://prefabs/prefab_map_limit.tscn<>uid://drvorwpv1f7us::::res://prefabs/crafting_table.tscn<>uid://dfkuqut0db8jg::::res://prefabs/prefab_solid_platform.tscn<>uid://mufcr4awut21::::res://resources/assets/textures/imgbin_areca-palm-areca-nut-arecaceae-drawing-png.png<>uid://cb2u6x4p3tnf3::::res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png<>uid://s4w7x85c0mfp::::res://resources/assets/textures/—Pngtree—sharp rock clip art_5830708.png<>uid://2c8nkkl4mk5k::::res://resources/assets/textures/blank.png<>uid://ddd0b666rc56::::res://prefabs/prefab_solid_ramp.tscn<>uid://b3o2vfyf8ufpx::::res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png<>res://scripts/Lvl_Transition.gd<>uid://d0ujyyldukj60::::res://prefabs/prefab_one_way_platform.tscn<>uid://ij74gv3om37x::::res://prefabs/scissors.tscn<>uid://c2bresfu5fvhq::::res://prefabs/betle_nut.tscn<>uid://bs56vbwomshws::::res://prefabs/betle_leaf.tscn
 >>>>>>> Stashed changes
+=======
+Sc1_Lvl1.1_Alchemy.tscn::PackedScene::588328208875101548::1722239364::0::1::::<><>::uid://lsxp0d0kfb6x::::res://prefabs/ch_lur.tscn<>uid://blvb6lomyadwd::::res://prefabs/prefab_map_limit.tscn<>uid://ca7ufur3w6ilj::::res://prefabs/prefab_moving_platform.tscn<>uid://mufcr4awut21::::res://resources/assets/textures/imgbin_areca-palm-areca-nut-arecaceae-drawing-png.png<>uid://cb2u6x4p3tnf3::::res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png<>uid://s4w7x85c0mfp::::res://resources/assets/textures/—Pngtree—sharp rock clip art_5830708.png<>uid://8s7sn4u5pu75::::res://resources/assets/textures/clipart1961948.png<>uid://2c8nkkl4mk5k::::res://resources/assets/textures/blank.png<>uid://ddd0b666rc56::::res://prefabs/prefab_solid_ramp.tscn<>uid://b3o2vfyf8ufpx::::res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png<>res://scripts/Lvl_Transition.gd<>uid://d0ujyyldukj60::::res://prefabs/prefab_one_way_platform.tscn<>uid://bs56vbwomshws::::res://prefabs/mandrake_root.tscn
+>>>>>>> Stashed changes
 Sc1_Lvl1.2_Narrative.tscn::PackedScene::816587004549004081::1722195816::0::1::::<><>::uid://lsxp0d0kfb6x::::res://prefabs/ch_lur.tscn<>uid://blvb6lomyadwd::::res://prefabs/prefab_map_limit.tscn<>uid://dfkuqut0db8jg::::res://prefabs/prefab_solid_platform.tscn<>uid://bbjkox4tijsqo::::res://textures/2736899_gamesmashdash_pixel-art-bed.png<>uid://fbhmlyqfi5ct::::res://textures/arturs-noviks-book-asset1.jpg<>uid://b3o2vfyf8ufpx::::res://textures/pngtree-stone-portal-photo-png-image_14369772.png
 Sc2_Lvl2.2.1_Platform.tscn::PackedScene::9124033171347201164::1722195816::0::1::::<><>::uid://blvb6lomyadwd::::res://prefabs/prefab_map_limit.tscn<>uid://dfkuqut0db8jg::::res://prefabs/prefab_solid_platform.tscn<>uid://lsxp0d0kfb6x::::res://prefabs/ch_lur.tscn<>uid://b3o2vfyf8ufpx::::res://textures/pngtree-stone-portal-photo-png-image_14369772.png<>uid://hifwmp353sk3::::res://prefabs/prefab_deadly_zone.tscn<>uid://ddd0b666rc56::::res://prefabs/prefab_solid_ramp.tscn<>uid://d0ujyyldukj60::::res://prefabs/prefab_one_way_platform.tscn
 Sc2_Lvl2.2.2_Narrative.tscn::PackedScene::1385331849459385039::1722195816::0::1::::<><>::uid://blvb6lomyadwd::::res://prefabs/prefab_map_limit.tscn<>uid://lsxp0d0kfb6x::::res://prefabs/ch_lur.tscn<>uid://b3o2vfyf8ufpx::::res://textures/pngtree-stone-portal-photo-png-image_14369772.png<>uid://dfkuqut0db8jg::::res://prefabs/prefab_solid_platform.tscn<>uid://8t3p6nmqv88d::::res://textures/alquimista 2.png
 Sc2_Lvl2.2.3_Platform.tscn::PackedScene::1691770734662961754::1722195816::0::1::::<><>::uid://blvb6lomyadwd::::res://prefabs/prefab_map_limit.tscn<>uid://lsxp0d0kfb6x::::res://prefabs/ch_lur.tscn<>uid://b3o2vfyf8ufpx::::res://textures/pngtree-stone-portal-photo-png-image_14369772.png<>uid://dfkuqut0db8jg::::res://prefabs/prefab_solid_platform.tscn<>uid://hifwmp353sk3::::res://prefabs/prefab_deadly_zone.tscn<>uid://d0ujyyldukj60::::res://prefabs/prefab_one_way_platform.tscn<>uid://ca7ufur3w6ilj::::res://prefabs/prefab_moving_platform.tscn
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 TestingLimboDrugAddict.tscn::PackedScene::541933464923852712::1722237389::0::1::::<><>::uid://ca7ufur3w6ilj::::res://prefabs/prefab_moving_platform.tscn<>uid://c0jit5rdycts8::::res://resources/assets/textures/TestScenario.png<>uid://lsxp0d0kfb6x::::res://prefabs/ch_lur.tscn<>res://scripts/Deadly Zone.gd<>uid://dfkuqut0db8jg::::res://prefabs/prefab_solid_platform.tscn<>uid://beeu2iu24g3mh::::res://prefabs/camera_2d.tscn<>uid://d0ujyyldukj60::::res://prefabs/prefab_one_way_platform.tscn<>uid://hifwmp353sk3::::res://prefabs/prefab_deadly_zone.tscn<>uid://blvb6lomyadwd::::res://prefabs/prefab_map_limit.tscn<>uid://b5qffhgkkcyq6::::res://prefabs/prefab_crate.tscn
+=======
+TestingLimboDrugAddict.tscn::PackedScene::541933464923852712::1722238566::0::1::::<><>::uid://ca7ufur3w6ilj::::res://prefabs/prefab_moving_platform.tscn<>uid://c0jit5rdycts8::::res://resources/assets/textures/TestScenario.png<>uid://lsxp0d0kfb6x::::res://prefabs/ch_lur.tscn<>res://scripts/Deadly Zone.gd<>uid://dfkuqut0db8jg::::res://prefabs/prefab_solid_platform.tscn<>uid://beeu2iu24g3mh::::res://prefabs/camera_2d.tscn<>uid://d0ujyyldukj60::::res://prefabs/prefab_one_way_platform.tscn<>uid://hifwmp353sk3::::res://prefabs/prefab_deadly_zone.tscn<>uid://blvb6lomyadwd::::res://prefabs/prefab_map_limit.tscn<>uid://b5qffhgkkcyq6::::res://prefabs/prefab_crate.tscn
+>>>>>>> Stashed changes
 ::res://scripts/::1722202549
 crafting_table.gd::GDScript::-1::1722202549::0::1::::<>Area2D<>::
 DarkMask.gd::GDScript::-1::1722166950::0::1::::<>Sprite2D<>::
