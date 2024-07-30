@@ -65,6 +65,7 @@ var ingredients: Dictionary = {
 
 # Plays idle anim when program starts.
 func _ready():
+	# Update the dictionary
 	corrected_crouch_shape = cshape.position + CROUCH_OFFSET
 	original_shape_pos = cshape.position
 	original_shape_pos = VERTICAL_OFFSET

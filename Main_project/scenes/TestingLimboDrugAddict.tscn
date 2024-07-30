@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://hyrthemij1hk"]
 
 [ext_resource type="PackedScene" uid="uid://ca7ufur3w6ilj" path="res://prefabs/prefab_moving_platform.tscn" id="1_iyt70"]
-[ext_resource type="Texture2D" uid="uid://c0jit5rdycts8" path="res://textures/TestScenario.png" id="1_mmfrh"]
+[ext_resource type="Texture2D" uid="uid://c0jit5rdycts8" path="res://resources/assets/textures/TestScenario.png" id="1_mmfrh"]
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="2_yyvqa"]
 [ext_resource type="Script" path="res://scripts/Deadly Zone.gd" id="5_gvh5c"]
 [ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="5_lgol5"]
@@ -129,6 +129,5 @@ mass = 3.0
 [node name="moving_platform2" parent="." instance=ExtResource("1_iyt70")]
 position = Vector2(1472, 288)
 rotation = 3.14159
-invert = true
 
 [connection signal="body_entered" from="Deadly Zone platforms" to="Deadly Zone platforms" method="_on_deadly_zone_body_entered"]

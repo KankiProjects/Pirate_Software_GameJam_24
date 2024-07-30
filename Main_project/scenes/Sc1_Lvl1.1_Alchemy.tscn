@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=43 format=3 uid="uid://im8xdw0ha2ou"]
 
 [ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="1_k60fx"]
@@ -37,6 +38,25 @@
 [ext_resource type="Texture2D" uid="uid://ch5voqdh7qh2h" path="res://resources/assets/Backgrounds/FGLeafs.png" id="32_1lban"]
 [ext_resource type="Texture2D" uid="uid://qj5sh0rcma2m" path="res://resources/assets/Backgrounds/FGChampijon.png" id="38_d4q5f"]
 [ext_resource type="Texture2D" uid="uid://bd5nanelsa5pg" path="res://resources/assets/Patterns/gradient.png" id="40_yndoc"]
+=======
+[gd_scene load_steps=17 format=3 uid="uid://im8xdw0ha2ou"]
+
+[ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="3_acsw4"]
+[ext_resource type="PackedScene" uid="uid://drvorwpv1f7us" path="res://prefabs/crafting_table.tscn" id="3_m6hgd"]
+[ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="3_oy31s"]
+[ext_resource type="Texture2D" uid="uid://mufcr4awut21" path="res://resources/assets/textures/imgbin_areca-palm-areca-nut-arecaceae-drawing-png.png" id="4_wcy1s"]
+[ext_resource type="Texture2D" uid="uid://cb2u6x4p3tnf3" path="res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png" id="6_t2muy"]
+[ext_resource type="Texture2D" uid="uid://s4w7x85c0mfp" path="res://resources/assets/textures/—Pngtree—sharp rock clip art_5830708.png" id="7_invw2"]
+[ext_resource type="Texture2D" uid="uid://2c8nkkl4mk5k" path="res://resources/assets/textures/blank.png" id="8_26f16"]
+[ext_resource type="PackedScene" uid="uid://ddd0b666rc56" path="res://prefabs/prefab_solid_ramp.tscn" id="8_nppxw"]
+[ext_resource type="Texture2D" uid="uid://b3o2vfyf8ufpx" path="res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png" id="11_xgcsp"]
+[ext_resource type="Script" path="res://scripts/Lvl_Transition.gd" id="12_3nyri"]
+[ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="12_41vwv"]
+[ext_resource type="PackedScene" uid="uid://ij74gv3om37x" path="res://prefabs/scissors.tscn" id="13_1qyky"]
+[ext_resource type="PackedScene" uid="uid://blejjc6kvhvbe" path="res://prefabs/betle_nut.tscn" id="14_djogi"]
+[ext_resource type="PackedScene" uid="uid://bs56vbwomshws" path="res://prefabs/betle_leaf.tscn" id="15_fce5o"]
+[ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="15_qq8fm"]
+>>>>>>> Eudald-alt
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5178p"]
 texture = ExtResource("19_0tnj7")
@@ -1056,6 +1076,7 @@ sources/0 = SubResource("TileSetAtlasSource_hh5dg")
 
 [node name="Sc1Lvl1_1Alchemy" type="Node2D"]
 
+<<<<<<< HEAD
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -1210,6 +1231,8 @@ texture = ExtResource("11_ksoyb")
 [node name="Ch_Lur" parent="." instance=ExtResource("1_k60fx")]
 position = Vector2(-448, 480)
 
+=======
+>>>>>>> Eudald-alt
 [node name="Limits" type="Node2D" parent="."]
 position = Vector2(-320, 0)
 
@@ -1235,10 +1258,15 @@ tile_set = ExtResource("18_jnr6g")
 format = 2
 layer_0/tile_data = PackedInt32Array(-524295, 2, 0, -524294, 2, 0, -524293, 2, 0, -524292, 2, 0, -524291, 2, 0, -524290, 2, 0, -524289, 2, 0, -589824, 2, 0, -589823, 2, 0, -589822, 2, 0, -589821, 2, 0, -589820, 2, 0, -589819, 2, 0, -589818, 2, 0, -589817, 5, 0, -524280, 2, 0, -524279, 2, 0, -524278, 2, 0, -524277, 2, 0, -524276, 2, 0, -524275, 2, 0, -524274, 2, 0, -524273, 2, 0, -524272, 2, 0, -524271, 2, 0, -524270, 2, 0, -524269, 2, 0, -524268, 2, 0, -524267, 2, 0, -524266, 2, 0, -524265, 2, 0, -524264, 2, 0, -524263, 2, 0, -524262, 2, 0, -524261, 2, 0, -524260, 2, 0, -524259, 2, 0, -524258, 2, 0, -524257, 2, 0, -589792, 4, 0, -589791, 2, 0, -589790, 2, 0, -589789, 2, 0, -589788, 2, 0, -589787, 2, 0, -589786, 2, 0, -589785, 2, 0, -589784, 2, 0, -589783, 2, 0, -589782, 2, 0, -589781, 2, 0, -589780, 2, 0, -589779, 2, 0, -589778, 2, 0, -589777, 2, 0, -589776, 2, 0, -589775, 2, 0, -589774, 2, 0, -589773, 2, 0, -589772, 2, 0, -589771, 2, 0, -589770, 2, 0, -655305, 4, 0, -655304, 2, 0, -655303, 2, 0, -655302, 2, 0, -655301, 2, 0, -655300, 2, 0, -655299, 2, 0, -655298, 2, 0, -524296, 2, 0, -524297, 2, 0, -524298, 2, 0, -524299, 2, 0, -524300, 2, 0, -524301, 2, 0, -524302, 2, 0, -524303, 2, 0, -524304, 2, 0, -524305, 2, 0, -524306, 2, 0, -524307, 2, 0, -524308, 2, 0, -524309, 2, 0, -524310, 2, 0, -524311, 2, 0, -524312, 2, 0, -524313, 2, 0, -524314, 2, 0, -655264, 2, 0, -655263, 2, 0, -655262, 2, 0, -655261, 2, 0, -655260, 2, 0, -655259, 2, 0, -655258, 2, 0, -655257, 2, 0, -655256, 2, 0, -655255, 2, 0, -655254, 2, 0, -655253, 3, 0, -655252, 3, 0, -655251, 3, 0, -655250, 3, 0, -655249, 3, 0, -655248, 3, 0, -655265, 2, 0, -655297, 2, 0, -655296, 2, 0, -655295, 2, 0, -655294, 2, 0, -655293, 2, 0, -655292, 2, 0, -655291, 2, 0, -655290, 2, 0, -655289, 2, 0, -655288, 2, 0, -655287, 2, 0, -655286, 2, 0, -655285, 2, 0, -655284, 2, 0, -655283, 2, 0, -655282, 2, 0, -655281, 2, 0, -655280, 2, 0, -655279, 2, 0, -655278, 2, 0, -655277, 2, 0, -655276, 2, 0, -655275, 2, 0, -655274, 2, 0, -655273, 2, 0, -655272, 2, 0, -655271, 2, 0, -655270, 2, 0, -655269, 2, 0, -655268, 2, 0, -655267, 2, 0, -655266, 2, 0, -458781, 3, 0, -458780, 3, 0, -458779, 3, 0, -458778, 3, 0, -458777, 3, 0, -458776, 3, 0, -458775, 3, 0, -458774, 3, 0, -458773, 3, 0, -458772, 3, 0, -458771, 3, 0, -458770, 3, 0, -458769, 3, 0, -458768, 3, 0, -458767, 3, 0, -458766, 3, 0, -458765, 3, 0, -458764, 3, 0, -458763, 3, 0, -458762, 3, 0, -458761, 3, 0, -458760, 3, 0, -458759, 3, 0, -458758, 3, 0, -458757, 3, 0, -458756, 3, 0, -458755, 3, 0, -458754, 3, 0, -458753, 3, 0, -524288, 3, 0, -524287, 3, 0, -524286, 3, 0, -524285, 3, 0, -524284, 3, 0, -524283, 3, 0, -524282, 3, 0, -524281, 3, 0, -524256, 3, 0, -524255, 3, 0, -524254, 3, 0, -524253, 3, 0, -524252, 3, 0, -524251, 3, 0, -524250, 3, 0, -524249, 3, 0, -524248, 3, 0, -524247, 3, 0, -524246, 3, 0, -524245, 3, 0, -524244, 3, 0, -524243, 3, 0, -524242, 3, 0, -524241, 3, 0, -524240, 3, 0, -524239, 3, 0, -524238, 3, 0, -524237, 3, 0, -524236, 3, 0, -524235, 3, 0, -524234, 3, 0, -524233, 3, 0, -524232, 3, 0, -524231, 3, 0, -524230, 3, 0, -524229, 3, 0, -524228, 3, 0, -524227, 3, 0, -524226, 3, 0, -524225, 3, 0, -524224, 3, 0, -524223, 3, 0, -524222, 3, 0, -524221, 3, 0, -524220, 3, 0, -524219, 3, 0, -524218, 3, 0, -524217, 3, 0, -524216, 3, 0, -524215, 3, 0, -524214, 3, 0, -524213, 3, 0, -524212, 3, 0, -589769, 3, 0, -589768, 3, 0, -589767, 3, 0, -589766, 3, 0, -589765, 3, 0, -589764, 3, 0, -589763, 3, 0, -589762, 3, 0, -589761, 3, 0, -589760, 3, 0, -589759, 3, 0, -589758, 3, 0, -589757, 3, 0, -589756, 3, 0, -589755, 3, 0, -589754, 3, 0, -589753, 3, 0, -589752, 3, 0, -589751, 3, 0, -589750, 3, 0, -589749, 3, 0, -589748, 3, 0, -589747, 3, 0, -589746, 3, 0, -589745, 3, 0, -589744, 3, 0, -589743, 3, 0, -589742, 3, 0, -589741, 3, 0, -589740, 3, 0, -589739, 3, 0, -589738, 3, 0, -589737, 3, 0, -589736, 3, 0, -589735, 3, 0, -589734, 3, 0, -589733, 3, 0, -589732, 3, 0, -589731, 3, 0, -589730, 3, 0, -589729, 3, 0, -589728, 3, 0, -589727, 3, 0, -589726, 3, 0, -589725, 3, 0, -589724, 3, 0, -589723, 3, 0, -589722, 3, 0, -589721, 3, 0, -589720, 3, 0, -589719, 3, 0, -589718, 3, 0, -589717, 3, 0, -589716, 3, 0, -589715, 3, 0, -589714, 3, 0, -589713, 3, 0, -589712, 3, 0, -524211, 3, 0, -524210, 3, 0, -524209, 3, 0, -524208, 3, 0, -524207, 3, 0, -524206, 3, 0, -524205, 3, 0, -524204, 3, 0, -524203, 3, 0, -524202, 3, 0, -524201, 3, 0, -524200, 3, 0, -524199, 3, 0, -524198, 3, 0, -524197, 3, 0, -524196, 3, 0, -524195, 3, 0, -524194, 3, 0, -524193, 3, 0, -524192, 3, 0, -524191, 3, 0, -524190, 3, 0, -524189, 3, 0, -524188, 3, 0, -524187, 3, 0, -524186, 3, 0, -524185, 3, 0, -524184, 3, 0, -524183, 3, 0, -524182, 3, 0, -524181, 3, 0, -524180, 3, 0, -524179, 3, 0, -524178, 3, 0, -524177, 3, 0, -524176, 3, 0, -655247, 3, 0, -589711, 3, 0, -524175, 3, 0, -720783, 3, 0)
 
+<<<<<<< HEAD
 [node name="Clipart1961948" type="Sprite2D" parent="ArtAssets/Front"]
 position = Vector2(2555.62, 411.544)
 scale = Vector2(0.273861, 0.273861)
 texture = ExtResource("3_g5ysj")
+=======
+[node name="crafting_table" parent="ArtAssets/Front" instance=ExtResource("3_m6hgd")]
+position = Vector2(2409, 434)
+>>>>>>> Eudald-alt
 
 [node name="StoreHouse" type="Node2D" parent="ArtAssets/Front"]
 
@@ -1623,6 +1651,7 @@ scale = Vector2(4.28741, 4.28741)
 position = Vector2(1036, 107)
 scale = Vector2(4.24352, 4.15058)
 
+<<<<<<< HEAD
 [node name="scissors" parent="Actions" instance=ExtResource("21_puegl")]
 position = Vector2(3867, -1435)
 rotation = 0.778049
@@ -1810,3 +1839,18 @@ position = Vector2(1922, 1085)
 rotation = -1.52533
 scale = Vector2(0.801758, 0.801758)
 texture = ExtResource("32_1lban")
+=======
+[node name="scissors" parent="." instance=ExtResource("13_1qyky")]
+position = Vector2(1221, 483)
+
+[node name="betle_nut" parent="." instance=ExtResource("14_djogi")]
+position = Vector2(1324, 528)
+
+[node name="betle_leaf" parent="." instance=ExtResource("15_fce5o")]
+position = Vector2(1401, 523)
+
+[node name="Ch_Lur" parent="." instance=ExtResource("15_qq8fm")]
+
+[connection signal="body_entered" from="betle_leaf" to="betle_leaf" method="_on_pickable_body_entered"]
+[connection signal="body_exited" from="betle_leaf" to="betle_leaf" method="_on_pickable_body_exited"]
+>>>>>>> Eudald-alt

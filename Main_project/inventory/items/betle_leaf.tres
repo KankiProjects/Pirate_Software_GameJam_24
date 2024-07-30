@@ -5,5 +5,10 @@
 
 [resource]
 script = ExtResource("1_xd3eq")
+<<<<<<< HEAD:Main_project/inventory/items/mandrake_root.tres
 name = "mandrake_root"
 texture = ExtResource("2_h8pb7")
+=======
+name = "betle_leaf"
+texture = ExtResource("2_sjmgk")
+>>>>>>> Eudald-alt:Main_project/inventory/items/betle_leaf.tres
