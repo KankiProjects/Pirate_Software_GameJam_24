@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://bv8umrkqcqboa" path="res://resources/fonts/Rosarivo-Regular.ttf" id="1_hi6ta"]
 [ext_resource type="Script" path="res://scripts/text_logic.gd" id="1_w8h37"]
-[ext_resource type="Texture2D" uid="uid://cpbbycdbia5j7" path="res://resources/assets/wallpaper.png" id="2_76unm"]
+[ext_resource type="Texture2D" uid="uid://d33te2l40edn4" path="res://resources/assets/wallpaper.png" id="2_76unm"]
 [ext_resource type="Theme" uid="uid://d25w31o1i41hr" path="res://resources/fonts/main_text.tres" id="2_u7o5q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nio66"]

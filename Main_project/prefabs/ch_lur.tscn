@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_n13u7"]
 [ext_resource type="PackedScene" uid="uid://ka5hpxuspxea" path="res://prefabs/inventory_ui.tscn" id="4_jijkq"]
 [ext_resource type="Texture2D" uid="uid://i1f2drre8sb" path="res://resources/DarkMask.svg" id="4_rgjn1"]
-[ext_resource type="Texture2D" uid="uid://82poibuea5rt" path="res://resources/assets/Sprites/Sp_LurResourcesNoline.png" id="6_bxwaq"]
+[ext_resource type="Texture2D" uid="uid://shr4nxer5hp4" path="res://resources/assets/Sprites/Sp_LurResourcesNoline.png" id="6_bxwaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4b57i"]
 size = Vector2(128, 190)
