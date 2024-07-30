@@ -27,17 +27,16 @@ func _ready():
 		print("Invalid scene ID: ", scene_id)
 
 # Function to handle when a body enters the area
-func _on_body_entered(body: PhysicsBody2D):
+func _on_body_entered(body):
 	player_in_area = true
+	print(player_in_area)
 
 # Function to handle when a body exits the area
-func _on_body_exited(body: PhysicsBody2D):
+func _on_body_exited(body):
 	player_in_area = false
+	print(player_in_area)
 
 # Function to check for the interact input
 func _process(delta):
-	if player_in_area == true and Input.is_action_just_pressed("interact"):  # "interact" is the action for interaction
-		if new_scene_path != "":
-			get_tree().change_scene_to_file(new_scene_path)
-		else:
-			print("No valid scene path set for the given ID")
+	if player_in_area == true and Input.is_action_just_pressed("interact"):  # "interact" is the action for interactio
+		get_tree().change_scene_to_file(new_scene_path)

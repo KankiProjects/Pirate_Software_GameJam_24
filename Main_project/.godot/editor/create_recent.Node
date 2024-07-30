@@ -1,9 +1,9 @@
-RichTextLabel
 Node2D
-TileMap
-Sprite2D
 ParallaxLayer
 ParallaxBackground
+TileMap
+RichTextLabel
+Sprite2D
 Label
 CollisionShape2D
 Area2D
@@ -12,4 +12,3 @@ Camera2D
 GridContainer
 Panel
 ColorRect
-CharacterBody2D
