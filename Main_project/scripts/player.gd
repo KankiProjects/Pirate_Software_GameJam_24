@@ -3,11 +3,14 @@ extends CharacterBody2D
 
 # Dynamics constants.
 @export var SPEED = 400.0
+@export var ENHANCED_SPEED = 400.0
 @export var RUN_SPEED_MULTIPLIER = 2.1
 @export var CROUCH_SPEED_MULTIPLIER = 0.7
+@export var ENHANCED_CROUCH_SPEED_MULTIPLIER = 1.0
 @export var JUMP_VELOCITY = -1500.0
 @export var WEIGHT = 5.0
 @export var AIR_CONTROL_MULTIPLIER = 0.5  # Influence multiplier for air control
+@export var ENHANCED_AIR_CONTROL_MULTIPLIER = 0.8
 @export var ACCELERATION = 2000.0  # Acceleration when running
 @export var DECELERATION_BASE = 2000.0  # Base deceleration when stopping
 @export var DECELERATION_MULTIPLIER = 1.5  # Multiplier for deceleration based on speed
@@ -15,8 +18,7 @@ extends CharacterBody2D
 @export var CROUCH_DECELERATION = 20000.0  # Deceleration when crouched
 @export var DROP_THROUGH_TIME = 0.2  # Time to disable collision for drop-through
 @export var PLATFORM_HEIGHT_THRESHOLD = 64.0  # Maximum height of platforms to drop through
-@export var VERTICAL_OFFSET = Vector2(0, -96) # Vertical offset for crouching
-@export var CROUCH_OFFSET = Vector2(0, -64) # Vertical offset for crouching
+@export var CROUCH_OFFSET = Vector2(0, 1) # Vertical offset for crouching
 
 # Pushing block constants.
 @export var PUSH_FORCE = 380
@@ -27,15 +29,18 @@ extends CharacterBody2D
 @onready var cshape = $CollisionShape2D
 @onready var platform_raycast = $PlatformRayCast  # Ensure this is the correct path to the RayCast2D node
 @onready var animated_Lur = $AnimationPlayer
-@onready var invUI = $Camera2D/InventoryUI
+@onready var invUI = $"Camera2D/InventoryUI"
 @onready var Lur = $Lur 
 
 # Upload resources.
-var standing_cshape = preload("res://resources/standing.tres")
-var crouching_cshape = preload("res://resources/crouching.tres")
+var standing_cshape = preload("res://resources/standing_polygon.tres")
+var crouching_cshape = preload("res://resources/crouching_polygon.tres")
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+var player_states: Array[String] = ["DEFAULT", "ENHANCED"]
+var actual_state: String
 
 # Global variables.
 var corrected_crouch_shape
@@ -44,11 +49,11 @@ var crouching = false
 var prev_velocity_y = 0.0
 var drop_through_timer = 0.0
 
-# Collectable ingredients
-var ingredients = {
-	"betel_nut" : false,
+# Collectible items.
+var ingredients: Dictionary = {
+	"betle_nut" : false,
  	"scissors" : false,
- 	"betel_leaf" : false,
+ 	"betle_leaf" : false,
 	"mushroom" : false,
 	"flower" : false,
  	"ginseng_root" : false,
@@ -59,9 +64,9 @@ var ingredients = {
 
 # Plays idle anim when program starts.
 func _ready():
+	# Update the dictionary
 	corrected_crouch_shape = cshape.position + CROUCH_OFFSET
 	original_shape_pos = cshape.position
-	original_shape_pos = VERTICAL_OFFSET
 	stand()
 
 
@@ -178,10 +183,37 @@ func drop_through():
   
 # Handle item interaction and collection
 func collect_item(item):
-	if !ingredients[item.name]:
+	if !ingredients[item.name] || item.name == "scissors":
 		ingredients[item.name] = true
 		for i in range(len(invUI.inv.items)):
 			if invUI.inv.items[i] == null:
+				print(item.name)
 				invUI.inv.items[i] = item
+				print(invUI.inv.items[i].name)
 				invUI.update_slots()
 				break
+	
+	
+func get_ingredients() -> Dictionary:
+	print(ingredients)
+	return ingredients
+	
+	
+func set_ingredients():
+	for key in ingredients.keys():
+		ingredients[key] = false
+		empty_inventory()
+
+
+func empty_inventory():
+	for i in range(len(invUI.inv.items)):
+		invUI.inv.items[i] = null
+		invUI.slots[i].set_item_visual()
+
+
+func _on_pickable_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_pickable_body_exited(body):
+	pass # Replace with function body.

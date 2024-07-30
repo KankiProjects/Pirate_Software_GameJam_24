@@ -5,20 +5,39 @@ extends Area2D
 var can_interact = false
 var interacting_body
 
+
+func _ready():
+	# Connect signals programmatically
+	self.body_entered.connect(_on_pickable_body_entered)
+	self.body_exited.connect(_on_pickable_body_exited)
+
+
 # Player's hitbox enters/exits 2D area
 func _on_pickable_body_entered(body):
 	if body.name == "Ch_Lur":
 		interacting_body = body
 		can_interact = true
 		
+		
 func _on_pickable_body_exited(body):
 	if body.name == "Ch_Lur":
+		interacting_body = null
 		can_interact = false
+		
+
 
 # When inside press E to collect
 func _process(delta):
-	if can_interact && Input.is_action_just_pressed("interact"):
+	if can_interact:
+		var required_item = interacting_body.get_ingredients()
 		var item_resource_path = "res://inventory/items/" + self.name + ".tres"
 		var item = load(item_resource_path)
-		interacting_body.collect_item(item)
-		queue_free()
+		if self.name == "scissors":
+			required_item["scissors"] = true
+		if required_item["scissors"] && Input.is_action_just_pressed("interact"):
+			interacting_body.collect_item(item)
+			queue_free()
+
+
+func _on_body_entered(body):
+	pass # Replace with function body.

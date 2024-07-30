@@ -1,0 +1,200 @@
+[gd_scene load_steps=17 format=3 uid="uid://im8xdw0ha2ou"]
+
+[ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="3_acsw4"]
+[ext_resource type="PackedScene" uid="uid://drvorwpv1f7us" path="res://prefabs/crafting_table.tscn" id="3_m6hgd"]
+[ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="3_oy31s"]
+[ext_resource type="Texture2D" uid="uid://cugy32eckbnkw" path="res://resources/assets/textures/imgbin_areca-palm-areca-nut-arecaceae-drawing-png.png" id="4_wcy1s"]
+[ext_resource type="Texture2D" uid="uid://ltpkknteqgjk" path="res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png" id="6_t2muy"]
+[ext_resource type="Texture2D" uid="uid://x0kawf2aobnt" path="res://resources/assets/textures/—Pngtree—sharp rock clip art_5830708.png" id="7_invw2"]
+[ext_resource type="Texture2D" uid="uid://2c8nkkl4mk5k" path="res://resources/assets/textures/blank.png" id="8_26f16"]
+[ext_resource type="PackedScene" uid="uid://ddd0b666rc56" path="res://prefabs/prefab_solid_ramp.tscn" id="8_nppxw"]
+[ext_resource type="Texture2D" uid="uid://c33lh1s7gs8pk" path="res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png" id="11_xgcsp"]
+[ext_resource type="Script" path="res://scripts/Lvl_Transition.gd" id="12_3nyri"]
+[ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="12_41vwv"]
+[ext_resource type="PackedScene" uid="uid://ij74gv3om37x" path="res://prefabs/scissors.tscn" id="13_1qyky"]
+[ext_resource type="PackedScene" uid="uid://blejjc6kvhvbe" path="res://prefabs/betle_nut.tscn" id="14_djogi"]
+[ext_resource type="PackedScene" uid="uid://bs56vbwomshws" path="res://prefabs/betle_leaf.tscn" id="15_fce5o"]
+[ext_resource type="PackedScene" uid="uid://lsxp0d0kfb6x" path="res://prefabs/ch_lur.tscn" id="15_qq8fm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2thb"]
+size = Vector2(160, 256)
+
+[node name="Sc1Lvl1_1Alchemy" type="Node2D"]
+
+[node name="Limits" type="Node2D" parent="."]
+position = Vector2(-320, 0)
+
+[node name="MapLimit" parent="Limits" instance=ExtResource("3_acsw4")]
+position = Vector2(0, 1024)
+
+[node name="MapLimit2" parent="Limits" instance=ExtResource("3_acsw4")]
+position = Vector2(-1472, 0)
+rotation = 1.57079
+
+[node name="MapLimit3" parent="Limits" instance=ExtResource("3_acsw4")]
+position = Vector2(6912, 0)
+rotation = -1.57079
+
+[node name="ArtAssets" type="Node2D" parent="."]
+show_behind_parent = true
+
+[node name="Front" type="Node2D" parent="ArtAssets"]
+top_level = true
+
+[node name="crafting_table" parent="ArtAssets/Front" instance=ExtResource("3_m6hgd")]
+position = Vector2(2409, 434)
+
+[node name="Back" type="Node2D" parent="ArtAssets"]
+show_behind_parent = true
+
+[node name="ImgbinAreca-palm-areca-nut-arecaceae-drawing-png" type="Sprite2D" parent="ArtAssets/Back"]
+position = Vector2(1024, 424)
+scale = Vector2(0.385305, 0.385305)
+texture = ExtResource("4_wcy1s")
+
+[node name="—pngtree—logCabinClipArt6025396" type="Sprite2D" parent="ArtAssets/Back"]
+position = Vector2(-1320, 200)
+scale = Vector2(0.82, 0.82)
+texture = ExtResource("6_t2muy")
+
+[node name="—pngtree—sharpRockClipArt5830708" type="Sprite2D" parent="ArtAssets/Back"]
+position = Vector2(-1968, 360)
+rotation = 0.677904
+scale = Vector2(0.513333, 0.513333)
+texture = ExtResource("7_invw2")
+
+[node name="Blank" type="Sprite2D" parent="ArtAssets/Back"]
+self_modulate = Color(0.545098, 0.545098, 0.545098, 0.345098)
+position = Vector2(4803.87, -612)
+scale = Vector2(5.12077, 5.12077)
+texture = ExtResource("8_26f16")
+
+[node name="Pngtree-stone-portal-photo-png-image14369772" type="Sprite2D" parent="ArtAssets/Back"]
+position = Vector2(6416, 312)
+scale = Vector2(0.0968, 0.0968)
+texture = ExtResource("11_xgcsp")
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="prefab_Solid_Platform" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(-896, 576)
+scale = Vector2(14, 1)
+
+[node name="Area2D" type="Area2D" parent="Platforms/prefab_Solid_Platform"]
+
+[node name="prefab_Solid_Platform2" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(1024, 640)
+scale = Vector2(12, 1)
+
+[node name="Area2D" type="Area2D" parent="Platforms/prefab_Solid_Platform2"]
+
+[node name="prefab_Solid_Platform4" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4800, 512)
+scale = Vector2(24, 1)
+
+[node name="Area2D" type="Area2D" parent="Platforms/prefab_Solid_Platform4"]
+
+[node name="prefab_Solid_Platform3" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(2624, 576)
+scale = Vector2(9, 1)
+
+[node name="Area2D" type="Area2D" parent="Platforms/prefab_Solid_Platform3"]
+
+[node name="Solid_Ramp" parent="Platforms" instance=ExtResource("8_nppxw")]
+position = Vector2(0, 576)
+
+[node name="Solid_Ramp2" parent="Platforms" instance=ExtResource("8_nppxw")]
+position = Vector2(2048, 576)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Solid_Ramp3" parent="Platforms" instance=ExtResource("8_nppxw")]
+position = Vector2(3264, 512)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="prefab_Solid_Platform5" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(3744, -768)
+scale = Vector2(0.5, 14)
+
+[node name="prefab_Solid_Platform6" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(5856, -768)
+scale = Vector2(0.5, 14)
+
+[node name="prefab_Solid_Platform7" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4800, -1632)
+scale = Vector2(16, 0.5)
+
+[node name="prefab_OneWay_Platform" parent="Platforms" instance=ExtResource("12_41vwv")]
+position = Vector2(5056, 176)
+scale = Vector2(4, 1)
+
+[node name="prefab_OneWay_Platform2" parent="Platforms" instance=ExtResource("12_41vwv")]
+position = Vector2(5056, -112)
+scale = Vector2(4, 1)
+
+[node name="prefab_OneWay_Platform3" parent="Platforms" instance=ExtResource("12_41vwv")]
+position = Vector2(4032, -368)
+scale = Vector2(4, 1)
+
+[node name="prefab_Solid_Platform8" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4288, -96)
+scale = Vector2(8, 0.5)
+
+[node name="prefab_Solid_Platform9" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(5568, -96)
+scale = Vector2(4, 0.5)
+
+[node name="prefab_Solid_Platform10" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4576, -480)
+scale = Vector2(2.5, 0.5)
+
+[node name="prefab_Solid_Platform11" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4992, -736)
+scale = Vector2(4, 0.5)
+
+[node name="prefab_Solid_Platform12" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4288, -1184)
+scale = Vector2(8, 0.5)
+
+[node name="prefab_Solid_Platform13" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(5568, -992)
+scale = Vector2(4, 0.5)
+
+[node name="prefab_Solid_Platform14" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4352, -384)
+scale = Vector2(1, 2)
+
+[node name="prefab_Solid_Platform15" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4672, -640)
+scale = Vector2(1, 2)
+
+[node name="prefab_Solid_Platform16" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(4672, -1024)
+scale = Vector2(1, 2)
+
+[node name="prefab_Solid_Platform17" parent="Platforms" instance=ExtResource("3_oy31s")]
+position = Vector2(6656, 512)
+scale = Vector2(5, 1)
+
+[node name="Actions" type="Node2D" parent="."]
+
+[node name="Lvl_Transition" type="Area2D" parent="Actions"]
+script = ExtResource("12_3nyri")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actions/Lvl_Transition"]
+shape = SubResource("RectangleShape2D_s2thb")
+
+[node name="scissors" parent="." instance=ExtResource("13_1qyky")]
+position = Vector2(1221, 483)
+
+[node name="betle_nut" parent="." instance=ExtResource("14_djogi")]
+position = Vector2(1324, 528)
+
+[node name="betle_leaf" parent="." instance=ExtResource("15_fce5o")]
+position = Vector2(1401, 523)
+
+[node name="Ch_Lur" parent="." instance=ExtResource("15_qq8fm")]
+
+[connection signal="body_entered" from="betle_leaf" to="betle_leaf" method="_on_pickable_body_entered"]
+[connection signal="body_exited" from="betle_leaf" to="betle_leaf" method="_on_pickable_body_exited"]

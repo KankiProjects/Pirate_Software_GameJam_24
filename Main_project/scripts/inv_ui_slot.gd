@@ -9,3 +9,7 @@ func update(item: InventoryItem):
 	if item: 
 		item_visual.visible = true
 		item_visual.texture = item.texture
+		
+
+func set_item_visual():
+	item_visual.visible = false
