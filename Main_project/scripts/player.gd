@@ -180,7 +180,7 @@ func drop_through():
 func collect_item(item):
 	if !ingredients[item.name]:
 		ingredients[item.name] = true
-d		for i in range(len(invUI.inv.items)):
+		for i in range(len(invUI.inv.items)):
 			if invUI.inv.items[i] == null:
 				invUI.inv.items[i] = item
 				invUI.update_slots()

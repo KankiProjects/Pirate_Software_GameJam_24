@@ -113,23 +113,6 @@ texture = ExtResource("19_tf60e")
 
 [node name="Ch_Lur" parent="." instance=ExtResource("1_w2ykf")]
 position = Vector2(812, 407)
-SPEED = null
-RUN_SPEED_MULTIPLIER = null
-CROUCH_SPEED_MULTIPLIER = null
-JUMP_VELOCITY = null
-WEIGHT = null
-AIR_CONTROL_MULTIPLIER = null
-ACCELERATION = null
-DECELERATION_BASE = null
-DECELERATION_MULTIPLIER = null
-LANDING_DECELERATION_MULTIPLIER = null
-CROUCH_DECELERATION = null
-DROP_THROUGH_TIME = null
-PLATFORM_HEIGHT_THRESHOLD = null
-VERTICAL_OFFSET = null
-CROUCH_OFFSET = null
-PUSH_FORCE = null
-BLOCK_MAX_VELOCITY = null
 
 [node name="Actions" type="Node2D" parent="."]
 

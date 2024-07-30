@@ -2305,23 +2305,6 @@ texture = ExtResource("11_ksoyb")
 
 [node name="Ch_Lur" parent="." instance=ExtResource("1_k60fx")]
 position = Vector2(-448, 480)
-SPEED = null
-RUN_SPEED_MULTIPLIER = null
-CROUCH_SPEED_MULTIPLIER = null
-JUMP_VELOCITY = null
-WEIGHT = null
-AIR_CONTROL_MULTIPLIER = null
-ACCELERATION = null
-DECELERATION_BASE = null
-DECELERATION_MULTIPLIER = null
-LANDING_DECELERATION_MULTIPLIER = null
-CROUCH_DECELERATION = null
-DROP_THROUGH_TIME = null
-PLATFORM_HEIGHT_THRESHOLD = null
-VERTICAL_OFFSET = null
-CROUCH_OFFSET = null
-PUSH_FORCE = null
-BLOCK_MAX_VELOCITY = null
 
 [node name="Limits" type="Node2D" parent="."]
 position = Vector2(-320, 0)
