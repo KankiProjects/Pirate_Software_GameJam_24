@@ -9,7 +9,8 @@ var scene_paths = {
 	12: "res://scenes/Sc1_Lvl1.2_Narrative.tscn",
 	221: "res://scenes/Sc2_Lvl2.2.1_Platform.tscn",
 	222: "res://scenes/Sc2_Lvl2.2.2_Narrative.tscn",
-	223: "res://scenes/Sc2_Lvl2.2.3_Platform.tscn"
+	223: "res://scenes/Sc2_Lvl2.2.3_Platform.tscn",
+	0: "res://scenes/MainMenu.tscn"
 }
 
 # Variable to check if the player is inside the area

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ca7ufur3w6ilj"]
 
-[ext_resource type="Script" path="res://moving_platform.gd" id="1_kun1s"]
-[ext_resource type="Texture2D" uid="uid://2c8nkkl4mk5k" path="res://textures/blank.png" id="2_bej0a"]
+[ext_resource type="Script" path="res://scripts/moving_platform.gd" id="1_ov6qt"]
+[ext_resource type="TileSet" uid="uid://hqaaf3ngotee" path="res://resources/Floor_tiles_Sc2_Lvl2.2.3_Alchemy.tres" id="2_gb14b"]
 
 [sub_resource type="Curve2D" id="Curve2D_0t7o1"]
 _data = {
@@ -13,7 +13,7 @@ point_count = 2
 size = Vector2(256, 64)
 
 [sub_resource type="Animation" id="Animation_n0q23"]
-length = 0.001
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -21,10 +21,10 @@ tracks/0/path = NodePath("PathFollow2D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="Animation" id="Animation_p5gf1"]
@@ -52,8 +52,7 @@ _data = {
 
 [node name="moving_platform" type="Path2D"]
 curve = SubResource("Curve2D_0t7o1")
-script = ExtResource("1_kun1s")
-loop = false
+script = ExtResource("1_ov6qt")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 rotates = false
@@ -71,10 +70,12 @@ one_shot = true
 shape = SubResource("RectangleShape2D_valej")
 debug_color = Color(0.802372, 0.292959, 0.753722, 0.42)
 
-[node name="Blank" type="Sprite2D" parent="AnimatableBody2D"]
-position = Vector2(-4.17233e-06, -9.53674e-07)
-scale = Vector2(0.599532, 0.154589)
-texture = ExtResource("2_bej0a")
+[node name="Floor" type="TileMap" parent="AnimatableBody2D"]
+position = Vector2(32, 734)
+scale = Vector2(0.0626518, 0.0651617)
+tile_set = ExtResource("2_gb14b")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1441796, 11, 0, -1441795, 11, 0, -1441794, 11, 0, -1441793, 11, 0, -1507328, 11, 0, -1507327, 11, 0, -1376260, 11, 805306368, -1376259, 11, 805306368, -1376258, 11, 805306368, -1376257, 11, 805306368, -1441792, 11, 805306368, -1441791, 11, 805306368, -1441797, 13, 0, -1441790, 13, 805306368, -1507326, 14, 0, -1376261, 14, 805306368)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 callback_mode_process = 0

@@ -1,0 +1,159 @@
+[gd_scene load_steps=6 format=3 uid="uid://ck3alre310pnp"]
+
+[ext_resource type="Texture2D" uid="uid://cpbbycdbia5j7" path="res://resources/assets/wallpaper.png" id="2_xo7s2"]
+[ext_resource type="Theme" uid="uid://d25w31o1i41hr" path="res://resources/fonts/main_text.tres" id="3_86cvl"]
+[ext_resource type="FontFile" uid="uid://bv8umrkqcqboa" path="res://resources/fonts/Rosarivo-Regular.ttf" id="4_4up7b"]
+
+[sub_resource type="GDScript" id="GDScript_ylym0"]
+script/source = "extends Control
+
+# Export variables for the animation and fade durations
+@export var animation_duration = 2.0
+@export var fade_duration = 1.0
+
+# Define variables for the RichTextLabel nodes and the fade ColorRect
+var prelude1
+var prelude2
+var fade_rect
+
+# Variables to track the current animation progress
+var animation_progress = 0.0
+var current_animation = 1
+var animation_finished = false
+
+func _ready():
+	# Get references to the RichTextLabel nodes and the fade ColorRect
+	prelude1 = $prelude1
+	prelude2 = $prelude2
+	fade_rect = $FadeRect
+
+	# Initialize prelude2 as hidden
+	prelude2.visible = false
+
+	# Initialize fade_rect
+	fade_rect.color = Color(0, 0, 0, 0)  # Fully transparent initially
+
+	# Start the animation for prelude1
+	start_animation(prelude1)
+
+func _process(delta):
+	if not animation_finished:
+		animation_progress += delta / animation_duration
+		if current_animation == 1:
+			prelude1.visible_ratio = animation_progress
+		elif current_animation == 2:
+			prelude2.visible_ratio = animation_progress
+
+		if animation_progress >= 1.0:
+			animation_finished = true
+	else:
+		if current_animation == 2:
+			# Fade to black after the second animation finishes
+			await get_tree().create_timer(2).timeout
+			fade_rect.color.a += delta / fade_duration
+			if fade_rect.color.a >= 1.0:
+				fade_rect.color.a = 1.0  # Clamp the value to 1.0
+				get_tree().change_scene_to_file(\"res://scenes/MainMenu.tscn\")
+
+func _input(event):
+	if event.is_action_pressed(\"ui_accept\"):
+		if animation_finished:
+			if current_animation == 1:
+				# Hide prelude1 and start animation for prelude2
+				prelude1.visible = false
+				prelude2.visible = true
+				current_animation = 2
+				start_animation(prelude2)
+			else:
+				# Both animations are finished, start the fade to black
+				animation_finished = true
+		else:
+			# Skip the current animation instantly
+			animation_progress = 1.0
+
+func start_animation(label):
+	animation_progress = 0.0
+	animation_finished = false
+	label.visible_ratio = 0.0
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_nio66"]
+font = ExtResource("4_4up7b")
+font_size = 128
+outline_size = 5
+
+[node name="Sc0Prelude" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_ylym0")
+animation_duration = 8.0
+fade_duration = 5.0
+
+[node name="FadeRect" type="ColorRect" parent="."]
+top_level = true
+layout_mode = 0
+offset_right = 1926.0
+offset_bottom = 1087.0
+
+[node name="Wallpaper2" type="Sprite2D" parent="."]
+position = Vector2(2022, 933)
+rotation = -3.14159
+scale = Vector2(2.1333, 2.1333)
+texture = ExtResource("2_xo7s2")
+
+[node name="Wallpaper" type="Sprite2D" parent="."]
+position = Vector2(575.555, 583)
+scale = Vector2(1.09676, 1.09676)
+texture = ExtResource("2_xo7s2")
+
+[node name="prelude1" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 441.0
+offset_right = 1498.0
+offset_bottom = 791.0
+theme = ExtResource("3_86cvl")
+text = "Epilogue
+
+Lur stands at the threshold of an uncertain future, his journey through the shadows only beginning. Ahead, he will confront his deepest fears and unearth the true power of alchemy."
+
+[node name="prelude2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 441.0
+offset_right = 1498.0
+offset_bottom = 630.0
+theme_override_fonts/normal_font = ExtResource("4_4up7b")
+theme_override_font_sizes/normal_font_size = 22
+text = "As he sails into the unknown, the trials awaiting him will test his spirit and reveal the secrets that lie within. The path to self-discovery and redemption unfolds before him, shrouded in mystery and promise."
+
+[node name="Press button" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -141.0
+offset_right = 500.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("4_4up7b")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[center]Press [wave]spacebar[/wave] to continue[/center]"
+scroll_active = false
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_top = 193.0
+offset_right = 1920.0
+offset_bottom = 368.0
+text = "DARK ELIXIR"
+label_settings = SubResource("LabelSettings_nio66")
+horizontal_alignment = 1
