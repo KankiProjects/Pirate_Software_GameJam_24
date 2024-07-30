@@ -37,3 +37,7 @@ func _process(delta):
 		if required_item["scissors"] && Input.is_action_just_pressed("interact"):
 			interacting_body.collect_item(item)
 			queue_free()
+
+
+func _on_body_entered(body):
+	pass # Replace with function body.

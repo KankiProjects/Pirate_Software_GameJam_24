@@ -1,2 +1,13 @@
-res://scenes/TestingLimboDrugAddict.tscn
 res://scenes/Sc1_Lvl1.1_Alchemy.tscn
+res://scenes/TestingLimboDrugAddict.tscn
+res://prefabs/ch_lur.tscn
+res://scripts/crafting_table.gd
+res://scripts/player.gd
+res://prefabs/betle_nut.tscn
+res://inventory/inventory.tres
+res://prefabs/betle_leaf.tscn
+res://prefabs/scissors.tscn
+res://scripts/inv_ui_slot.gd
+res://prefabs/crafting_table.tscn
+res://scripts/item_2DArea.gd
+res://prefabs/inventory_ui.tscn

@@ -46,9 +46,9 @@ func check_required_items():
 	if required_items["betle_nut"] && required_items["betle_leaf"] && required_items["scissors"]:
 		if Input.is_action_just_pressed("interact"):
 			interacting_body.set_ingredients()
+			
 			text1.visible = false
 	elif Input.is_action_just_pressed("interact"):
 		text1.visible = false
 		text2.visible = true
->>>>>>> Stashed changes
 		

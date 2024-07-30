@@ -29,7 +29,7 @@ extends CharacterBody2D
 @onready var cshape = $CollisionShape2D
 @onready var platform_raycast = $PlatformRayCast  # Ensure this is the correct path to the RayCast2D node
 @onready var animated_Lur = $AnimationPlayer
-@onready var invUI = $Lur/InventoryUI
+@onready var invUI = $"Camera2D/InventoryUI"
 @onready var Lur = $Lur 
 
 # Upload resources.
@@ -187,18 +187,28 @@ func collect_item(item):
 		ingredients[item.name] = true
 		for i in range(len(invUI.inv.items)):
 			if invUI.inv.items[i] == null:
+				print(item.name)
 				invUI.inv.items[i] = item
+				print(invUI.inv.items[i].name)
 				invUI.update_slots()
 				break
 	
-				
+	
 func get_ingredients() -> Dictionary:
+	print(ingredients)
 	return ingredients
 	
 	
 func set_ingredients():
 	for key in ingredients.keys():
 		ingredients[key] = false
+		empty_inventory()
+
+
+func empty_inventory():
+	for i in range(len(invUI.inv.items)):
+		invUI.inv.items[i] = null
+		invUI.slots[i].set_item_visual()
 
 
 func _on_pickable_body_entered(body):
@@ -207,4 +217,3 @@ func _on_pickable_body_entered(body):
 
 func _on_pickable_body_exited(body):
 	pass # Replace with function body.
->>>>>>> Stashed changes

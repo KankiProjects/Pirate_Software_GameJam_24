@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://drvorwpv1f7us"]
 
-[ext_resource type="Texture2D" uid="uid://8s7sn4u5pu75" path="res://textures/clipart1961948.png" id="1_o4hq3"]
+[ext_resource type="Texture2D" uid="uid://8s7sn4u5pu75" path="res://resources/assets/textures/clipart1961948.png" id="1_o4hq3"]
 [ext_resource type="Script" path="res://scripts/crafting_table.gd" id="1_sikh8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ljyp"]
@@ -30,3 +30,6 @@ offset_top = -150.0
 offset_right = 109.0
 offset_bottom = -116.0
 text = "\"I require an ingredient still\""
+
+[connection signal="body_entered" from="." to="." method="_on_pickable_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_pickable_body_exited"]
