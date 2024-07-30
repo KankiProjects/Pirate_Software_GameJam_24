@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://hifwmp353sk3" path="res://prefabs/prefab_deadly_zone.tscn" id="6_mvwi3"]
 [ext_resource type="PackedScene" uid="uid://ddd0b666rc56" path="res://prefabs/prefab_solid_ramp.tscn" id="6_o5pkq"]
 [ext_resource type="PackedScene" uid="uid://b3cf3x2slv3kx" path="res://prefabs/lvl_transition.tscn" id="7_splwl"]
-[ext_resource type="Texture2D" uid="uid://5x5m3imuqcxs" path="res://resources/assets/Backgrounds/ForestL4.png" id="7_vskdt"]
+[ext_resource type="Texture2D" uid="uid://dfgm6w3b1y1dv" path="res://resources/assets/Backgrounds/ForestL4.png" id="7_vskdt"]
 [ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="7_ws7lg"]
-[ext_resource type="Texture2D" uid="uid://df8n2mmr16mec" path="res://resources/assets/Backgrounds/ForestL3.png" id="8_ogbci"]
-[ext_resource type="Texture2D" uid="uid://wpvqek8sfkxb" path="res://resources/assets/Backgrounds/ForestL2.png" id="9_xxrpa"]
-[ext_resource type="Texture2D" uid="uid://gej3nufy63tp" path="res://resources/assets/Backgrounds/ForestL1.png" id="10_l67np"]
+[ext_resource type="Texture2D" uid="uid://cprsi0tcfg8ju" path="res://resources/assets/Backgrounds/ForestL3.png" id="8_ogbci"]
+[ext_resource type="Texture2D" uid="uid://duevv2r08piff" path="res://resources/assets/Backgrounds/ForestL2.png" id="9_xxrpa"]
+[ext_resource type="Texture2D" uid="uid://b64l2ubcyn3rs" path="res://resources/assets/Backgrounds/ForestL1.png" id="10_l67np"]
 
 [node name="Sc2Lvl2_2_1Platform" type="Node2D"]
 
@@ -116,6 +116,23 @@ rotation = -1.5708
 
 [node name="Ch_Lur" parent="." instance=ExtResource("3_d2s5q")]
 position = Vector2(-544, 352)
+SPEED = null
+RUN_SPEED_MULTIPLIER = null
+CROUCH_SPEED_MULTIPLIER = null
+JUMP_VELOCITY = null
+WEIGHT = null
+AIR_CONTROL_MULTIPLIER = null
+ACCELERATION = null
+DECELERATION_BASE = null
+DECELERATION_MULTIPLIER = null
+LANDING_DECELERATION_MULTIPLIER = null
+CROUCH_DECELERATION = null
+DROP_THROUGH_TIME = null
+PLATFORM_HEIGHT_THRESHOLD = null
+VERTICAL_OFFSET = null
+CROUCH_OFFSET = null
+PUSH_FORCE = null
+BLOCK_MAX_VELOCITY = null
 
 [node name="ArtAssets" type="Node2D" parent="."]
 show_behind_parent = true

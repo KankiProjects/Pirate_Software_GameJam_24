@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_l4r40"]
 [ext_resource type="FontFile" uid="uid://bv8umrkqcqboa" path="res://resources/fonts/Rosarivo-Regular.ttf" id="2_ayp1i"]
-[ext_resource type="Texture2D" uid="uid://bjif6vigrpp0a" path="res://resources/assets/wp3917096.jpg" id="2_icraf"]
+[ext_resource type="Texture2D" uid="uid://bduee7d8hnmol" path="res://resources/assets/wp3917096.jpg" id="2_icraf"]
 [ext_resource type="Theme" uid="uid://wc1ba71tesn8" path="res://resources/fonts/buttondeftypo.tres" id="3_av0dm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kgpnn"]
