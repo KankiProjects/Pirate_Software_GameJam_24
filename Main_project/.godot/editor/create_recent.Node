@@ -1,9 +1,9 @@
 Node2D
+ParallaxLayer
+ParallaxBackground
 TileMap
 RichTextLabel
 Sprite2D
-ParallaxLayer
-ParallaxBackground
 Label
 CollisionShape2D
 Area2D
