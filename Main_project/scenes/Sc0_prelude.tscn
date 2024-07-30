@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ivt6m6cqk5uh"]
+[gd_scene load_steps=6 format=3 uid="uid://ivt6m6cqk5uh"]
 
 [ext_resource type="FontFile" uid="uid://bv8umrkqcqboa" path="res://resources/fonts/Rosarivo-Regular.ttf" id="1_hi6ta"]
 [ext_resource type="Script" path="res://scripts/text_logic.gd" id="1_w8h37"]
+[ext_resource type="Texture2D" uid="uid://cpbbycdbia5j7" path="res://resources/assets/wallpaper.png" id="2_76unm"]
+[ext_resource type="Theme" uid="uid://d25w31o1i41hr" path="res://resources/fonts/main_text.tres" id="2_u7o5q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nio66"]
 font = ExtResource("1_hi6ta")
@@ -25,26 +27,41 @@ layout_mode = 0
 offset_right = 1926.0
 offset_bottom = 1087.0
 
+[node name="Wallpaper2" type="Sprite2D" parent="."]
+position = Vector2(2022, 933)
+rotation = -3.14159
+scale = Vector2(2.1333, 2.1333)
+texture = ExtResource("2_76unm")
+
+[node name="Wallpaper" type="Sprite2D" parent="."]
+position = Vector2(575.555, 583)
+scale = Vector2(1.09676, 1.09676)
+texture = ExtResource("2_76unm")
+
 [node name="prelude1" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 498.0
-offset_top = 535.0
+offset_top = 441.0
 offset_right = 1498.0
-offset_bottom = 724.0
-theme_override_fonts/normal_font = ExtResource("1_hi6ta")
-theme_override_font_sizes/normal_font_size = 22
-text = "In 1491, the last Muslim stronghold in Granada faces the relentless siege of the Catholic Monarchs of Spain. Lur Mahdi Al-Fasi, born into a wealthy family within the Alhambra,
-had a promising future as an alchemist under the guidance of a skilled tutor. However, the violent invasion forces him to flee to the countryside, where his family is tragically killed, leaving him alone to continue his studies in isolation."
-visible_characters = 0
-visible_ratio = 0.0
+offset_bottom = 791.0
+theme = ExtResource("2_u7o5q")
+text = "In 1491, the last Muslim stronghold in Granada faces the relentless siege of the Catholic Monarchs of Spain.
+
+Lur Mahdi Al-Fasi, born into a wealthy family within the Alhambra, had a promising future as an alchemist under the guidance of a skilled tutor.
+
+However, the violent invasion forces him to flee to the countryside, where his family is tragically killed, leaving him alone to continue his studies in isolation."
 
 [node name="prelude2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 498.0
-offset_top = 535.0
+offset_top = 441.0
 offset_right = 1498.0
-offset_bottom = 724.0
+offset_bottom = 630.0
 theme_override_fonts/normal_font = ExtResource("1_hi6ta")
 theme_override_font_sizes/normal_font_size = 22
-text = "Now 21, Lur lives as a hermit, hidden from the Spanish Inquisition and dependent on his own alchemical brews for daily survival. In this time of darkness and danger for his kind, Lur must confront his deepest fears and desires, seeking survival and self-acceptance amid the ruins of a once-great kingdom."
+text = "Now 21, Lur lives as a hermit, hidden from the Spanish Inquisition and dependent on his own alchemical brews for daily survival.
+
+In this time of darkness and danger for his kind, Lur must confront his deepest fears and desires, seeking survival and self-acceptance amid the ruins of a once-great kingdom."
 
 [node name="Press button" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -65,6 +82,7 @@ text = "[center]Press [wave]spacebar[/wave] to continue[/center]"
 scroll_active = false
 
 [node name="Title" type="Label" parent="."]
+layout_mode = 0
 offset_top = 193.0
 offset_right = 1920.0
 offset_bottom = 368.0

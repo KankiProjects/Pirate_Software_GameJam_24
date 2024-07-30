@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8og74e8c3jmf"]
+
+[ext_resource type="Script" path="res://scripts/item_2DArea.gd" id="1_fu80l"]
+[ext_resource type="Texture2D" uid="uid://cos25mfmkemw3" path="res://resources/assets/Sprites/BetelLeaf.png" id="2_xrp0p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_00gow"]
+
+[node name="betel_leaf" type="Area2D"]
+z_index = 2
+scale = Vector2(6.29774, 6.29774)
+script = ExtResource("1_fu80l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.249985, -0.200061)
+shape = SubResource("CircleShape2D_00gow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.25, -1.2)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_xrp0p")
+
+[connection signal="body_entered" from="." to="." method="_on_pickable_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_pickable_body_exited"]

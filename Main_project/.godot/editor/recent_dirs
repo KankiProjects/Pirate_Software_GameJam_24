@@ -1,2 +1,13 @@
+<<<<<<< HEAD
 res://scenes
 res://prefabs
+=======
+res://resources
+res://resources/assets/textures
+res://resources/assets/Sprites/level_art
+res://resources/fonts
+res://scenes
+res://
+res://prefabs
+res://scripts
+>>>>>>> art
