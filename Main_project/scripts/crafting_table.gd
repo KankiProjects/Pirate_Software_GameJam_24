@@ -17,12 +17,6 @@ func _ready():
 	cshape.visible = false
 
 
-
-func _ready():
-	text1.visible = false
-	text2.visible = false
-
-
 # Player's hitbox enters/exits 2D area
 func _on_pickable_body_entered(body):
 	if body.name == "Ch_Lur":

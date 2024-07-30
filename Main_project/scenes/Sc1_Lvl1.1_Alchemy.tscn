@@ -4,16 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="3_acsw4"]
 [ext_resource type="PackedScene" uid="uid://drvorwpv1f7us" path="res://prefabs/crafting_table.tscn" id="3_m6hgd"]
 [ext_resource type="PackedScene" uid="uid://dfkuqut0db8jg" path="res://prefabs/prefab_solid_platform.tscn" id="3_oy31s"]
-[ext_resource type="Texture2D" uid="uid://mufcr4awut21" path="res://resources/assets/textures/imgbin_areca-palm-areca-nut-arecaceae-drawing-png.png" id="4_wcy1s"]
-[ext_resource type="Texture2D" uid="uid://cb2u6x4p3tnf3" path="res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png" id="6_t2muy"]
-[ext_resource type="Texture2D" uid="uid://s4w7x85c0mfp" path="res://resources/assets/textures/—Pngtree—sharp rock clip art_5830708.png" id="7_invw2"]
+[ext_resource type="Texture2D" uid="uid://cugy32eckbnkw" path="res://resources/assets/textures/imgbin_areca-palm-areca-nut-arecaceae-drawing-png.png" id="4_wcy1s"]
+[ext_resource type="Texture2D" uid="uid://ltpkknteqgjk" path="res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png" id="6_t2muy"]
+[ext_resource type="Texture2D" uid="uid://x0kawf2aobnt" path="res://resources/assets/textures/—Pngtree—sharp rock clip art_5830708.png" id="7_invw2"]
 [ext_resource type="Texture2D" uid="uid://2c8nkkl4mk5k" path="res://resources/assets/textures/blank.png" id="8_26f16"]
 [ext_resource type="PackedScene" uid="uid://ddd0b666rc56" path="res://prefabs/prefab_solid_ramp.tscn" id="8_nppxw"]
-[ext_resource type="Texture2D" uid="uid://b3o2vfyf8ufpx" path="res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png" id="11_xgcsp"]
+[ext_resource type="Texture2D" uid="uid://c33lh1s7gs8pk" path="res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png" id="11_xgcsp"]
 [ext_resource type="Script" path="res://scripts/Lvl_Transition.gd" id="12_3nyri"]
 [ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="12_41vwv"]
 [ext_resource type="PackedScene" uid="uid://ij74gv3om37x" path="res://prefabs/scissors.tscn" id="13_1qyky"]
-[ext_resource type="PackedScene" uid="uid://c2bresfu5fvhq" path="res://prefabs/betle_nut.tscn" id="14_djogi"]
+[ext_resource type="PackedScene" uid="uid://blejjc6kvhvbe" path="res://prefabs/betle_nut.tscn" id="14_djogi"]
 [ext_resource type="PackedScene" uid="uid://bs56vbwomshws" path="res://prefabs/betle_leaf.tscn" id="15_fce5o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2thb"]
@@ -200,6 +200,4 @@ position = Vector2(1401, 523)
 [connection signal="body_entered" from="ArtAssets/Front/crafting_table" to="Ch_Lur" method="_on_pickable_body_entered"]
 [connection signal="body_exited" from="ArtAssets/Front/crafting_table" to="Ch_Lur" method="_on_pickable_body_exited"]
 [connection signal="body_entered" from="Actions/Lvl_Transition" to="Ch_Lur" method="_on_lvl_transition_body_entered"]
-
 [connection signal="body_exited" from="Actions/Lvl_Transition" to="Ch_Lur" method="_on_lvl_transition_body_exited"]
-
