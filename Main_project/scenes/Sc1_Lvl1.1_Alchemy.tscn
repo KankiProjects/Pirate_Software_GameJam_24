@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="12_41vwv"]
 [ext_resource type="Texture2D" uid="uid://fblyuv3g5x2b" path="res://resources/assets/Sprites/BetelPalm.png" id="12_801o8"]
 [ext_resource type="PackedScene" uid="uid://b8og74e8c3jmf" path="res://prefabs/ingredients/betel_leaf.tscn" id="13_qeiqn"]
-[ext_resource type="PackedScene" uid="uid://blejjc6kvhvbe" path="res://prefabs/ingredients/betel_nut.tscn" id="14_dajdc"]
+[ext_resource type="PackedScene" uid="uid://blejjc6kvhvbe" path="res://prefabs/betle_nut.tscn" id="14_dajdc"]
 [ext_resource type="Texture2D" uid="uid://b6cyumm7tiyn2" path="res://resources/assets/Sprites/level_art/haybaleforkless.png" id="17_bycnb"]
 [ext_resource type="TileSet" uid="uid://cc3xrf2303cs7" path="res://resources/Floor_tiles_Sc1_Lvl1.1_Alchemy.tres" id="18_jnr6g"]
 [ext_resource type="Texture2D" uid="uid://c7fa0hkuewoaf" path="res://resources/assets/Patterns/grassCenter540px.png" id="19_0tnj7"]
