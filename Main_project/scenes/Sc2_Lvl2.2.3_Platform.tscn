@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ydrhmwisfhdq"]
+[gd_scene load_steps=24 format=3 uid="uid://ydrhmwisfhdq"]
 
 [ext_resource type="Texture2D" uid="uid://dadh1edpihjob" path="res://resources/assets/Backgrounds/darkForest5.png" id="1_e2mk6"]
 [ext_resource type="PackedScene" uid="uid://blvb6lomyadwd" path="res://prefabs/prefab_map_limit.tscn" id="1_s1vag"]
@@ -18,7 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://4xyristceuy0" path="res://resources/assets/Sprites/level_art/Plank3.png" id="11_1y3ey"]
 [ext_resource type="Texture2D" uid="uid://bjaymnfyallmg" path="res://resources/assets/Sprites/level_art/Plank2.png" id="12_qehyq"]
 [ext_resource type="Texture2D" uid="uid://dm5ix76y8o87" path="res://resources/assets/Backgrounds/FGBush.png" id="13_43swd"]
+[ext_resource type="Texture2D" uid="uid://cq1wbgh5qh4np" path="res://resources/assets/Sprites/level_art/stonedoor.png" id="14_fvl7h"]
 [ext_resource type="Texture2D" uid="uid://h8y32r84h5vc" path="res://resources/assets/Backgrounds/FGRock2.png" id="15_jdt38"]
+[ext_resource type="Texture2D" uid="uid://ciccj3mcpyge3" path="res://resources/assets/Sprites/level_art/rock.png" id="15_wogh5"]
 [ext_resource type="Texture2D" uid="uid://cmtybyyejq8oy" path="res://resources/assets/Backgrounds/FGRock.png" id="16_6a1rv"]
 [ext_resource type="PackedScene" uid="uid://b3cf3x2slv3kx" path="res://prefabs/lvl_transition.tscn" id="21_tr3el"]
 
@@ -159,11 +161,11 @@ position = Vector2(-1024, 0)
 rotation = 1.57079
 
 [node name="MapLimit3" parent="Limits" instance=ExtResource("1_s1vag")]
-position = Vector2(16640, 0)
+position = Vector2(14355, 0)
 rotation = -1.5708
 
 [node name="Ch_Lur" parent="." instance=ExtResource("2_2rc0f")]
-position = Vector2(-704, 456)
+position = Vector2(-564, 466)
 
 [node name="ArtAssets" type="Node2D" parent="."]
 show_behind_parent = true
@@ -218,12 +220,24 @@ layer_0/tile_data = PackedInt32Array(-458789, 12, 0, -458790, 12, 0, -458791, 12
 show_behind_parent = true
 
 [node name="Pngtree-stone-portal-photo-png-image14369772" type="Sprite2D" parent="ArtAssets/Back"]
-position = Vector2(-1032, 520)
-scale = Vector2(0.084, 0.084)
+position = Vector2(-942, 484)
+scale = Vector2(0.637779, 0.637779)
+texture = ExtResource("14_fvl7h")
 
 [node name="Pngtree-stone-portal-photo-png-image14369773" type="Sprite2D" parent="ArtAssets/Back"]
-position = Vector2(14168, 1408)
-scale = Vector2(0.084, 0.084)
+position = Vector2(14163, 1382)
+scale = Vector2(0.637779, 0.637779)
+texture = ExtResource("14_fvl7h")
+
+[node name="Rock" type="Sprite2D" parent="ArtAssets/Back"]
+position = Vector2(-1414, 432)
+scale = Vector2(1.50921, 1.50921)
+texture = ExtResource("15_wogh5")
+
+[node name="Rock2" type="Sprite2D" parent="ArtAssets/Back"]
+position = Vector2(14695, 1314)
+scale = Vector2(-1.509, 1.509)
+texture = ExtResource("15_wogh5")
 
 [node name="Platforms" type="Node2D" parent="."]
 show_behind_parent = true
@@ -401,6 +415,11 @@ position = Vector2(14104, 2332)
 scale = Vector2(-2.94492, 2.94492)
 texture = ExtResource("13_43swd")
 
+[node name="FgBush29" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
+position = Vector2(15079, 2143)
+scale = Vector2(-2.94492, 2.94492)
+texture = ExtResource("13_43swd")
+
 [node name="FgBush13" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
 position = Vector2(7657, 2399)
 scale = Vector2(-2.94492, 2.94492)
@@ -556,6 +575,12 @@ texture = ExtResource("16_6a1rv")
 position = Vector2(13650, 2247)
 rotation = -0.0733336
 scale = Vector2(4.69373, 3.54145)
+texture = ExtResource("16_6a1rv")
+
+[node name="FgRock20" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(19095, 1617)
+rotation = -0.0258092
+scale = Vector2(-7.523, 5.676)
 texture = ExtResource("16_6a1rv")
 
 [node name="FgRock2" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]

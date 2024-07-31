@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://4fx12igs78vf"]
+[gd_scene load_steps=7 format=3 uid="uid://4fx12igs78vf"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_l4r40"]
 [ext_resource type="FontFile" uid="uid://bv8umrkqcqboa" path="res://resources/fonts/Rosarivo-Regular.ttf" id="2_ayp1i"]
-[ext_resource type="Texture2D" uid="uid://bduee7d8hnmol" path="res://resources/assets/wp3917096.jpg" id="2_icraf"]
+[ext_resource type="Texture2D" uid="uid://djbtopeanfjk0" path="res://resources/assets/Backgrounds/menu.png" id="2_k1i4c"]
 [ext_resource type="Theme" uid="uid://wc1ba71tesn8" path="res://resources/fonts/buttondeftypo.tres" id="3_av0dm"]
+[ext_resource type="Theme" uid="uid://d25w31o1i41hr" path="res://resources/fonts/main_text.tres" id="5_npwcm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kgpnn"]
 font = ExtResource("2_ayp1i")
@@ -21,9 +22,9 @@ script = ExtResource("1_l4r40")
 metadata/_edit_use_anchors_ = true
 
 [node name="Wp3917096" type="Sprite2D" parent="."]
-position = Vector2(905, 493)
-scale = Vector2(1.09722, 1.09722)
-texture = ExtResource("2_icraf")
+position = Vector2(905.278, 550)
+scale = Vector2(1.06696, 1.03079)
+texture = ExtResource("2_k1i4c")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -70,6 +71,15 @@ text = "Credits"
 layout_mode = 2
 theme = ExtResource("3_av0dm")
 text = "Exit"
+
+[node name="prelude1" type="RichTextLabel" parent="."]
+offset_left = 17.0
+offset_top = 966.0
+offset_right = 905.0
+offset_bottom = 1114.0
+theme = ExtResource("5_npwcm")
+theme_override_font_sizes/normal_font_size = 22
+text = "This game was created for \"The Pirate Software Game Jam 15\" over a span of two weeks. Due to our inexperience and challenges with the Godot game engine, the result is more of a showcase of our efforts rather than a fully playable experience."
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

@@ -1,8 +1,8 @@
+RichTextLabel
 Node2D
 TileMap
 ParallaxLayer
 ParallaxBackground
-RichTextLabel
 Sprite2D
 Label
 CollisionShape2D

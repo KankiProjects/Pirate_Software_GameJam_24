@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://b64l2ubcyn3rs" path="res://resources/assets/Backgrounds/ForestL1.png" id="4_16tu6"]
 [ext_resource type="Texture2D" uid="uid://cxrgkeiafoqf7" path="res://resources/assets/Sprites/level_art/bush.png" id="5_ku2an"]
 [ext_resource type="Texture2D" uid="uid://ltpkknteqgjk" path="res://resources/assets/textures/—Pngtree—log cabin clip art_6025396.png" id="6_t2muy"]
+[ext_resource type="Texture2D" uid="uid://cq1wbgh5qh4np" path="res://resources/assets/Sprites/level_art/stonedoor.png" id="7_6j5go"]
 [ext_resource type="Texture2D" uid="uid://bqbskp03kh13q" path="res://resources/assets/Patterns/woodBackground.png" id="8_1y2hm"]
 [ext_resource type="Texture2D" uid="uid://ciccj3mcpyge3" path="res://resources/assets/Sprites/level_art/rock.png" id="11_3icd0"]
 [ext_resource type="Texture2D" uid="uid://bwjbxiqpgoium" path="res://resources/assets/Sprites/level_art/cabinWall.png" id="11_ksoyb"]
-[ext_resource type="Texture2D" uid="uid://c33lh1s7gs8pk" path="res://resources/assets/textures/pngtree-stone-portal-photo-png-image_14369772.png" id="11_xgcsp"]
 [ext_resource type="PackedScene" uid="uid://d0ujyyldukj60" path="res://prefabs/prefab_one_way_platform.tscn" id="12_41vwv"]
 [ext_resource type="Texture2D" uid="uid://fblyuv3g5x2b" path="res://resources/assets/Sprites/BetelPalm.png" id="12_801o8"]
 [ext_resource type="PackedScene" uid="uid://b8og74e8c3jmf" path="res://prefabs/ingredients/betel_leaf.tscn" id="13_qeiqn"]
@@ -1134,9 +1134,9 @@ scale = Vector2(0.910833, 0.82)
 texture = ExtResource("6_t2muy")
 
 [node name="Pngtree-stone-portal-photo-png-image14369772" type="Sprite2D" parent="ArtAssets2/Back"]
-position = Vector2(6416, 312)
-scale = Vector2(0.0968, 0.0968)
-texture = ExtResource("11_xgcsp")
+position = Vector2(6416, 291)
+scale = Vector2(0.638672, 0.638672)
+texture = ExtResource("7_6j5go")
 
 [node name="Palm" type="Sprite2D" parent="ArtAssets2/Back"]
 position = Vector2(1017, 239)
