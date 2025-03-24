@@ -1,4 +1,4 @@
-# PirateSoftware (Thor) Game Jam: Summer 2024
+# PirateSoftware Game Jam: Summer 2024
 
 **Game Title:** Shadow Alchemist  
 **Game Jam:** PirateSoftware (Thor) Game Jam  
